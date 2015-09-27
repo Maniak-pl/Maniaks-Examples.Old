@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- App colors -->
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="gray">#6c6c6c</color>
+    <color name="light_gray">#b0b0b0</color>
+    <color name="green">#ff18a035</color>
+    <color name="red">#ffe41e0a</color>
+    <color name="orange">#fff39100</color>
+    <color name="blue">#ff0077bd</color>
+
+</resources>

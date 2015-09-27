@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Maniak\'s Examples</string>
+
+
+
+    <string-array name="apps_array">
+        <item>Google</item>
+        <item>Lib</item>
+        <item>Server</item>
+    </string-array>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+</resources>
