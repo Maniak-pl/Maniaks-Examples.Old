@@ -14,8 +14,55 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textOutput"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_default"
+        android:layout_gravity="center"
+        android:text="Aplikacja pobiera położenie Fine Location, co oznacza, że kożysta z GPS-a. Jest to lokalizacja drobnoziarnista która powinna zbierać dane do 100 m, a w żeczywistośći pobiera od 5 -20 m. "
+        />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/black"
+        android:padding="@dimen/padding_small"
+        android:layout_margin="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_default"
+            android:background="@color/white"
+            android:text="Location:"/>
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="5dp"/>
+
+        <TextView
+            android:id="@+id/LatitudeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_default"
+            android:background="@color/white"
+            android:text="--.------"/>
+
+        <View
+            android:layout_width="5dp"
+            android:layout_height="5dp"/>
+
+        <TextView
+            android:id="@+id/LongitudeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding_default"
+            android:background="@color/white"
+            android:text="--.------"/>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>

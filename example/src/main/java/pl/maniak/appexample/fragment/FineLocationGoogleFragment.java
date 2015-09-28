@@ -2,7 +2,6 @@ package pl.maniak.appexample.fragment;
 
 import android.app.Fragment;
 import android.location.Location;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,7 +27,7 @@ public class FineLocationGoogleFragment extends Fragment implements GoogleApiCli
      3. Musimy dodać uprawnienia
     */
 
-    private TextView textOutput;
+    private TextView mLongitudeTv, mLatitudeTv;
     private GoogleApiClient mGoogleApiClient;
     private LocationRequest mLocationRequest;
 
@@ -43,7 +42,8 @@ public class FineLocationGoogleFragment extends Fragment implements GoogleApiCli
                 .addOnConnectionFailedListener(this)
                 .build();
 
-        textOutput = (TextView) root.findViewById(R.id.textOutput);
+        mLongitudeTv = (TextView) root.findViewById(R.id.LongitudeTv);
+        mLatitudeTv = (TextView) root.findViewById(R.id.LatitudeTv);
         return root;
     }
 
@@ -87,6 +87,8 @@ public class FineLocationGoogleFragment extends Fragment implements GoogleApiCli
 
     @Override
     public void onLocationChanged(Location location) {
-        textOutput.setText(location.toString()); // Latitude - Szerokość
+        mLatitudeTv.setText(Double.toString(location.getLatitude())); // Latitude - Szerokość
+        mLongitudeTv.setText(Double.toString(location.getLongitude())); // Longitude - długość geograficzną
+
     }
 }

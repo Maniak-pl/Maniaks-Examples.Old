@@ -2,12 +2,11 @@ package pl.maniak.appexample.activity;
 
 
 import android.app.Fragment;
-import android.support.v4.widget.DrawerLayout;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,7 +86,7 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
                 initWizard(Step.GITHUB);
                 break;
         }
-        getFragmentManager().beginTransaction().add(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
+        getFragmentManager().beginTransaction().replace(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
 
     }
 
