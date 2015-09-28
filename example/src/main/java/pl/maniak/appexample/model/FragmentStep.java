@@ -4,12 +4,14 @@ import android.app.Fragment;
 import android.content.Context;
 
 import pl.maniak.appexample.fragment.FineLocationGoogleFragment;
+import pl.maniak.appexample.fragment.LogHelpFragment;
 
 /**
  * Created by Sony on 2015-09-28.
  */
 public enum FragmentStep {
-    FINE_LOCATION(FineLocationGoogleFragment.class);
+    FINE_LOCATION(FineLocationGoogleFragment.class),
+    LOG(LogHelpFragment.class);
 
     String fragmentName;
 

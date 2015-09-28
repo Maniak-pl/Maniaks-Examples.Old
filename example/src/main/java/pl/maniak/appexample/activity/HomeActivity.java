@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import pl.maniak.appexample.R;
+import pl.maniak.appexample.common.log.L;
 import pl.maniak.appexample.fragment.NavigationDrawerFragment;
 import pl.maniak.appexample.model.FragmentStep;
 
@@ -25,13 +26,15 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
     private int currentStep = 0;
 
     enum Step {
-        GOOGLE, GITHUB
+        GOOGLE, GITHUB, HELP
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        L.i("HomeActivity.onCreate() ");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
 
         mNavigation = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
         mDrawerTitle = getTitle();
@@ -45,22 +48,24 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 
     private void initWizard(Step step) {
 
-        stepList = new ArrayList<FragmentStep>();
+        stepList = new ArrayList();
         switch (step) {
             case GOOGLE:
                 stepList.add(FragmentStep.FINE_LOCATION);
                 break;
             case GITHUB:
-            default:
-                    break;
+                break;
+            case HELP:
+                stepList.add(FragmentStep.LOG);
+                break;
         }
-
 
 
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+
         if (!mNavigation.isDrawerOpen()) {
             restoreActionBar();
             return true;
@@ -81,9 +86,15 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
         switch (position) {
             case 0:
                 initWizard(Step.GOOGLE);
+                L.d("HomeActivity.onNavigationDrawerItemSelected() GOOGLE");
                 break;
             case 1:
                 initWizard(Step.GITHUB);
+                L.d("HomeActivity.onNavigationDrawerItemSelected() GITHUB");
+                break;
+            case 2:
+                initWizard(Step.HELP);
+                L.d("HomeActivity.onNavigationDrawerItemSelected() HELP");
                 break;
         }
         getFragmentManager().beginTransaction().replace(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();

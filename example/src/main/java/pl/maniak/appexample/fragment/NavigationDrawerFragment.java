@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -62,6 +61,7 @@ public class NavigationDrawerFragment extends Fragment {
         listCategory = new ArrayList();
         listCategory.add(new NavDraItem("Google", R.drawable.ic_google));
         listCategory.add(new NavDraItem("GitHub", R.drawable.ic_github));
+        listCategory.add(new NavDraItem("Help", R.drawable.ic_help));
 
         adapter = new NavigationDrawerAdapter(getActivity(), listCategory);
         mDrawerListView.setAdapter(adapter);

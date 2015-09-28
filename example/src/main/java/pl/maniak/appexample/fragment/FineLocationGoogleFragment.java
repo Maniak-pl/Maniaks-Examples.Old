@@ -15,6 +15,7 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
 import pl.maniak.appexample.R;
+import pl.maniak.appexample.common.log.L;
 
 /**
  * Created by Sony on 2015-09-28.
@@ -34,7 +35,8 @@ public class FineLocationGoogleFragment extends Fragment implements GoogleApiCli
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup root = (ViewGroup)inflater.inflate(R.layout.fragment_go_fine_location, null);
+        L.i("FineLocationGoogleFragment.onCreateView() ");
+        ViewGroup root = (ViewGroup)inflater.inflate(R.layout.fragment_google_fine_location, null);
 
         mGoogleApiClient = new GoogleApiClient.Builder(getActivity())
                 .addApi(LocationServices.API)
