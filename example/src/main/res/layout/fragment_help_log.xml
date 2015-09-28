@@ -31,5 +31,54 @@
 
         </ListView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_default_small"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/logInfoBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:textSize="@dimen/text_micro_size"
+            android:textStyle="bold"
+            android:text="Log.INFO"
+            android:textColor="@color/green"/>
+
+        <Button
+            android:id="@+id/logDebugBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:textSize="@dimen/text_micro_size"
+            android:textStyle="bold"
+            android:text="Log.DEBUG"
+            android:textColor="@color/blue"/>
+
+        <Button
+            android:id="@+id/logWarningBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:textSize="@dimen/text_micro_size"
+            android:textStyle="bold"
+            android:text="Log.WARN"
+            android:textColor="@color/orange"/>
+
+        <Button
+            android:id="@+id/logErrorBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="Log.ERROR"
+            android:textSize="@dimen/text_micro_size"
+            android:textStyle="bold"
+            android:textColor="@color/red"/>
+
+
+        </LinearLayout>
+
 
 </LinearLayout>

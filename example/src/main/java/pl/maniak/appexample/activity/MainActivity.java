@@ -17,7 +17,7 @@ import pl.maniak.appexample.fragment.NavigationDrawerFragment;
 import pl.maniak.appexample.model.FragmentStep;
 
 
-public class HomeActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
 
     private NavigationDrawerFragment mNavigation;
     private CharSequence mDrawerTitle;
@@ -31,9 +31,9 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        L.i("HomeActivity.onCreate() ");
+        L.i("MainActivity.onCreate() ");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_main);
 
 
         mNavigation = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
@@ -46,8 +46,44 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 
     }
 
-    private void initWizard(Step step) {
+    @Override
+    protected void onStart() {
+        L.i("MainActivity.onStart() ");
+        super.onStart();
+    }
 
+    @Override
+    protected void onResume() {
+        L.i("MainActivity.onResume() ");
+        super.onResume();
+    }
+
+    @Override
+    protected void onRestart() {
+        L.i("MainActivity.onRestart() ");
+        super.onRestart();
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        L.i("MainActivity.onWindowFocusChanged() ");
+        super.onWindowFocusChanged(hasFocus);
+    }
+
+    @Override
+    protected void onPause() {
+        L.i("MainActivity.onPause() ");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        L.i("MainActivity.onStop() ");
+        super.onStop();
+    }
+
+    private void initWizard(Step step) {
+        L.i("MainActivity.initWizard() ");
         stepList = new ArrayList();
         switch (step) {
             case GOOGLE:
@@ -65,7 +101,6 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         if (!mNavigation.isDrawerOpen()) {
             restoreActionBar();
             return true;
@@ -83,18 +118,19 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
+        L.i("MainActivity.onNavigationDrawerItemSelected() ");
         switch (position) {
             case 0:
                 initWizard(Step.GOOGLE);
-                L.d("HomeActivity.onNavigationDrawerItemSelected() GOOGLE");
+                L.d("MainActivity.onNavigationDrawerItemSelected() GOOGLE");
                 break;
             case 1:
                 initWizard(Step.GITHUB);
-                L.d("HomeActivity.onNavigationDrawerItemSelected() GITHUB");
+                L.d("MainActivity.onNavigationDrawerItemSelected() GITHUB");
                 break;
             case 2:
                 initWizard(Step.HELP);
-                L.d("HomeActivity.onNavigationDrawerItemSelected() HELP");
+                L.d("MainActivity.onNavigationDrawerItemSelected() HELP");
                 break;
         }
         getFragmentManager().beginTransaction().replace(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
