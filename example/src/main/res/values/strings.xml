@@ -3,13 +3,14 @@
 
     <string name="app_name">Maniak\'s Examples</string>
 
+    <!-- Navigation buttons -->
+    <string name="prev">Back</string>
+    <string name="next">Next</string>
+    <string name="send">Send</string>
+    <string name="save">Save</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
 
-
-    <string-array name="apps_array">
-        <item>Google</item>
-        <item>Lib</item>
-        <item>Server</item>
-    </string-array>
 
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>

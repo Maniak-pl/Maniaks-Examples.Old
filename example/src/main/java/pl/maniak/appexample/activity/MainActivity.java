@@ -2,11 +2,17 @@ package pl.maniak.appexample.activity;
 
 
 import android.app.Fragment;
+import android.app.FragmentTransaction;
+import android.content.DialogInterface;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,10 +23,10 @@ import pl.maniak.appexample.fragment.NavigationDrawerFragment;
 import pl.maniak.appexample.model.FragmentStep;
 
 
-public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks {
+public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks, View.OnClickListener {
 
+    private Button nextBt, prevBt;
     private NavigationDrawerFragment mNavigation;
-    private CharSequence mDrawerTitle;
 
     private List<FragmentStep> stepList;
     private int currentStep = 0;
@@ -37,8 +43,12 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
 
         mNavigation = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mDrawerTitle = getTitle();
         mNavigation.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
+        prevBt = (Button) findViewById(R.id.prevBt);
+        nextBt = (Button) findViewById(R.id.nextBt);
+
+        nextBt.setOnClickListener(this);
+        prevBt.setOnClickListener(this);
 
         initWizard(Step.GOOGLE);
         getFragmentManager().beginTransaction().add(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
@@ -95,8 +105,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                 stepList.add(FragmentStep.LOG);
                 break;
         }
-
-
     }
 
     @Override
@@ -112,7 +120,6 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mDrawerTitle);
     }
 
 
@@ -137,8 +144,44 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
 
     }
 
+
+
+
     private Fragment getFragment(final FragmentStep fragmentStep) {
         return fragmentStep.getFragment(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.nextBt:
+                changeStep(true);
+                break;
+            case R.id.prevBt:
+                changeStep(false);
+                break;
+        }
+    }
+
+    public void changeStep(boolean isNest) {
+        currentStep = isNest ? nextStep() : previousStep();
+
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        ft.replace(R.id.container, getFragment(stepList.get(currentStep)), "stepFragment").commit();
+    }
+
+    private int nextStep() {
+        if (currentStep == stepList.size() - 1) {
+            return 0;
+        }
+        return ++currentStep;
+    }
+
+    private int previousStep() {
+        if(currentStep == 0) {
+            return stepList.size() -1;
+        }
+        return --currentStep;
     }
 
 }

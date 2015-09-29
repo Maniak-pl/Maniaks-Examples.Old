@@ -6,12 +6,8 @@
     android:layout_height="match_parent">
 
 
-    <FrameLayout
-        android:id="@+id/container"
-        android:layout_below="@+id/headerLine"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+    <include
+        layout="@layout/container_fragment"/>
 
     <fragment android:id="@+id/navigation_drawer"
         android:layout_width="240dp"
