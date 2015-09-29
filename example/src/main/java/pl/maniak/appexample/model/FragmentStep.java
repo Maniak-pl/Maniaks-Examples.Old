@@ -5,6 +5,7 @@ import android.content.Context;
 
 import pl.maniak.appexample.fragment.FineLocationGoogleFragment;
 import pl.maniak.appexample.fragment.LogHelpFragment;
+import pl.maniak.appexample.fragment.MainGitHubFragment;
 import pl.maniak.appexample.fragment.MainGoogleFragment;
 
 /**
@@ -16,6 +17,11 @@ public enum FragmentStep {
 
     GOOGLE_MAIN(MainGoogleFragment.class),
     FINE_LOCATION(FineLocationGoogleFragment.class),
+
+    // GitHub
+
+    GITHUB_MAIN(MainGitHubFragment.class),
+
 
     // Help
 

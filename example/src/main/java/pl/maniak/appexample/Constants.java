@@ -35,6 +35,7 @@ public class Constants {
                 fragmentSteps.add(FragmentStep.FINE_LOCATION);
                 break;
             case GITHUB:
+                fragmentSteps.add(FragmentStep.GITHUB_MAIN);
                 break;
             case HELP:
                 fragmentSteps.add(FragmentStep.LOG);

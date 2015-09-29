@@ -27,7 +27,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     private NavigationDrawerFragment mNavigation;
 
     private List<FragmentStep> stepList;
-    private int currentStep = 0;
+    private int currentStep;
 
 
 
@@ -153,6 +153,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         currentStep = isNest ? nextStep() : previousStep();
 
         FragmentTransaction ft = getFragmentManager().beginTransaction();
+        if(currentStep >= stepList.size()){
+            currentStep = 0;
+        }
         ft.replace(R.id.container, getFragment(stepList.get(currentStep)), "stepFragment").commit();
     }
 
