@@ -5,12 +5,20 @@ import android.content.Context;
 
 import pl.maniak.appexample.fragment.FineLocationGoogleFragment;
 import pl.maniak.appexample.fragment.LogHelpFragment;
+import pl.maniak.appexample.fragment.MainGoogleFragment;
 
 /**
  * Created by Sony on 2015-09-28.
  */
 public enum FragmentStep {
+
+    // Google
+
+    GOOGLE_MAIN(MainGoogleFragment.class),
     FINE_LOCATION(FineLocationGoogleFragment.class),
+
+    // Help
+
     LOG(LogHelpFragment.class);
 
     String fragmentName;

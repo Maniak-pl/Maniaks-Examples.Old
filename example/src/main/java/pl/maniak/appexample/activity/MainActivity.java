@@ -3,24 +3,22 @@ package pl.maniak.appexample.activity;
 
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.DialogInterface;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import pl.maniak.appexample.Constants;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 import pl.maniak.appexample.fragment.NavigationDrawerFragment;
 import pl.maniak.appexample.model.FragmentStep;
+import pl.maniak.appexample.model.Step;
 
 
 public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks, View.OnClickListener {
@@ -31,9 +29,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     private List<FragmentStep> stepList;
     private int currentStep = 0;
 
-    enum Step {
-        GOOGLE, GITHUB, HELP
-    }
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -50,7 +46,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         nextBt.setOnClickListener(this);
         prevBt.setOnClickListener(this);
 
-        initWizard(Step.GOOGLE);
+        initFragmentStep(Step.GOOGLE);
         getFragmentManager().beginTransaction().add(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
         currentStep = 0;
 
@@ -92,19 +88,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         super.onStop();
     }
 
-    private void initWizard(Step step) {
-        L.i("MainActivity.initWizard() ");
-        stepList = new ArrayList();
-        switch (step) {
-            case GOOGLE:
-                stepList.add(FragmentStep.FINE_LOCATION);
-                break;
-            case GITHUB:
-                break;
-            case HELP:
-                stepList.add(FragmentStep.LOG);
-                break;
-        }
+    private void initFragmentStep(Step step) {
+        L.i("MainActivity.initFragmentStep() ");
+        stepList = Constants.getFragmentSteps(step);
     }
 
     @Override
@@ -128,15 +114,15 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         L.i("MainActivity.onNavigationDrawerItemSelected() ");
         switch (position) {
             case 0:
-                initWizard(Step.GOOGLE);
+                initFragmentStep(Step.GOOGLE);
                 L.d("MainActivity.onNavigationDrawerItemSelected() GOOGLE");
                 break;
             case 1:
-                initWizard(Step.GITHUB);
+                initFragmentStep(Step.GITHUB);
                 L.d("MainActivity.onNavigationDrawerItemSelected() GITHUB");
                 break;
             case 2:
-                initWizard(Step.HELP);
+                initFragmentStep(Step.HELP);
                 L.d("MainActivity.onNavigationDrawerItemSelected() HELP");
                 break;
         }

@@ -17,6 +17,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
+import pl.maniak.appexample.Constants;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.adapter.NavigationDrawerAdapter;
 import pl.maniak.appexample.model.NavDraItem;
@@ -35,8 +36,6 @@ public class NavigationDrawerFragment extends Fragment {
 
     private int mCurrentSelectedPosition = 0;
     private NavigationDrawerAdapter adapter;
-    List<NavDraItem> listCategory;
-
     private ActionBarDrawerToggle mDrawerToggle;
 
     public NavigationDrawerFragment() {}
@@ -58,12 +57,7 @@ public class NavigationDrawerFragment extends Fragment {
             }
         });
 
-        listCategory = new ArrayList();
-        listCategory.add(new NavDraItem("Google", R.drawable.ic_google));
-        listCategory.add(new NavDraItem("GitHub", R.drawable.ic_github));
-        listCategory.add(new NavDraItem("Help", R.drawable.ic_help));
-
-        adapter = new NavigationDrawerAdapter(getActivity(), listCategory);
+        adapter = new NavigationDrawerAdapter(getActivity(), Constants.getNavDraItems());
         mDrawerListView.setAdapter(adapter);
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
