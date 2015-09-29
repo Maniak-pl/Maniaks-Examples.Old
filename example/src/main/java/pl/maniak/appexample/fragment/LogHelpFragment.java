@@ -18,7 +18,7 @@ import pl.maniak.appexample.common.log.L;
 import pl.maniak.appexample.model.CommandLog;
 
 /**
- * Created by pliszka on 28.09.15.
+ * Created by Maniak on 28.09.15.
  */
 public class LogHelpFragment extends Fragment implements View.OnClickListener {
 

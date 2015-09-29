@@ -32,6 +32,7 @@ public class Constants {
         switch (step) {
             case GOOGLE:
                 fragmentSteps.add(FragmentStep.GOOGLE_MAIN);
+                fragmentSteps.add(FragmentStep.TURN_ON_GPS);
                 fragmentSteps.add(FragmentStep.FINE_LOCATION);
                 break;
             case GITHUB:

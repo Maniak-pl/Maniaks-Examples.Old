@@ -11,7 +11,7 @@ import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 
 /**
- * Created by Sony on 2015-09-29.
+ * Created by Maniak on 2015-09-29.
  */
 public class MainGitHubFragment extends Fragment {
 

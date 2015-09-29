@@ -18,7 +18,7 @@ import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 
 /**
- * Created by Sony on 2015-09-28.
+ * Created by Maniak on 2015-09-28.
  */
 public class FineLocationGoogleFragment extends Fragment implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, LocationListener {
