@@ -3,6 +3,7 @@ package pl.maniak.appexample.model;
 import android.app.Fragment;
 import android.content.Context;
 
+import pl.maniak.appexample.fragment.ActivitiesRecognitionGoogleFragment;
 import pl.maniak.appexample.fragment.FineLocationGoogleFragment;
 import pl.maniak.appexample.fragment.LogHelpFragment;
 import pl.maniak.appexample.fragment.MainGitHubFragment;
@@ -19,6 +20,7 @@ public enum FragmentStep {
     GOOGLE_MAIN(MainGoogleFragment.class),
     TURN_ON_GPS(TurnOnGPSGoogleFragment.class),
     FINE_LOCATION(FineLocationGoogleFragment.class),
+    ACTIVITIES_RECOGNITION(ActivitiesRecognitionGoogleFragment.class),
 
     // GitHub
 

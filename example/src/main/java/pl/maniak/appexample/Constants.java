@@ -1,5 +1,7 @@
 package pl.maniak.appexample;
 
+import com.google.android.gms.location.DetectedActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,6 +17,34 @@ public class Constants {
 
     public final static boolean DEBUG_LOG = true;
     public final static int SIZE_LOG = 20;
+
+    public static final String PACKAGE_NAME = "pl.maniak.appexample";
+
+    public static final String BROADCAST_ACTION = PACKAGE_NAME + ".BROADCAST_ACTION";
+
+    public static final String DETECTED_ACTIVITIES_EXTRA = PACKAGE_NAME + ".DETECTED_ACTIVITIES_EXTRA";
+
+    /**
+     * The desired time between activity detections. Larger values result in fewer activity
+     * detections while improving battery life. A value of 0 results in activity detections at the
+     * fastest possible rate. Getting frequent updates negatively impact battery life and a real
+     * app may prefer to request less frequent updates.
+     */
+    public static final long DETECTION_INTERVAL_IN_MILLISECONDS = 0;
+
+    /**
+     * List of DetectedActivity types that we monitor in this sample.
+     */
+    protected static final int[] MONITORED_ACTIVITIES = {
+            DetectedActivity.STILL,
+            DetectedActivity.ON_FOOT,
+            DetectedActivity.WALKING,
+            DetectedActivity.RUNNING,
+            DetectedActivity.ON_BICYCLE,
+            DetectedActivity.IN_VEHICLE,
+            DetectedActivity.TILTING,
+            DetectedActivity.UNKNOWN
+    };
 
     private static List<NavDraItem> navDraItems = new ArrayList();
     private static List<FragmentStep> fragmentSteps = new ArrayList();
@@ -32,8 +62,9 @@ public class Constants {
         switch (step) {
             case GOOGLE:
                 fragmentSteps.add(FragmentStep.GOOGLE_MAIN);
-                fragmentSteps.add(FragmentStep.TURN_ON_GPS);
+//                fragmentSteps.add(FragmentStep.TURN_ON_GPS);
                 fragmentSteps.add(FragmentStep.FINE_LOCATION);
+                fragmentSteps.add(FragmentStep.ACTIVITIES_RECOGNITION);
                 break;
             case GITHUB:
                 fragmentSteps.add(FragmentStep.GITHUB_MAIN);

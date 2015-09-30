@@ -18,4 +18,20 @@
     <string name="app_not_available">Sorry, there\'s no web browser available</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    // Activities Recognition
+
+    <string name="detected_activities_recognition__title">Detected Activities</string>
+    <string name="request_activities_recognition__updates">Request updates</string>
+    <string name="remove_activities_recognition__updates">Remove updates</string>
+    <string name="activities_recognition_in_vehicle">In a vehicle</string>
+    <string name="activities_recognition_on_bicycle">On a bicycle</string>
+    <string name="activities_recognition_on_foot">On foot</string>
+    <string name="activities_recognition_running">Running</string>
+    <string name="activities_recognition_still">Still</string>
+    <string name="activities_recognition_tilting">Tilting</string>
+    <string name="activities_recognition_unknown">Unknown activity</string>
+    <string name="activities_recognition_walking">Walking</string>
+    <string name="activities_recognition_unidentifiable_activity">Unidentifiable activity: %1$d</string>
+    <string name="google_api_client_not_connected">GoogleApiClient not yet connected. Try again.</string>
+
 </resources>
