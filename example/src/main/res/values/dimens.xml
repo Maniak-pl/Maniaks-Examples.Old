@@ -19,4 +19,11 @@
     <dimen name="padding_default_small">8dp</dimen>
     <dimen name="padding_default">16dp</dimen>
     <dimen name="padding_middle">32dp</dimen>
+
+    <!--PIN PATTERN-->
+
+    <dimen name="min_size">116dp</dimen>
+    <dimen name="inner_circle_radius">5dp</dimen>
+    <dimen name="outer_circle_radius">10dp</dimen>
+
 </resources>

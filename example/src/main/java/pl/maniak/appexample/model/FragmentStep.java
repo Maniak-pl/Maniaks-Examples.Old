@@ -8,6 +8,7 @@ import pl.maniak.appexample.fragment.FineLocationGoogleFragment;
 import pl.maniak.appexample.fragment.LogHelpFragment;
 import pl.maniak.appexample.fragment.MainGitHubFragment;
 import pl.maniak.appexample.fragment.MainGoogleFragment;
+import pl.maniak.appexample.fragment.PinPatternHelpFragment;
 import pl.maniak.appexample.fragment.TurnOnGPSGoogleFragment;
 
 /**
@@ -29,7 +30,8 @@ public enum FragmentStep {
 
     // Help
 
-    LOG(LogHelpFragment.class);
+    LOG(LogHelpFragment.class),
+    PIN_PATTERN(PinPatternHelpFragment.class);
 
     String fragmentName;
 

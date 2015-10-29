@@ -70,6 +70,7 @@ public class Constants {
                 fragmentSteps.add(FragmentStep.GITHUB_MAIN);
                 break;
             case HELP:
+                fragmentSteps.add(FragmentStep.PIN_PATTERN);
                 fragmentSteps.add(FragmentStep.LOG);
                 break;
         }

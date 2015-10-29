@@ -46,7 +46,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         nextBt.setOnClickListener(this);
         prevBt.setOnClickListener(this);
 
-        initFragmentStep(Step.GOOGLE);
+        initFragmentStep(Step.HELP);
         getFragmentManager().beginTransaction().add(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
         currentStep = 0;
 
