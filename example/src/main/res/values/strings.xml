@@ -34,4 +34,16 @@
     <string name="activities_recognition_unidentifiable_activity">Unidentifiable activity: %1$d</string>
     <string name="google_api_client_not_connected">GoogleApiClient not yet connected. Try again.</string>
 
+    <!--Educativo - AsyncTask -->
+
+    <string name="educativo_asynctask_header">AsyncTask</string>
+    <string name="educativo_asynctask_fragment_description">Aplikacja przedstawia proste użycie AsyncTaska.</string>
+    <string name="educativo_asynctask_progress_dialog_title">Loading</string>
+    <string name="educativo_asynctask_progress_dialog_message">Loading data</string>
+    <string name="educativo_asynctask_exception_message">Exception: Bardzo prosty wyjątek</string>
+    <string name="educativo_asynctask_result_message">"Mamy wynik: "</string>
+    <string name="educativo_asynctask_result_exception">"Nie mamy wyniku \n"</string>
+    <string name="educativo_asynctask_button">start Task</string>
+    <string name="educativo_asynctask_button_exception">start Task with Exception</string>
+
 </resources>

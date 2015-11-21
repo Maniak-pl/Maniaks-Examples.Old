@@ -1,9 +1,9 @@
 package pl.maniak.appexample.activity;
 
 
-import android.app.Fragment;
-import android.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -38,7 +38,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         setContentView(R.layout.activity_main);
 
 
-        mNavigation = (NavigationDrawerFragment) getFragmentManager().findFragmentById(R.id.navigation_drawer);
+        mNavigation = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mNavigation.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
         prevBt = (Button) findViewById(R.id.prevBt);
         nextBt = (Button) findViewById(R.id.nextBt);
@@ -47,7 +47,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
         prevBt.setOnClickListener(this);
 
         initFragmentStep(Step.HELP);
-        getFragmentManager().beginTransaction().add(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
         currentStep = 0;
 
     }
@@ -126,7 +126,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
                 L.d("MainActivity.onNavigationDrawerItemSelected() HELP");
                 break;
         }
-        getFragmentManager().beginTransaction().replace(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
 
     }
 
@@ -152,7 +152,7 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
     public void changeStep(boolean isNest) {
         currentStep = isNest ? nextStep() : previousStep();
 
-        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         if(currentStep >= stepList.size()){
             currentStep = 0;
         }

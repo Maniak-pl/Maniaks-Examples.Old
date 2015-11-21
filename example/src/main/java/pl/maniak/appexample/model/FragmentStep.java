@@ -1,9 +1,10 @@
 package pl.maniak.appexample.model;
 
-import android.app.Fragment;
 import android.content.Context;
+import android.support.v4.app.Fragment;
 
 import pl.maniak.appexample.fragment.ActivitiesRecognitionGoogleFragment;
+import pl.maniak.appexample.fragment.AsyncTaskEducativoFragment;
 import pl.maniak.appexample.fragment.FineLocationGoogleFragment;
 import pl.maniak.appexample.fragment.LogHelpFragment;
 import pl.maniak.appexample.fragment.MainGitHubFragment;
@@ -31,7 +32,8 @@ public enum FragmentStep {
     // Help
 
     LOG(LogHelpFragment.class),
-    PIN_PATTERN(PinPatternHelpFragment.class);
+    PIN_PATTERN(PinPatternHelpFragment.class),
+    ASYNC_TASK_EXAMPLE(AsyncTaskEducativoFragment.class);
 
     String fragmentName;
 
