@@ -45,7 +45,7 @@ public class AsyncTaskEducativoFragment extends Fragment {
 
     private class ExtremelySampleTask extends ExtraAsyncTask<Integer, String> {
 
-        public static final int INTERVAL = 5000;
+        public static final int INTERVAL = 500;
         private boolean throwException;
         private ProgressDialog progressDialog;
 
@@ -62,7 +62,10 @@ public class AsyncTaskEducativoFragment extends Fragment {
 
         @Override
         protected String doInAnotherThread() throws Exception {
-            Thread.sleep(INTERVAL);
+            for (int i = 0; i < 5; i++) {
+                publishProgress(i);
+                Thread.sleep(INTERVAL);
+            }
             if (throwException) {
                 throw new Exception(getActivity().getString(R.string.educativo_asynctask_exception_message));
             }
@@ -71,6 +74,7 @@ public class AsyncTaskEducativoFragment extends Fragment {
 
         @Override
         protected void onProgressUpdate(Integer... values) {
+            L.i("ExtremelySampleTask.onProgressUpdate() called with " + "values = [" + values[0] + "]");
             int i = values[0];
             progressDialog.setMessage(String.valueOf(i));
         }
