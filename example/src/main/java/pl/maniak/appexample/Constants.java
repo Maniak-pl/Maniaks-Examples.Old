@@ -70,9 +70,9 @@ public class Constants {
                 fragmentSteps.add(FragmentStep.GITHUB_MAIN);
                 break;
             case HELP:
+                fragmentSteps.add(FragmentStep.ASYNC_TASK_EXAMPLE);
                 fragmentSteps.add(FragmentStep.LOG);
                 fragmentSteps.add(FragmentStep.PIN_PATTERN);
-                fragmentSteps.add(FragmentStep.ASYNC_TASK_EXAMPLE);
                 break;
         }
         return fragmentSteps;

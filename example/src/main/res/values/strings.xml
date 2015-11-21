@@ -41,8 +41,8 @@
     <string name="educativo_asynctask_progress_dialog_title">Loading</string>
     <string name="educativo_asynctask_progress_dialog_message">Loading data</string>
     <string name="educativo_asynctask_exception_message">Exception: Bardzo prosty wyjątek</string>
-    <string name="educativo_asynctask_result_message">"Mamy wynik: "</string>
-    <string name="educativo_asynctask_result_exception">"Nie mamy wyniku \n"</string>
+    <string name="educativo_asynctask_result_success">"Success! : "</string>
+    <string name="educativo_asynctask_result_error">"Error! : "</string>
     <string name="educativo_asynctask_button">start Task</string>
     <string name="educativo_asynctask_button_exception">start Task with Exception</string>
 

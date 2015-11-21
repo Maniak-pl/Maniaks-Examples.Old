@@ -1,7 +1,6 @@
 package pl.maniak.appexample.fragment;
 
 import android.app.ProgressDialog;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -12,7 +11,7 @@ import android.widget.Toast;
 
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
-import pl.maniak.appexample.helpers.AsyncResult;
+import pl.maniak.appexample.helpers.ExtraAsyncTask;
 
 /**
  * Created by Sony on 2015-11-21.
@@ -29,7 +28,7 @@ public class AsyncTaskEducativoFragment extends Fragment {
         startTaskBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ExtremelySampleTask().execute(false);
+                new ExtremelySampleTask(false).execute();
             }
         });
 
@@ -37,17 +36,22 @@ public class AsyncTaskEducativoFragment extends Fragment {
         startTaskExceptionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new ExtremelySampleTask().execute(true);
+                new ExtremelySampleTask(true).execute();
             }
         });
-
 
         return root;
     }
 
-    private class ExtremelySampleTask extends AsyncTask<Boolean, Integer, AsyncResult<String>> {
+    private class ExtremelySampleTask extends ExtraAsyncTask<Integer, String> {
 
+        public static final int INTERVAL = 5000;
+        private boolean throwException;
         private ProgressDialog progressDialog;
+
+        private ExtremelySampleTask(boolean throwException) {
+            this.throwException = throwException;
+        }
 
         @Override
         protected void onPreExecute() {
@@ -57,22 +61,12 @@ public class AsyncTaskEducativoFragment extends Fragment {
         }
 
         @Override
-        protected AsyncResult<String> doInBackground(Boolean... params) {
-            try {
-                for (int i = 0; i < 5; i++) {
-                    publishProgress(i);
-                    Thread.sleep(1000);
-                    if(i>=3 && params[0]==true) {
-                        throw new Exception(getActivity().getString(R.string.educativo_asynctask_exception_message));
-                    }
-                }
-                return new AsyncResult("Educativo");
-            } catch (Exception e) {
-                L.e("ExtremelySampleTask.doInBackground() ", e);
-
-                return new AsyncResult(e);
+        protected String doInAnotherThread() throws Exception {
+            Thread.sleep(INTERVAL);
+            if (throwException) {
+                throw new Exception(getActivity().getString(R.string.educativo_asynctask_exception_message));
             }
-
+            return "Educativo";
         }
 
         @Override
@@ -82,18 +76,24 @@ public class AsyncTaskEducativoFragment extends Fragment {
         }
 
         @Override
-        protected void onPostExecute(AsyncResult<String> result) {
-            progressDialog.dismiss();
-            String message;
-
-            if (!result.exceptionHasBeenThrown()) {
-                message = getActivity().getString(R.string.educativo_asynctask_result_message) + result.getResult();
-            } else {
-                message = getActivity().getString(R.string.educativo_asynctask_result_exception) + result.getException().getMessage();
+        protected void onSuccess(String result) {
+            if(isResumed()) {
+                Toast.makeText(getActivity(), getActivity().getString(R.string.educativo_asynctask_result_success) + result, Toast.LENGTH_LONG).show();
             }
+        }
 
-            Toast.makeText(getActivity(), message, Toast.LENGTH_LONG).show();
+        @Override
+        protected void onException(Exception e) {
+            if(isResumed()){
+                Toast.makeText(getActivity(), getActivity().getString(R.string.educativo_asynctask_result_error) + e, Toast.LENGTH_LONG).show();
+            }
+        }
+
+        @Override
+        protected void onFinally() {
+            if(isResumed()) {
+                progressDialog.dismiss();
+            }
         }
     }
-
 }
