@@ -11,6 +11,7 @@ import pl.maniak.appexample.fragment.MainGitHubFragment;
 import pl.maniak.appexample.fragment.MainGoogleFragment;
 import pl.maniak.appexample.fragment.MainSecurityFragment;
 import pl.maniak.appexample.fragment.PinPatternSecurityFragment;
+import pl.maniak.appexample.fragment.SymmetricAlgorithmAESFragment;
 import pl.maniak.appexample.fragment.TurnOnGPSGoogleFragment;
 
 /**
@@ -37,7 +38,8 @@ public enum FragmentStep {
     // Security
 
     SECURITY_MAIN(MainSecurityFragment.class),
-    PIN_PATTERN(PinPatternSecurityFragment.class);
+    PIN_PATTERN(PinPatternSecurityFragment.class),
+    SYMMETRIC_ALGORITHM_AES(SymmetricAlgorithmAESFragment.class);
 
     // --------------------------------------------------------
 

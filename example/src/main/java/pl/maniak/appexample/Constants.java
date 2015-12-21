@@ -76,6 +76,7 @@ public class Constants {
             case SECURITY:
                 fragmentSteps.add(FragmentStep.SECURITY_MAIN);
                 fragmentSteps.add(FragmentStep.PIN_PATTERN);
+                fragmentSteps.add(FragmentStep.SYMMETRIC_ALGORITHM_AES);
                 break;
         }
         return fragmentSteps;
