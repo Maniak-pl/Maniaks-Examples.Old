@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +21,7 @@ import pl.maniak.appexample.model.FragmentStep;
 import pl.maniak.appexample.model.Step;
 
 
-public class MainActivity extends ActionBarActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks, View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks, View.OnClickListener {
 
     private Button nextBt, prevBt;
     private NavigationDrawerFragment mNavigation;
@@ -124,6 +124,9 @@ public class MainActivity extends ActionBarActivity implements NavigationDrawerF
             case 2:
                 initFragmentStep(Step.HELP);
                 L.d("MainActivity.onNavigationDrawerItemSelected() HELP");
+                break;
+            case 3:
+                initFragmentStep(Step.SECURITY);
                 break;
         }
         getSupportFragmentManager().beginTransaction().replace(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();

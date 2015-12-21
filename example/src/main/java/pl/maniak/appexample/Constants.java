@@ -5,7 +5,6 @@ import com.google.android.gms.location.DetectedActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import pl.maniak.appexample.common.log.L;
 import pl.maniak.appexample.model.FragmentStep;
 import pl.maniak.appexample.model.NavDraItem;
 import pl.maniak.appexample.model.Step;
@@ -54,6 +53,7 @@ public class Constants {
         navDraItems.add(new NavDraItem("Google", R.drawable.ic_google));
         navDraItems.add(new NavDraItem("GitHub", R.drawable.ic_github));
         navDraItems.add(new NavDraItem("Help", R.drawable.ic_help));
+        navDraItems.add(new NavDraItem("Security", R.drawable.ic_security));
         return navDraItems;
     }
 
@@ -70,8 +70,11 @@ public class Constants {
                 fragmentSteps.add(FragmentStep.GITHUB_MAIN);
                 break;
             case HELP:
-                fragmentSteps.add(FragmentStep.ASYNC_TASK_EXAMPLE);
                 fragmentSteps.add(FragmentStep.LOG);
+                fragmentSteps.add(FragmentStep.ASYNC_TASK_EXAMPLE);
+                break;
+            case SECURITY:
+                fragmentSteps.add(FragmentStep.SECURITY_MAIN);
                 fragmentSteps.add(FragmentStep.PIN_PATTERN);
                 break;
         }

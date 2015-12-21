@@ -422,20 +422,16 @@ public class PinPatternView extends View implements PinPatternInterface {
         for (int i = 0; i < NUMBER_OF_ROWS; i++) {
             for (int j = 0; j < NUMBER_OF_COLUMNS; j++) {
                 if (!(mPatternState == PatternState.ENTERED)) {
-                    L.d("Draw 1");
                     canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mInnerCircleRadius, mInnerCirclePaint);
                     canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mOuterCircleRadius, mOuterCirclePaint);
                     if (mCellTracker.isCellIncluded(getCellNumberFromRowAndColumn(i, j))) {
-                        L.d("Draw 2");
                         canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mOuterCircleRadius, mOuterCirclePaint);
                     }
                 } else {
                     if (mCellTracker.isCellIncluded(getCellNumberFromRowAndColumn(i, j))) {
-                        L.d("Draw 3");
                         canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mOuterCircleRadius, mOuterCircleCustomPaint);
                         canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mInnerCircleRadius, mInnerCircleHollowPaint);
                     } else {
-                        L.d("Draw 4");
                         canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mInnerCircleRadius, mInnerCirclePaint);
                         canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mOuterCircleRadius, mOuterCirclePaint);
                     }

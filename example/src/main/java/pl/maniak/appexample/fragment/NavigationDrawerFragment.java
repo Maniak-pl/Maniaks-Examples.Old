@@ -1,12 +1,14 @@
 package pl.maniak.appexample.fragment;
 
-import android.app.ActionBar;
+
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,13 +16,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import pl.maniak.appexample.Constants;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.adapter.NavigationDrawerAdapter;
-import pl.maniak.appexample.model.NavDraItem;
 
 
 /**
@@ -106,7 +104,7 @@ public class NavigationDrawerFragment extends Fragment {
         mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
 
 
-        ActionBar actionBar = getActivity().getActionBar();
+        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setHomeButtonEnabled(true);
         actionBar.setBackgroundDrawable(getResources().getDrawable(R.drawable.action_bar_background));

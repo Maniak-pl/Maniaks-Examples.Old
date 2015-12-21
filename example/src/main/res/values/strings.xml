@@ -46,4 +46,10 @@
     <string name="educativo_asynctask_button">start Task</string>
     <string name="educativo_asynctask_button_exception">start Task with Exception</string>
 
+    <string name="fragment_github_main_header">GitHub Main</string>
+    <string name="fragment_security_main_header">Security Main</string>
+
+    <string name="fragment_github_main_description">Przykłady implementacji kodów znalezionych na GitHub-e.</string>
+    <string name="fragment_security_main_description">Przykłady implementacji szyfrowań lubi innych zabezpieczeń.</string>
+
 </resources>

@@ -9,7 +9,8 @@ import pl.maniak.appexample.fragment.FineLocationGoogleFragment;
 import pl.maniak.appexample.fragment.LogHelpFragment;
 import pl.maniak.appexample.fragment.MainGitHubFragment;
 import pl.maniak.appexample.fragment.MainGoogleFragment;
-import pl.maniak.appexample.fragment.PinPatternHelpFragment;
+import pl.maniak.appexample.fragment.MainSecurityFragment;
+import pl.maniak.appexample.fragment.PinPatternSecurityFragment;
 import pl.maniak.appexample.fragment.TurnOnGPSGoogleFragment;
 
 /**
@@ -28,12 +29,17 @@ public enum FragmentStep {
 
     GITHUB_MAIN(MainGitHubFragment.class),
 
-
     // Help
 
     LOG(LogHelpFragment.class),
-    PIN_PATTERN(PinPatternHelpFragment.class),
-    ASYNC_TASK_EXAMPLE(AsyncTaskEducativoFragment.class);
+    ASYNC_TASK_EXAMPLE(AsyncTaskEducativoFragment.class),
+
+    // Security
+
+    SECURITY_MAIN(MainSecurityFragment.class),
+    PIN_PATTERN(PinPatternSecurityFragment.class);
+
+    // --------------------------------------------------------
 
     String fragmentName;
 
