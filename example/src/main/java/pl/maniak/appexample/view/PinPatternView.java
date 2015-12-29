@@ -22,8 +22,8 @@ public class PinPatternView extends View implements PinPatternInterface {
     public static final int PATTERN_TYPE_SAVE = 0;
     public static final int PATTERN_TYPE_CHECK = 1;
 
-    private static final int NUMBER_OF_COLUMNS = 4;
-    private static final int NUMBER_OF_ROWS = 4;
+    private static final int NUMBER_OF_COLUMNS = 5;
+    private static final int NUMBER_OF_ROWS = 5;
 
     private final float minCellSize = getResources().getDimension(R.dimen.min_size);
 
@@ -115,7 +115,7 @@ public class PinPatternView extends View implements PinPatternInterface {
                 mInnerCircleHollowPaint.setColor(Color.BLACK);
                 mOuterCirclePaint.setColor(Color.BLACK);
                 mTrianglePaint.setColor(Color.BLACK);
-                mTriangleEnteredPaint.setColor(Color.BLUE);
+                mTriangleEnteredPaint.setColor(Color.RED);
                 mLinePaint.setColor(Color.BLACK);
                 break;
             case PATTERN_TYPE_CHECK:
@@ -289,34 +289,50 @@ public class PinPatternView extends View implements PinPatternInterface {
                 return false;
             } else {
                 if (mCellList.size() > 0) {
-                    int currentCell = cellNumber,
-                            previousCell = mCellList.get(mCellList.size() - 1);
-                    int currentRow = getRowFromCellNumber(currentCell),
-                            currentColumn = getColumnFromCellNumber(currentCell),
-                            previousRow = getRowFromCellNumber(previousCell),
-                            previousColumn = getColumnFromCellNumber(previousCell);
-                    int dRow = Math.abs(currentRow - previousRow),
-                            dColumn = Math.abs(currentColumn - previousColumn);
-                    boolean redoFlag = false;
-                    if (dRow == 2 && dColumn != 1) {
-                        addCell(getCellNumberFromRowAndColumn(1,
-                                (dColumn == 0) ? currentColumn : 1));
-                        redoFlag = true;
-                    } else if (dColumn == 2 && dRow != 1) {
-                        addCell(getCellNumberFromRowAndColumn(currentRow, 1));
-                        redoFlag = true;
-                    }
-                    if (redoFlag) {
-                        previousCell = mCellList.get(mCellList.size() - 1);
-                        previousRow = getRowFromCellNumber(previousCell);
-                        previousColumn = getColumnFromCellNumber(previousCell);
-                    }
-                    int cellCenterX = mColumnCenters[currentColumn],
-                            cellCenterY = mRowCenters[currentRow],
-                            previousCellCenterX = mColumnCenters[previousColumn],
-                            previousCellCenterY = mRowCenters[previousRow];
 
-                    int xDiff = cellCenterX - previousCellCenterX, yDiff = cellCenterY - previousCellCenterY;
+
+                    int currentCell = cellNumber;
+                    int previousCell = mCellList.get(mCellList.size() - 1);
+                    int currentRow = getRowFromCellNumber(currentCell);
+                    int currentColumn = getColumnFromCellNumber(currentCell);
+                    int previousRow = getRowFromCellNumber(previousCell);
+                    int previousColumn = getColumnFromCellNumber(previousCell);
+                    int dRow = currentRow - previousRow;
+                    int dCol = currentColumn - previousColumn;
+                    int rsign = dRow > 0 ? 1 : -1;
+                    int csign = dCol > 0 ? 1 : -1;
+
+
+                    if (dRow == 0) {
+                            for (int i = 1; i < Math.abs(dCol); i++) {
+                                addCell(getCellNumberFromRowAndColumn(currentRow, previousColumn + i * csign));
+                            }
+
+
+                    } else if (dCol == 0) {
+                        for (int i = 1; i < Math.abs(dRow); i++) {
+                            addCell(getCellNumberFromRowAndColumn(previousRow + i * rsign, previousColumn));
+                        }
+                    } else if (Math.abs(dCol) == Math.abs(dRow)) {
+
+                        for (int i = 1; i < Math.abs(dRow); i++) {
+                            addCell(getCellNumberFromRowAndColumn(previousRow + i * rsign, previousColumn + i * csign));
+                        }
+                    }
+
+                    previousCell = mCellList.get(mCellList.size() - 1);
+                    previousRow = getRowFromCellNumber(previousCell);
+                    previousColumn = getColumnFromCellNumber(previousCell);
+
+                    int cellCenterX = mColumnCenters[currentColumn];
+                    int cellCenterY = mRowCenters[currentRow];
+                    int previousCellCenterX = mColumnCenters[previousColumn];
+                    int previousCellCenterY = mRowCenters[previousRow];
+
+//                    L.e("(1) cellCenterX("+cellCenterX+") cellCenterY("+cellCenterY+") previousCellCenterX("+previousCellCenterX+") previousCellCenterY("+previousCellCenterY+")");
+
+                    int xDiff = cellCenterX - previousCellCenterX;
+                    int yDiff = cellCenterY - previousCellCenterY;
                     double rotAngle;
                     if (xDiff == 0) {
                         if (yDiff < 0)
@@ -331,8 +347,7 @@ public class PinPatternView extends View implements PinPatternInterface {
                         rotAngle += 180;
                     }
                     mTransformation.reset();
-                    mTransformation.postRotate((float) rotAngle,
-                            mColumnCenters[previousColumn], mRowCenters[previousRow]);
+                    mTransformation.postRotate((float) rotAngle, mColumnCenters[previousColumn], mRowCenters[previousRow]);
                     mTrianglePath[previousRow][previousColumn].transform(mTransformation);
                 }
                 isIncluded[cellNumber] = true;
@@ -340,6 +355,7 @@ public class PinPatternView extends View implements PinPatternInterface {
                 return true;
             }
         }
+
 
         public List<Integer> getCellNumberList() {
             return mCellList;
@@ -418,22 +434,27 @@ public class PinPatternView extends View implements PinPatternInterface {
             mPath.rewind();
             mCellTracker.setPath(canvas);
             canvas.drawPath(mPath, mLinePaint);
+
         }
         for (int i = 0; i < NUMBER_OF_ROWS; i++) {
             for (int j = 0; j < NUMBER_OF_COLUMNS; j++) {
                 if (!(mPatternState == PatternState.ENTERED)) {
-                    canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mInnerCircleRadius, mInnerCirclePaint);
                     canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mOuterCircleRadius, mOuterCirclePaint);
+                    canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mInnerCircleRadius, mInnerCirclePaint);
                     if (mCellTracker.isCellIncluded(getCellNumberFromRowAndColumn(i, j))) {
                         canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mOuterCircleRadius, mOuterCirclePaint);
+                        canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mInnerCircleRadius, mInnerCirclePaint);
+
                     }
                 } else {
                     if (mCellTracker.isCellIncluded(getCellNumberFromRowAndColumn(i, j))) {
                         canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mOuterCircleRadius, mOuterCircleCustomPaint);
                         canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mInnerCircleRadius, mInnerCircleHollowPaint);
+                        mCellTracker.setPath(canvas);
                     } else {
-                        canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mInnerCircleRadius, mInnerCirclePaint);
                         canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mOuterCircleRadius, mOuterCirclePaint);
+                        canvas.drawCircle(mColumnCenters[j], mRowCenters[i], mInnerCircleRadius, mInnerCirclePaint);
+                        mCellTracker.setPath(canvas);
                     }
                 }
             }

@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         nextBt.setOnClickListener(this);
         prevBt.setOnClickListener(this);
 
-        initFragmentStep(Step.HELP);
+        initFragmentStep(Step.GOOGLE);
         getSupportFragmentManager().beginTransaction().add(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
         currentStep = 0;
 
