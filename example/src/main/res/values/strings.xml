@@ -48,6 +48,7 @@
 
     <string name="fragment_github_main_header">GitHub Main</string>
     <string name="fragment_security_main_header">Security Main</string>
+    <string name="fragment_help_webview_injection">WebView Injection</string>
     <string name="fragment_security_aes_header">AES (Symmetric)</string>
     <string name="fragment_security_pin_pattern_header">Pin Pattern</string>
 

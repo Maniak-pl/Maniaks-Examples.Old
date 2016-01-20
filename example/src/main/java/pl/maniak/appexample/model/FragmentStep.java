@@ -13,6 +13,7 @@ import pl.maniak.appexample.fragment.MainSecurityFragment;
 import pl.maniak.appexample.fragment.PinPatternSecurityFragment;
 import pl.maniak.appexample.fragment.SymmetricAlgorithmAESFragment;
 import pl.maniak.appexample.fragment.TurnOnGPSGoogleFragment;
+import pl.maniak.appexample.fragment.WebViewInjectionHelpFragment;
 
 /**
  * Created by Sony on 2015-09-28.
@@ -34,6 +35,7 @@ public enum FragmentStep {
 
     LOG(LogHelpFragment.class),
     ASYNC_TASK_EXAMPLE(AsyncTaskEducativoFragment.class),
+    WEBVIEW_INJECTION(WebViewInjectionHelpFragment.class),
 
     // Security
 

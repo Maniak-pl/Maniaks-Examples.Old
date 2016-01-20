@@ -71,6 +71,7 @@ public class Constants {
                 break;
             case HELP:
                 fragmentSteps.add(FragmentStep.LOG);
+                fragmentSteps.add(FragmentStep.WEBVIEW_INJECTION);
                 fragmentSteps.add(FragmentStep.ASYNC_TASK_EXAMPLE);
                 break;
             case SECURITY:
