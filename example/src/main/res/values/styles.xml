@@ -43,4 +43,9 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="FloatingButtonMenuLabels">
+        <item name="android:background">@color/white</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 </resources>

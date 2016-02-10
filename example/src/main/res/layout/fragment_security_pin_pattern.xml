@@ -5,14 +5,9 @@
     android:layout_height="match_parent"
     >
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/red"
-        android:gravity="center"
-        android:padding="@dimen/padding_small"
+        style="@style/FragmentHeader"
         android:text="@string/fragment_security_pin_pattern_header"
-        android:textSize="18dp"
-        android:textStyle="bold" />
+/>
 
     <pl.maniak.appexample.view.PinPatternView
         xmlns:app="http://schemas.android.com/apk/res-auto"

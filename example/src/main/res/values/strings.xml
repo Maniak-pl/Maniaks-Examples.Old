@@ -46,7 +46,18 @@
     <string name="educativo_asynctask_button">start Task</string>
     <string name="educativo_asynctask_button_exception">start Task with Exception</string>
 
+    <!--Floating Action Button-->
+    <string name="floating_button_title_a">Akcja A</string>
+    <string name="floating_button_title_b">Akcja B</string>
+    <string name="floating_button_title_show">Ukryj / Pokaż informacje</string>
+    <string name="floating_button_toast_a">Wykonano akcje A</string>
+    <string name="floating_button_toast_b">Wykonano akcje B</string>
+    <string name="floating_button_info_text">Aby zobaczyć więcej przykładów wystarczy pobrać sample z repozytorium GitHub-a pod linkiem https://github.com/futuresimple/android-floating-action-button</string>
+
+
+
     <string name="fragment_github_main_header">GitHub Main</string>
+    <string name="fragment_github_floating_action_button_header">Floating Action Button</string>
     <string name="fragment_security_main_header">Security Main</string>
     <string name="fragment_help_webview_injection">WebView Injection</string>
     <string name="fragment_security_aes_header">AES (Symmetric)</string>
@@ -54,5 +65,6 @@
 
     <string name="fragment_github_main_description">Przykłady implementacji kodów znalezionych na GitHub-e.</string>
     <string name="fragment_security_main_description">Przykłady implementacji szyfrowań lubi innych zabezpieczeń.</string>
+
 
 </resources>

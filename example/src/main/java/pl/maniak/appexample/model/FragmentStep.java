@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import pl.maniak.appexample.fragment.ActivitiesRecognitionGoogleFragment;
 import pl.maniak.appexample.fragment.AsyncTaskEducativoFragment;
 import pl.maniak.appexample.fragment.FineLocationGoogleFragment;
+import pl.maniak.appexample.fragment.FloatingActionButtonGitHubFragment;
 import pl.maniak.appexample.fragment.LogHelpFragment;
 import pl.maniak.appexample.fragment.MainGitHubFragment;
 import pl.maniak.appexample.fragment.MainGoogleFragment;
@@ -30,6 +31,7 @@ public enum FragmentStep {
     // GitHub
 
     GITHUB_MAIN(MainGitHubFragment.class),
+    GITHUB_FLOATING_ACTION_BUTTON(FloatingActionButtonGitHubFragment.class),
 
     // Help
 
