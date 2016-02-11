@@ -18,7 +18,7 @@
     <string name="app_not_available">Sorry, there\'s no web browser available</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    // Activities Recognition
+    <!--Activities Recognition-->
 
     <string name="detected_activities_recognition__title">Detected Activities</string>
     <string name="request_activities_recognition__updates">Request updates</string>
@@ -47,11 +47,9 @@
     <string name="educativo_asynctask_button_exception">start Task with Exception</string>
 
     <!--Floating Action Button-->
-    <string name="floating_button_title_a">Akcja A</string>
-    <string name="floating_button_title_b">Akcja B</string>
     <string name="floating_button_title_show">Ukryj / Pokaż informacje</string>
-    <string name="floating_button_toast_a">Wykonano akcje A</string>
-    <string name="floating_button_toast_b">Wykonano akcje B</string>
+    <string name="floating_button_label_next">Dalej</string>
+    <string name="floating_button_label_back">Wstecz</string>
     <string name="floating_button_info_text">Aby zobaczyć więcej przykładów wystarczy pobrać sample z repozytorium GitHub-a pod linkiem https://github.com/futuresimple/android-floating-action-button</string>
 
 
@@ -65,6 +63,11 @@
 
     <string name="fragment_github_main_description">Przykłady implementacji kodów znalezionych na GitHub-e.</string>
     <string name="fragment_security_main_description">Przykłady implementacji szyfrowań lubi innych zabezpieczeń.</string>
+
+
+    <!--Voice commands-->
+
+    <string name="google_voice_commands_info">Podaj jedną z dwuch komend \'Dalej\' lub \'Cofnij\'</string>
 
 
 </resources>

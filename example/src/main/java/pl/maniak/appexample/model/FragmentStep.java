@@ -14,6 +14,7 @@ import pl.maniak.appexample.fragment.MainSecurityFragment;
 import pl.maniak.appexample.fragment.PinPatternSecurityFragment;
 import pl.maniak.appexample.fragment.SymmetricAlgorithmAESFragment;
 import pl.maniak.appexample.fragment.TurnOnGPSGoogleFragment;
+import pl.maniak.appexample.fragment.VoiceCommandsFragment;
 import pl.maniak.appexample.fragment.WebViewInjectionHelpFragment;
 
 /**
@@ -27,6 +28,7 @@ public enum FragmentStep {
     TURN_ON_GPS(TurnOnGPSGoogleFragment.class),
     FINE_LOCATION(FineLocationGoogleFragment.class),
     ACTIVITIES_RECOGNITION(ActivitiesRecognitionGoogleFragment.class),
+    VOICE_COMMANDS(VoiceCommandsFragment.class),
 
     // GitHub
 

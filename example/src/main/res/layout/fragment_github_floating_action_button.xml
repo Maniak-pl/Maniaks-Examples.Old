@@ -36,19 +36,21 @@
             android:layout_marginEnd="16dp">
 
             <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/action_a"
+                android:id="@+id/action_next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 fab:fab_colorNormal="@color/white"
-                fab:fab_title="@string/floating_button_title_a"
+                fab:fab_title="@string/floating_button_label_next"
+                fab:fab_icon="@drawable/ic_hand_next"
                 fab:fab_colorPressed="@color/white"/>
 
             <com.getbase.floatingactionbutton.FloatingActionButton
-                android:id="@+id/action_b"
+                android:id="@+id/action_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 fab:fab_colorNormal="@color/white"
-                fab:fab_title="@string/floating_button_title_b"
+                fab:fab_icon="@drawable/ic_hand_back"
+                fab:fab_title="@string/floating_button_label_back"
                 fab:fab_colorPressed="@color/white"/>
 
         </com.getbase.floatingactionbutton.FloatingActionsMenu>

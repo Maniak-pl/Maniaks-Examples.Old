@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 import pl.maniak.appexample.R;
+import pl.maniak.appexample.activity.MainActivity;
 import pl.maniak.appexample.common.log.L;
 
 /**
@@ -28,8 +28,8 @@ public class FloatingActionButtonGitHubFragment extends Fragment implements View
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_github_floating_action_button, null);
 
         mInfoTv = (TextView) root.findViewById(R.id.floatingActionButtonInfoTv);
-        actionA = root.findViewById(R.id.action_a);
-        actionB = root.findViewById(R.id.action_b);
+        actionA = root.findViewById(R.id.action_next);
+        actionB = root.findViewById(R.id.action_back);
 
         actionA.setOnClickListener(this);
         actionB.setOnClickListener(this);
@@ -44,6 +44,7 @@ public class FloatingActionButtonGitHubFragment extends Fragment implements View
         FloatingActionButton button = new FloatingActionButton(getActivity().getBaseContext());
         button.setTitle(getActivity().getString(R.string.floating_button_title_show));
         button.setIcon(R.drawable.ic_hide_and_show);
+        button.setColorNormalResId(R.color.red);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,11 +60,11 @@ public class FloatingActionButtonGitHubFragment extends Fragment implements View
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.action_a:
-                Toast.makeText(getActivity(), getActivity().getString(R.string.floating_button_toast_a), Toast.LENGTH_SHORT).show();
+            case R.id.action_next:
+                ((MainActivity)getActivity()).changeStep(true);
                 break;
-            case R.id.action_b:
-                Toast.makeText(getActivity(), getActivity().getString(R.string.floating_button_toast_b), Toast.LENGTH_SHORT).show();
+            case R.id.action_back:
+                ((MainActivity)getActivity()).changeStep(false);
                 break;
         }
     }

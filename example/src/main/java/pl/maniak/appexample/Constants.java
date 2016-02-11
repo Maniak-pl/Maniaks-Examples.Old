@@ -65,6 +65,7 @@ public class Constants {
 //                fragmentSteps.add(FragmentStep.TURN_ON_GPS);
                 fragmentSteps.add(FragmentStep.FINE_LOCATION);
                 fragmentSteps.add(FragmentStep.ACTIVITIES_RECOGNITION);
+                fragmentSteps.add(FragmentStep.VOICE_COMMANDS);
                 break;
             case GITHUB:
                 fragmentSteps.add(FragmentStep.GITHUB_MAIN);
