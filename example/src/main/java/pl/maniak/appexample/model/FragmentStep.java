@@ -7,6 +7,7 @@ import pl.maniak.appexample.fragment.ActivitiesRecognitionGoogleFragment;
 import pl.maniak.appexample.fragment.AsyncTaskEducativoFragment;
 import pl.maniak.appexample.fragment.FineLocationGoogleFragment;
 import pl.maniak.appexample.fragment.FloatingActionButtonGitHubFragment;
+import pl.maniak.appexample.fragment.GenerationKeySHASecurityFragment;
 import pl.maniak.appexample.fragment.LogHelpFragment;
 import pl.maniak.appexample.fragment.MainGitHubFragment;
 import pl.maniak.appexample.fragment.MainGoogleFragment;
@@ -45,7 +46,8 @@ public enum FragmentStep {
 
     SECURITY_MAIN(MainSecurityFragment.class),
     PIN_PATTERN(PinPatternSecurityFragment.class),
-    SYMMETRIC_ALGORITHM_AES(SymmetricAlgorithmAESFragment.class);
+    SYMMETRIC_ALGORITHM_AES(SymmetricAlgorithmAESFragment.class),
+    GENERATION_KEY_SHA(GenerationKeySHASecurityFragment.class);
 
     // --------------------------------------------------------
 

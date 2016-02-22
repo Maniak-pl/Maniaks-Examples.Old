@@ -80,6 +80,7 @@ public class Constants {
                 fragmentSteps.add(FragmentStep.SECURITY_MAIN);
                 fragmentSteps.add(FragmentStep.PIN_PATTERN);
                 fragmentSteps.add(FragmentStep.SYMMETRIC_ALGORITHM_AES);
+                fragmentSteps.add(FragmentStep.GENERATION_KEY_SHA);
                 break;
         }
         return fragmentSteps;
