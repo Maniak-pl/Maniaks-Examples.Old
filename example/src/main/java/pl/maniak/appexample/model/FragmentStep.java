@@ -9,6 +9,8 @@ import pl.maniak.appexample.fragment.FineLocationGoogleFragment;
 import pl.maniak.appexample.fragment.FloatingActionButtonGitHubFragment;
 import pl.maniak.appexample.fragment.GenerationKeySHASecurityFragment;
 import pl.maniak.appexample.fragment.LogHelpFragment;
+import pl.maniak.appexample.fragment.MainAdvancedTutorialFragment;
+import pl.maniak.appexample.fragment.MainClaverPointFragment;
 import pl.maniak.appexample.fragment.MainGitHubFragment;
 import pl.maniak.appexample.fragment.MainGoogleFragment;
 import pl.maniak.appexample.fragment.MainSecurityFragment;
@@ -47,7 +49,15 @@ public enum FragmentStep {
     SECURITY_MAIN(MainSecurityFragment.class),
     PIN_PATTERN(PinPatternSecurityFragment.class),
     SYMMETRIC_ALGORITHM_AES(SymmetricAlgorithmAESFragment.class),
-    GENERATION_KEY_SHA(GenerationKeySHASecurityFragment.class);
+    GENERATION_KEY_SHA(GenerationKeySHASecurityFragment.class),
+
+    // Advanced Tutorial
+
+    ADVANCED_TUTORIAL_MAIN(MainAdvancedTutorialFragment.class),
+
+    // Claver Point
+
+    CLEVER_POINT_MAIN(MainClaverPointFragment.class);
 
     // --------------------------------------------------------
 

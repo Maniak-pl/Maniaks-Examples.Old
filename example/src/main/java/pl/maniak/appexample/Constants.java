@@ -53,7 +53,9 @@ public class Constants {
         navDraItems.add(new NavDraItem("Google", R.drawable.ic_google));
         navDraItems.add(new NavDraItem("GitHub", R.drawable.ic_github));
         navDraItems.add(new NavDraItem("Help", R.drawable.ic_help));
+        navDraItems.add(new NavDraItem("Advanced Tutorial", R.drawable.ic_advanced_tutorial));
         navDraItems.add(new NavDraItem("Security", R.drawable.ic_security));
+        navDraItems.add(new NavDraItem("Advanced android programming", R.drawable.ic_clever_point));
         return navDraItems;
     }
 
@@ -76,12 +78,19 @@ public class Constants {
                 fragmentSteps.add(FragmentStep.WEBVIEW_INJECTION);
                 fragmentSteps.add(FragmentStep.ASYNC_TASK_EXAMPLE);
                 break;
+            case ADVANCED_TUTORIAL:
+                fragmentSteps.add(FragmentStep.ADVANCED_TUTORIAL_MAIN);
+                break;
+            case CLEVER_POINT:
+                fragmentSteps.add(FragmentStep.CLEVER_POINT_MAIN);
+                break;
             case SECURITY:
                 fragmentSteps.add(FragmentStep.SECURITY_MAIN);
                 fragmentSteps.add(FragmentStep.PIN_PATTERN);
                 fragmentSteps.add(FragmentStep.SYMMETRIC_ALGORITHM_AES);
                 fragmentSteps.add(FragmentStep.GENERATION_KEY_SHA);
                 break;
+
         }
         return fragmentSteps;
     }

@@ -126,7 +126,17 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
                 L.d("MainActivity.onNavigationDrawerItemSelected() HELP");
                 break;
             case 3:
+                initFragmentStep(Step.ADVANCED_TUTORIAL);
+                L.d("MainActivity.onNavigationDrawerItemSelected() ADVANCED_TUTORIAL");
+
+                break;
+            case 4:
                 initFragmentStep(Step.SECURITY);
+                L.d("MainActivity.onNavigationDrawerItemSelected() SECURITY");
+                break;
+            case 5:
+                initFragmentStep(Step.CLEVER_POINT);
+                L.d("MainActivity.onNavigationDrawerItemSelected() CLEVER_POINT");
                 break;
         }
         getSupportFragmentManager().beginTransaction().replace(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
