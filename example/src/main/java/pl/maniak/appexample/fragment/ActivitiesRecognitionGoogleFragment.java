@@ -34,7 +34,7 @@ import pl.maniak.appexample.common.log.L;
 import pl.maniak.appexample.service.DetectedActivitiesIntentService;
 
 /**
- * Created by Sony on 2015-09-30.
+ * Created by Maniak on 2015-09-30.
  */
 public class ActivitiesRecognitionGoogleFragment extends Fragment implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, ResultCallback< Status>, View.OnClickListener {

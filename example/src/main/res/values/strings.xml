@@ -10,13 +10,23 @@
     <string name="save">Save</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Anuluj</string>
+    <string name="share">Udostępnij</string>
 
 
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <string name="action_websearch">Web search</string>
     <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_label_google">Google</string>
+    <string name="nav_label_github">GitHub</string>
+    <string name="nav_label_help">Help</string>
+    <string name="nav_label_advanced_tutorial">Advanced Tutorial</string>
+    <string name="nav_label_security">Security</string>
+    <string name="nav_label_clever_point">Advanced android programming</string>
 
     <!--Activities Recognition-->
 
@@ -61,7 +71,7 @@
     <!--Clever Point-->
 
     <string name="fragment_claver_point_main_header">Clever Point Main</string>
-    <string name="fragment_claver_point_main_description">Przykłady przerabiane na szkoleniu Advanced android programming - Clever point </string>
+    <string name="fragment_claver_point_main_description">Przykłady przerabiane na szkoleniu Advanced android programming - Clever point \nProwadzący Sylwester Madej \nhttp://soldiersofmobile.com </string>
 
 
     <string name="fragment_github_main_header">GitHub Main</string>
@@ -79,6 +89,13 @@
     <!--Voice commands-->
 
     <string name="google_voice_commands_info">Podaj jedną z dwuch komend \'Dalej\' lub \'Cofnij\'</string>
+    <string name="action_menu_close">Close</string>
 
-
+    <!--Message-->
+    <string name="msg_intent_failed">Przepraszamy, żadana aplikacja nie może zostać uruchomiona. Zawartość kodu paskowego może być nieprawidłowa.</string>
+    <string name="about_message_subject">[Maniak\'s Examples] </string>
+    <string name="about_share_title">Aplikacja z przykładami implementacji bibliotek i nie tylko</string>
+    <string name="about_mail_chooser">Wyślij przez</string>
+    <string name="about_email">piotr.liszka.pl@gmail.com</string>
+    <string name="about_autor">Piotr Liszka</string>
 </resources>

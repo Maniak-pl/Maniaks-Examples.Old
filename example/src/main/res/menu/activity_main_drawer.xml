@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_google"
+            android:icon="@drawable/ic_google"
+            android:title="@string/nav_label_google" />
+        <item
+            android:id="@+id/nav_github"
+            android:icon="@drawable/ic_github"
+            android:title="@string/nav_label_github" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_help"
+            android:title="@string/nav_label_help" />
+        <item
+            android:id="@+id/nav_advanced_tutorial"
+            android:icon="@drawable/ic_advanced_tutorial"
+            android:title="@string/nav_label_advanced_tutorial" />
+        <item
+            android:id="@+id/nav_security"
+            android:icon="@drawable/ic_security"
+            android:title="@string/nav_label_security" />
+        <item
+            android:id="@+id/nav_soldiers_of_mobile"
+            android:icon="@drawable/ic_soldiers_of_mobile"
+        android:title="@string/nav_label_clever_point" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>

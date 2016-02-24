@@ -1,30 +1,37 @@
 package pl.maniak.appexample.activity;
 
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.List;
 
 import pl.maniak.appexample.Constants;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
-import pl.maniak.appexample.fragment.NavigationDrawerFragment;
 import pl.maniak.appexample.model.FragmentStep;
 import pl.maniak.appexample.model.Step;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationDrawerFragment.NavigationDrawerCallbacks, View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
 
     private Button nextBt, prevBt;
-    private NavigationDrawerFragment mNavigation;
 
     private List<FragmentStep> stepList;
     private int currentStep;
@@ -37,9 +44,19 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
-        mNavigation = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-        mNavigation.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setItemIconTintList(null);
+
         prevBt = (Button) findViewById(R.id.prevBt);
         nextBt = (Button) findViewById(R.id.nextBt);
 
@@ -47,7 +64,6 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
         prevBt.setOnClickListener(this);
 
         initFragmentStep(Step.GITHUB);
-        getSupportFragmentManager().beginTransaction().add(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
         currentStep = 0;
 
     }
@@ -91,58 +107,109 @@ public class MainActivity extends AppCompatActivity implements NavigationDrawerF
     private void initFragmentStep(Step step) {
         L.i("MainActivity.initFragmentStep() ");
         stepList = Constants.getFragmentSteps(step);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
+        currentStep = 0;
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        if (!mNavigation.isDrawerOpen()) {
-            restoreActionBar();
-            return true;
-        }
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    public void restoreActionBar() {
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        actionBar.setDisplayShowTitleEnabled(true);
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
     }
 
 
+    @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public void onNavigationDrawerItemSelected(int position) {
-        L.i("MainActivity.onNavigationDrawerItemSelected() ");
-        switch (position) {
-            case 0:
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        switch (item.getItemId()) {
+            case R.id.nav_google:
                 initFragmentStep(Step.GOOGLE);
                 L.d("MainActivity.onNavigationDrawerItemSelected() GOOGLE");
                 break;
-            case 1:
+            case R.id.nav_github:
                 initFragmentStep(Step.GITHUB);
                 L.d("MainActivity.onNavigationDrawerItemSelected() GITHUB");
                 break;
-            case 2:
+            case R.id.nav_help:
                 initFragmentStep(Step.HELP);
                 L.d("MainActivity.onNavigationDrawerItemSelected() HELP");
                 break;
-            case 3:
+            case R.id.nav_advanced_tutorial:
                 initFragmentStep(Step.ADVANCED_TUTORIAL);
                 L.d("MainActivity.onNavigationDrawerItemSelected() ADVANCED_TUTORIAL");
-
                 break;
-            case 4:
+            case R.id.nav_security:
                 initFragmentStep(Step.SECURITY);
                 L.d("MainActivity.onNavigationDrawerItemSelected() SECURITY");
                 break;
-            case 5:
-                initFragmentStep(Step.CLEVER_POINT);
-                L.d("MainActivity.onNavigationDrawerItemSelected() CLEVER_POINT");
+            case R.id.nav_soldiers_of_mobile:
+                initFragmentStep(Step.SOLDIERS_OF_MOBILE);
+                L.d("MainActivity.onNavigationDrawerItemSelected() SOLDIERS_OF_MOBILE");
+                break;
+            case R.id.nav_share:
+                shareApp();
+                break;
+            case R.id.nav_send:
+                sendMail();
                 break;
         }
-        getSupportFragmentManager().beginTransaction().replace(R.id.container, getFragment(stepList.get(0)), "stepFragment").commit();
 
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
     }
 
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    private void shareApp() {
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.setType("text/plain");
+        shareIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.about_share_title));
+        shareIntent.putExtra(android.content.Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=" + this.getApplicationContext().getPackageName());
+        Intent intent = Intent.createChooser(shareIntent, getString(R.string.share));
+        try {
+            startActivity(intent);
+        } catch (ActivityNotFoundException ignored) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle(R.string.app_name);
+            builder.setMessage(R.string.msg_intent_failed);
+            builder.setPositiveButton(R.string.ok, null);
+            builder.show();
+        }
+    }
+
+    private void sendMail() {
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto", getString(R.string.about_email), null));
+        emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.about_message_subject));
+        try {
+            startActivity(Intent.createChooser(emailIntent, getString(R.string.about_mail_chooser)));
+        } catch(ActivityNotFoundException exception) {
+            Toast.makeText(this, getString(R.string.msg_intent_failed), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (item.getItemId()) {
+            case R.id.action_menu_close:
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
 
 
 

@@ -4,14 +4,8 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/red"
-        android:gravity="center"
-        android:padding="@dimen/padding_small"
-        android:text="@string/fragment_security_aes_header"
-        android:textSize="18dp"
-        android:textStyle="bold" />
+        style="@style/FragmentHeader"
+        android:text="@string/fragment_security_aes_header" />
 
 
 

@@ -48,17 +48,6 @@ public class Constants {
     private static List<NavDraItem> navDraItems = new ArrayList();
     private static List<FragmentStep> fragmentSteps = new ArrayList();
 
-    public static List<NavDraItem> getNavDraItems() {
-        navDraItems.clear();
-        navDraItems.add(new NavDraItem("Google", R.drawable.ic_google));
-        navDraItems.add(new NavDraItem("GitHub", R.drawable.ic_github));
-        navDraItems.add(new NavDraItem("Help", R.drawable.ic_help));
-        navDraItems.add(new NavDraItem("Advanced Tutorial", R.drawable.ic_advanced_tutorial));
-        navDraItems.add(new NavDraItem("Security", R.drawable.ic_security));
-        navDraItems.add(new NavDraItem("Advanced android programming", R.drawable.ic_clever_point));
-        return navDraItems;
-    }
-
     public static List<FragmentStep> getFragmentSteps(Step step){
         fragmentSteps.clear();
         switch (step) {
@@ -81,7 +70,7 @@ public class Constants {
             case ADVANCED_TUTORIAL:
                 fragmentSteps.add(FragmentStep.ADVANCED_TUTORIAL_MAIN);
                 break;
-            case CLEVER_POINT:
+            case SOLDIERS_OF_MOBILE:
                 fragmentSteps.add(FragmentStep.CLEVER_POINT_MAIN);
                 break;
             case SECURITY:
