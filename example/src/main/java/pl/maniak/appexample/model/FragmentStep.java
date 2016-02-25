@@ -11,11 +11,12 @@ import pl.maniak.appexample.fragment.FloatingActionButtonGitHubFragment;
 import pl.maniak.appexample.fragment.GenerationKeySHASecurityFragment;
 import pl.maniak.appexample.fragment.LogHelpFragment;
 import pl.maniak.appexample.fragment.MainAdvancedTutorialFragment;
-import pl.maniak.appexample.fragment.MainSoldiersOfMobileFragment;
+import pl.maniak.appexample.fragment.SoldiersOfMobileMainFragment;
 import pl.maniak.appexample.fragment.MainGitHubFragment;
 import pl.maniak.appexample.fragment.MainGoogleFragment;
 import pl.maniak.appexample.fragment.MainSecurityFragment;
 import pl.maniak.appexample.fragment.PinPatternSecurityFragment;
+import pl.maniak.appexample.fragment.SoldiersOfMobileMapFragment;
 import pl.maniak.appexample.fragment.SymmetricAlgorithmAESFragment;
 import pl.maniak.appexample.fragment.TurnOnGPSGoogleFragment;
 import pl.maniak.appexample.fragment.VoiceCommandsFragment;
@@ -58,8 +59,9 @@ public enum FragmentStep {
 
     // Soldiers Of Mobile
 
-    SOLDIERS_OF_MOBILE_MAIN(MainSoldiersOfMobileFragment.class),
-    SOLDIERS_OF_MOBILE_EXIT_MODAL(ExitModalSoldiersOfMobileFragment.class);
+    SOLDIERS_OF_MOBILE_MAIN(SoldiersOfMobileMainFragment.class),
+    SOLDIERS_OF_MOBILE_EXIT_MODAL(ExitModalSoldiersOfMobileFragment.class),
+    SOLDIERS_OF_MOBILE_MAP(SoldiersOfMobileMapFragment.class);
 
     // --------------------------------------------------------
 

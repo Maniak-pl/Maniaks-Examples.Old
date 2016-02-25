@@ -12,7 +12,7 @@ import pl.maniak.appexample.common.log.L;
 /**
  * Created by maniak on 23.02.16.
  */
-public class MainSoldiersOfMobileFragment extends Fragment {
+public class SoldiersOfMobileMainFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

@@ -72,8 +72,8 @@ public class Constants {
                 break;
             case SOLDIERS_OF_MOBILE:
                 fragmentSteps.add(FragmentStep.SOLDIERS_OF_MOBILE_MAIN);
-                fragmentSteps.add(FragmentStep.SOLDIERS_OF_MOBILE_EXIT_MODAL
-                );
+                fragmentSteps.add(FragmentStep.SOLDIERS_OF_MOBILE_EXIT_MODAL);
+                fragmentSteps.add(FragmentStep.SOLDIERS_OF_MOBILE_MAP);
 
                 break;
             case SECURITY:
