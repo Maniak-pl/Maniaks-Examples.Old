@@ -5,12 +5,13 @@ import android.support.v4.app.Fragment;
 
 import pl.maniak.appexample.fragment.ActivitiesRecognitionGoogleFragment;
 import pl.maniak.appexample.fragment.AsyncTaskEducativoFragment;
+import pl.maniak.appexample.fragment.ExitModalSoldiersOfMobileFragment;
 import pl.maniak.appexample.fragment.FineLocationGoogleFragment;
 import pl.maniak.appexample.fragment.FloatingActionButtonGitHubFragment;
 import pl.maniak.appexample.fragment.GenerationKeySHASecurityFragment;
 import pl.maniak.appexample.fragment.LogHelpFragment;
 import pl.maniak.appexample.fragment.MainAdvancedTutorialFragment;
-import pl.maniak.appexample.fragment.MainClaverPointFragment;
+import pl.maniak.appexample.fragment.MainSoldiersOfMobileFragment;
 import pl.maniak.appexample.fragment.MainGitHubFragment;
 import pl.maniak.appexample.fragment.MainGoogleFragment;
 import pl.maniak.appexample.fragment.MainSecurityFragment;
@@ -55,9 +56,10 @@ public enum FragmentStep {
 
     ADVANCED_TUTORIAL_MAIN(MainAdvancedTutorialFragment.class),
 
-    // Claver Point
+    // Soldiers Of Mobile
 
-    CLEVER_POINT_MAIN(MainClaverPointFragment.class);
+    SOLDIERS_OF_MOBILE_MAIN(MainSoldiersOfMobileFragment.class),
+    SOLDIERS_OF_MOBILE_EXIT_MODAL(ExitModalSoldiersOfMobileFragment.class);
 
     // --------------------------------------------------------
 

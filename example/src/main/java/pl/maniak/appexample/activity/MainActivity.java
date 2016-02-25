@@ -25,11 +25,13 @@ import java.util.List;
 import pl.maniak.appexample.Constants;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
+import pl.maniak.appexample.fragment.ExitModalSoldiersOfMobileFragment;
+import pl.maniak.appexample.modals.ExitDialogFragment;
 import pl.maniak.appexample.model.FragmentStep;
 import pl.maniak.appexample.model.Step;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, ExitModalSoldiersOfMobileFragment.ExitCallback {
 
     private Button nextBt, prevBt;
 
@@ -253,4 +255,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return --currentStep;
     }
 
+    @Override
+    public void exit() {
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        ExitDialogFragment dialogFragment = new ExitDialogFragment();
+        dialogFragment.show(transaction, "ExitDialogFragment");
+    }
 }

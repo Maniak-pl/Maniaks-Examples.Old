@@ -12,12 +12,12 @@ import pl.maniak.appexample.common.log.L;
 /**
  * Created by maniak on 23.02.16.
  */
-public class MainClaverPointFragment extends Fragment {
+public class MainSoldiersOfMobileFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         L.i("MainSecurityFragment.onCreateView() ");
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_claver_point_main, null);
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_soldiers_of_mobile_main, null);
         return root;
     }
 }

@@ -71,7 +71,10 @@ public class Constants {
                 fragmentSteps.add(FragmentStep.ADVANCED_TUTORIAL_MAIN);
                 break;
             case SOLDIERS_OF_MOBILE:
-                fragmentSteps.add(FragmentStep.CLEVER_POINT_MAIN);
+                fragmentSteps.add(FragmentStep.SOLDIERS_OF_MOBILE_MAIN);
+                fragmentSteps.add(FragmentStep.SOLDIERS_OF_MOBILE_EXIT_MODAL
+                );
+
                 break;
             case SECURITY:
                 fragmentSteps.add(FragmentStep.SECURITY_MAIN);

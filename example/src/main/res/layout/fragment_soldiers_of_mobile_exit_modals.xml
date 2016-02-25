@@ -5,16 +5,7 @@
 
     <TextView
         style="@style/FragmentHeader"
-        android:text="@string/fragment_claver_point_main_header" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:padding="5dp"
-        android:layout_margin="5dp"
-        android:src="@drawable/ic_soldiers_of_mobile"
-        android:scaleType="center"/>
+        android:text="@string/modals_exit_header" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -22,6 +13,14 @@
         android:padding="@dimen/padding_default"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="@string/fragment_claver_point_main_description"/>
+        android:text="@string/modals_exit_descritpeion"/>
+
+    <Button
+        android:id="@+id/modalsExitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/padding_default"
+        android:text="@string/modals_exit_button"/>
 
 </LinearLayout>

@@ -12,6 +12,8 @@
     <string name="stop">Stop</string>
     <string name="ok">OK</string>
     <string name="cancel">Anuluj</string>
+    <string name="yes">Tak</string>
+    <string name="no">Nie</string>
     <string name="share">Udostępnij</string>
 
 
@@ -70,8 +72,8 @@
 
     <!--Clever Point-->
 
-    <string name="fragment_claver_point_main_header">Clever Point Main</string>
-    <string name="fragment_claver_point_main_description">Przykłady przerabiane na szkoleniu Advanced android programming - Clever point \nProwadzący Sylwester Madej \nhttp://soldiersofmobile.com </string>
+    <string name="fragment_soldiers_of_mobile_main_header">Soldiers Of Mobile Main</string>
+    <string name="fragment_soldiers_of_mobile_main_description">Przykłady przerabiane na szkoleniu Advanced android programming - Clever point \nProwadzący Sylwester Madej \nhttp://soldiersofmobile.com </string>
 
 
     <string name="fragment_github_main_header">GitHub Main</string>
@@ -91,11 +93,19 @@
     <string name="google_voice_commands_info">Podaj jedną z dwuch komend \'Dalej\' lub \'Cofnij\'</string>
     <string name="action_menu_close">Close</string>
 
-    <!--Message-->
+    <!--About-->
     <string name="msg_intent_failed">Przepraszamy, żadana aplikacja nie może zostać uruchomiona. Zawartość kodu paskowego może być nieprawidłowa.</string>
     <string name="about_message_subject">[Maniak\'s Examples] </string>
     <string name="about_share_title">Aplikacja z przykładami implementacji bibliotek i nie tylko</string>
     <string name="about_mail_chooser">Wyślij przez</string>
     <string name="about_email">piotr.liszka.pl@gmail.com</string>
     <string name="about_autor">Piotr Liszka</string>
+
+    <!--ExitDialogFragment-->
+    <string name="modals_exit_header">Exit DialogFragment</string>
+    <string name="modals_exit_title">Wyjście</string>
+    <string name="modals_exit_button">Wyjście</string>
+    <string name="modals_exit_message">Czy na pewno chcesz opuścić aplikację?</string>
+    <string name="modals_exit_descritpeion">Możemy we fragmencie dodać dodatkowe menu, które doda się do menu z głównej aktywności. Z tego menu możemy wywołać proste okienko zbudowane na DialogFragment, który za pomocą callback-a, porozumie się z Aktywnością i zamknie aplikację.</string>
+
 </resources>
