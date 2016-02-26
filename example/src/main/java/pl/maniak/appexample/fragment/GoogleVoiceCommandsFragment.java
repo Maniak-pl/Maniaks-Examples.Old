@@ -22,7 +22,7 @@ import pl.maniak.appexample.common.log.L;
 /**
  * Created by pliszka on 10.09.15.
  */
-public class VoiceCommandsFragment extends Fragment implements View.OnClickListener {
+public class GoogleVoiceCommandsFragment extends Fragment implements View.OnClickListener {
 
     public ListView mList;
     public Button speakButton;

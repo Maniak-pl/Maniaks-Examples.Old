@@ -21,7 +21,7 @@ import pl.maniak.appexample.common.log.L;
 /**
  * Created by Maniak on 2015-09-28.
  */
-public class FineLocationGoogleFragment extends Fragment implements GoogleApiClient.ConnectionCallbacks,
+public class GoogleFindLocationFragment extends Fragment implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, LocationListener {
   /*
      1. Wymagany jest import biblioteki compile 'com.google.android.gms:play-services-location:7.+'

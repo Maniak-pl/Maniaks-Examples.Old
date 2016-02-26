@@ -17,7 +17,7 @@ import pl.maniak.appexample.common.log.L;
 /**
  * Created by pliszka on 22.02.16.
  */
-public class GenerationKeySHASecurityFragment extends Fragment {
+public class SecurityGenerationKeySHAFragment extends Fragment {
 
     TextView mKeyTv;
 

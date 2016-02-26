@@ -17,7 +17,7 @@ import pl.maniak.appexample.common.log.L;
 /**
  * Created by maniak on 23.02.16.
  */
-public class ExitModalSoldiersOfMobileFragment extends Fragment {
+public class SoldiersOfMobileExitModalFragment extends Fragment {
 
     ExitCallback exitCallback;
 

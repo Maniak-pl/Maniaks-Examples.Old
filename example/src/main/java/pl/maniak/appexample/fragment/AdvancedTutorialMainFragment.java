@@ -13,12 +13,13 @@ import pl.maniak.appexample.common.log.L;
 /**
  * Created by Maniak on 2015-09-29.
  */
-public class MainGitHubFragment extends Fragment {
+public class AdvancedTutorialMainFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        L.i("MainGitHubFragment.onCreateView() ");
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_github_main, null);
+        L.i("MainGoogleFragment.onCreateView() ");
+        ViewGroup root = (ViewGroup)inflater.inflate(R.layout.fragment_advanced_tutorial_main, null);
+
         return root;
     }
 }

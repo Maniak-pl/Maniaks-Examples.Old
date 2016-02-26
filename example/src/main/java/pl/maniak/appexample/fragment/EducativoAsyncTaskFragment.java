@@ -16,7 +16,7 @@ import pl.maniak.appexample.helpers.ExtraAsyncTask;
 /**
  * Created by Sony on 2015-11-21.
  */
-public class AsyncTaskEducativoFragment extends Fragment {
+public class EducativoAsyncTaskFragment extends Fragment {
 
     Button startTaskBtn, startTaskExceptionBtn;
 

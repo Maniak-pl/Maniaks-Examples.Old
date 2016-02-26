@@ -18,7 +18,7 @@ import pl.maniak.appexample.common.log.L;
  * Created by pliszka on 10.02.16.
  * Usage compile 'com.getbase:floatingactionbutton:1.10.1'
  */
-public class FloatingActionButtonGitHubFragment extends Fragment implements View.OnClickListener {
+public class GitHubFloatingActionButtonFragment extends Fragment implements View.OnClickListener {
 
 
 

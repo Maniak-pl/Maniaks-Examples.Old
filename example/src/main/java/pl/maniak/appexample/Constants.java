@@ -16,6 +16,7 @@ public class Constants {
 
     public final static boolean DEBUG_LOG = true;
     public final static int SIZE_LOG = 20;
+    public final static int ZOOM_LEVEL=15;
 
     public static final String PACKAGE_NAME = "pl.maniak.appexample";
 
@@ -74,6 +75,7 @@ public class Constants {
                 fragmentSteps.add(FragmentStep.SOLDIERS_OF_MOBILE_MAIN);
                 fragmentSteps.add(FragmentStep.SOLDIERS_OF_MOBILE_EXIT_MODAL);
                 fragmentSteps.add(FragmentStep.SOLDIERS_OF_MOBILE_MAP);
+                fragmentSteps.add(FragmentStep.SOLDIERS_OF_MOBILE_FIND_LOCATION);
 
                 break;
             case SECURITY:

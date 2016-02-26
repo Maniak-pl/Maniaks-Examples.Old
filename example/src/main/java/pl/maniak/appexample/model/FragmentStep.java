@@ -3,24 +3,25 @@ package pl.maniak.appexample.model;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 
-import pl.maniak.appexample.fragment.ActivitiesRecognitionGoogleFragment;
-import pl.maniak.appexample.fragment.AsyncTaskEducativoFragment;
-import pl.maniak.appexample.fragment.ExitModalSoldiersOfMobileFragment;
-import pl.maniak.appexample.fragment.FineLocationGoogleFragment;
-import pl.maniak.appexample.fragment.FloatingActionButtonGitHubFragment;
-import pl.maniak.appexample.fragment.GenerationKeySHASecurityFragment;
-import pl.maniak.appexample.fragment.LogHelpFragment;
-import pl.maniak.appexample.fragment.MainAdvancedTutorialFragment;
+import pl.maniak.appexample.fragment.GoogleActivitiesRecognitionFragment;
+import pl.maniak.appexample.fragment.EducativoAsyncTaskFragment;
+import pl.maniak.appexample.fragment.SoldiersOfMobileExitModalFragment;
+import pl.maniak.appexample.fragment.GoogleFindLocationFragment;
+import pl.maniak.appexample.fragment.GitHubFloatingActionButtonFragment;
+import pl.maniak.appexample.fragment.SecurityGenerationKeySHAFragment;
+import pl.maniak.appexample.fragment.HelpLogFragment;
+import pl.maniak.appexample.fragment.AdvancedTutorialMainFragment;
+import pl.maniak.appexample.fragment.SoldiersOfMobileFindLocationFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileMainFragment;
-import pl.maniak.appexample.fragment.MainGitHubFragment;
-import pl.maniak.appexample.fragment.MainGoogleFragment;
-import pl.maniak.appexample.fragment.MainSecurityFragment;
-import pl.maniak.appexample.fragment.PinPatternSecurityFragment;
+import pl.maniak.appexample.fragment.GitHubMainFragment;
+import pl.maniak.appexample.fragment.GoogleMainFragment;
+import pl.maniak.appexample.fragment.SecurityMainFragment;
+import pl.maniak.appexample.fragment.SecurityPinPatternFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileMapFragment;
-import pl.maniak.appexample.fragment.SymmetricAlgorithmAESFragment;
-import pl.maniak.appexample.fragment.TurnOnGPSGoogleFragment;
-import pl.maniak.appexample.fragment.VoiceCommandsFragment;
-import pl.maniak.appexample.fragment.WebViewInjectionHelpFragment;
+import pl.maniak.appexample.fragment.SecuritySymmetricAlgorithmAESFragment;
+import pl.maniak.appexample.fragment.GoogleTurnOnGPSFragment;
+import pl.maniak.appexample.fragment.GoogleVoiceCommandsFragment;
+import pl.maniak.appexample.fragment.HelpWebViewInjectionFragment;
 
 /**
  * Created by Sony on 2015-09-28.
@@ -29,39 +30,40 @@ public enum FragmentStep {
 
     // Google
 
-    GOOGLE_MAIN(MainGoogleFragment.class),
-    TURN_ON_GPS(TurnOnGPSGoogleFragment.class),
-    FINE_LOCATION(FineLocationGoogleFragment.class),
-    ACTIVITIES_RECOGNITION(ActivitiesRecognitionGoogleFragment.class),
-    VOICE_COMMANDS(VoiceCommandsFragment.class),
+    GOOGLE_MAIN(GoogleMainFragment.class),
+    TURN_ON_GPS(GoogleTurnOnGPSFragment.class),
+    FINE_LOCATION(GoogleFindLocationFragment.class),
+    ACTIVITIES_RECOGNITION(GoogleActivitiesRecognitionFragment.class),
+    VOICE_COMMANDS(GoogleVoiceCommandsFragment.class),
 
     // GitHub
 
-    GITHUB_MAIN(MainGitHubFragment.class),
-    GITHUB_FLOATING_ACTION_BUTTON(FloatingActionButtonGitHubFragment.class),
+    GITHUB_MAIN(GitHubMainFragment.class),
+    GITHUB_FLOATING_ACTION_BUTTON(GitHubFloatingActionButtonFragment.class),
 
     // Help
 
-    LOG(LogHelpFragment.class),
-    ASYNC_TASK_EXAMPLE(AsyncTaskEducativoFragment.class),
-    WEBVIEW_INJECTION(WebViewInjectionHelpFragment.class),
+    LOG(HelpLogFragment.class),
+    ASYNC_TASK_EXAMPLE(EducativoAsyncTaskFragment.class),
+    WEBVIEW_INJECTION(HelpWebViewInjectionFragment.class),
 
     // Security
 
-    SECURITY_MAIN(MainSecurityFragment.class),
-    PIN_PATTERN(PinPatternSecurityFragment.class),
-    SYMMETRIC_ALGORITHM_AES(SymmetricAlgorithmAESFragment.class),
-    GENERATION_KEY_SHA(GenerationKeySHASecurityFragment.class),
+    SECURITY_MAIN(SecurityMainFragment.class),
+    PIN_PATTERN(SecurityPinPatternFragment.class),
+    SYMMETRIC_ALGORITHM_AES(SecuritySymmetricAlgorithmAESFragment.class),
+    GENERATION_KEY_SHA(SecurityGenerationKeySHAFragment.class),
 
     // Advanced Tutorial
 
-    ADVANCED_TUTORIAL_MAIN(MainAdvancedTutorialFragment.class),
+    ADVANCED_TUTORIAL_MAIN(AdvancedTutorialMainFragment.class),
 
     // Soldiers Of Mobile
 
     SOLDIERS_OF_MOBILE_MAIN(SoldiersOfMobileMainFragment.class),
-    SOLDIERS_OF_MOBILE_EXIT_MODAL(ExitModalSoldiersOfMobileFragment.class),
-    SOLDIERS_OF_MOBILE_MAP(SoldiersOfMobileMapFragment.class);
+    SOLDIERS_OF_MOBILE_EXIT_MODAL(SoldiersOfMobileExitModalFragment.class),
+    SOLDIERS_OF_MOBILE_MAP(SoldiersOfMobileMapFragment.class),
+    SOLDIERS_OF_MOBILE_FIND_LOCATION(SoldiersOfMobileFindLocationFragment.class);
 
     // --------------------------------------------------------
 

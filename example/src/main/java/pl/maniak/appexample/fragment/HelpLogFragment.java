@@ -21,7 +21,7 @@ import pl.maniak.appexample.model.CommandLog;
 /**
  * Created by Maniak on 28.09.15.
  */
-public class LogHelpFragment extends Fragment implements View.OnClickListener {
+public class HelpLogFragment extends Fragment implements View.OnClickListener {
 
     ArrayAdapter<CommandLog> adapter;
     ListView consoleLogLv;

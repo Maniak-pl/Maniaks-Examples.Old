@@ -1,6 +1,7 @@
 package pl.maniak.appexample.activity;
 
 
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
@@ -20,24 +21,34 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker;
+import com.google.android.gms.maps.model.LatLng;
+
 import java.util.List;
 
 import pl.maniak.appexample.Constants;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
-import pl.maniak.appexample.fragment.ExitModalSoldiersOfMobileFragment;
+import pl.maniak.appexample.fragment.SoldiersOfMobileExitModalFragment;
+import pl.maniak.appexample.fragment.SoldiersOfMobileFindLocationFragment;
 import pl.maniak.appexample.modals.ExitDialogFragment;
+import pl.maniak.appexample.model.FavoriteLocation;
 import pl.maniak.appexample.model.FragmentStep;
 import pl.maniak.appexample.model.Step;
 
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, ExitModalSoldiersOfMobileFragment.ExitCallback {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, SoldiersOfMobileExitModalFragment.ExitCallback {
 
     private Button nextBt, prevBt;
+    private static final int REQUEST_PLACE_PICKER = 4421;
 
     private List<FragmentStep> stepList;
     private int currentStep;
-
+    FavoriteLocation favoriteLocation = new FavoriteLocation("Advanced android programming", "Clever point, date: 24-26.02.2016", new LatLng(52.232219699999995, 20.988004));
 
 
     @Override
@@ -196,7 +207,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.about_message_subject));
         try {
             startActivity(Intent.createChooser(emailIntent, getString(R.string.about_mail_chooser)));
-        } catch(ActivityNotFoundException exception) {
+        } catch (ActivityNotFoundException exception) {
             Toast.makeText(this, getString(R.string.msg_intent_failed), Toast.LENGTH_SHORT).show();
         }
     }
@@ -212,7 +223,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return super.onOptionsItemSelected(item);
     }
-
 
 
     private Fragment getFragment(final FragmentStep fragmentStep) {
@@ -235,7 +245,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         currentStep = isNest ? nextStep() : previousStep();
 
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        if(currentStep >= stepList.size()){
+        if (currentStep >= stepList.size()) {
             currentStep = 0;
         }
         ft.replace(R.id.container, getFragment(stepList.get(currentStep)), "stepFragment").commit();
@@ -249,8 +259,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     private int previousStep() {
-        if(currentStep == 0) {
-            return stepList.size() -1;
+        if (currentStep == 0) {
+            return stepList.size() - 1;
         }
         return --currentStep;
     }
@@ -261,4 +271,71 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         ExitDialogFragment dialogFragment = new ExitDialogFragment();
         dialogFragment.show(transaction, "ExitDialogFragment");
     }
+
+    public void startLocationPicker() {
+
+        try {
+            PlacePicker.IntentBuilder intentBuilder = new PlacePicker.IntentBuilder();
+            Intent intent = intentBuilder.build(MainActivity.this);
+            // Start the Intent by requesting a result, identified by a request code.
+            startActivityForResult(intent, REQUEST_PLACE_PICKER);
+
+            // Hide the pick option in the UI to prevent users from starting the picker
+            // multiple times.
+            // showPickAction(false);
+
+        } catch (GooglePlayServicesRepairableException e) {
+            GooglePlayServicesUtil
+                    .getErrorDialog(e.getConnectionStatusCode(), MainActivity.this, 0);
+        } catch (GooglePlayServicesNotAvailableException e) {
+            Toast.makeText(MainActivity.this, "Google Play Services is not available.",
+                    Toast.LENGTH_LONG)
+                    .show();
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // BEGIN_INCLUDE(activity_result)
+        if (requestCode == REQUEST_PLACE_PICKER) {
+            // This result is from the PlacePicker dialog.
+
+            // Enable the picker option
+            //showPickAction(true);
+
+            if (resultCode == Activity.RESULT_OK) {
+                /* User has picked a place, extract data.
+                    Data is extracted from the returned intent by retrieving a Place object from
+                    the PlacePicker.
+                */
+                final Place place = PlacePicker.getPlace(data, this);
+
+                /* A Place object contains details about that place, such as its name, address
+                    and phone number. Extract the name, address, phone number, place ID and place types.
+                */
+
+                final String placeId = place.getId();
+                String attribution = PlacePicker.getAttributions(data);
+                if (attribution == null) {
+                    attribution = "";
+                    favoriteLocation = new FavoriteLocation(place.getName().toString(),place.getAddress().toString(),place.getLatLng());
+                    Fragment frg = getSupportFragmentManager().findFragmentByTag("stepFragment");
+                    getSupportFragmentManager().beginTransaction().detach(frg).attach(frg).commit();
+                }
+
+            } else {
+            // User has not selected a place, hide the card.
+            // getCardStream().hideCard(CARD_DETAIL);
+            }
+
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+        // END_INCLUDE(activity_result)
+    }
+
+    public FavoriteLocation getFavoriteLocation() {
+        return favoriteLocation;
+    }
+
 }

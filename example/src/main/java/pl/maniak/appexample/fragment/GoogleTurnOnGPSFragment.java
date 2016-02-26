@@ -15,7 +15,7 @@ import pl.maniak.appexample.common.log.L;
 /**
  * Created by maniak on 2015-09-29.
  */
-public class TurnOnGPSGoogleFragment extends Fragment {
+public class GoogleTurnOnGPSFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

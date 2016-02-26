@@ -36,7 +36,7 @@ import pl.maniak.appexample.service.DetectedActivitiesIntentService;
 /**
  * Created by Maniak on 2015-09-30.
  */
-public class ActivitiesRecognitionGoogleFragment extends Fragment implements GoogleApiClient.ConnectionCallbacks,
+public class GoogleActivitiesRecognitionFragment extends Fragment implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener, ResultCallback< Status>, View.OnClickListener {
 
 

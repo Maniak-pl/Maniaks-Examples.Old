@@ -13,7 +13,7 @@ import pl.maniak.appexample.common.log.L;
 /**
  * Created by Maniak on 2015-09-29.
  */
-public class MainGoogleFragment extends Fragment {
+public class GoogleMainFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

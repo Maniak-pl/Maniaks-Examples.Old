@@ -20,7 +20,7 @@ import pl.maniak.appexample.common.log.L;
 /**
  * Created by pliszka on 21.12.15.
  */
-public class SymmetricAlgorithmAESFragment extends Fragment {
+public class SecuritySymmetricAlgorithmAESFragment extends Fragment {
 
     private TextView mOrginTv;
     private TextView mEncodedTv;

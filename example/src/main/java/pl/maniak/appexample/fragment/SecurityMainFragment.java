@@ -12,7 +12,7 @@ import pl.maniak.appexample.common.log.L;
 /**
  * Created by pliszka on 21.12.15.
  */
-public class MainSecurityFragment extends Fragment {
+public class SecurityMainFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

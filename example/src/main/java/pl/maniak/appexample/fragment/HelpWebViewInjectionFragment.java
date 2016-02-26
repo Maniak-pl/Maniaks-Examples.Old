@@ -17,7 +17,7 @@ import pl.maniak.appexample.common.log.L;
 /**
  * Created by pliszka on 09.06.15.
  */
-public class WebViewInjectionHelpFragment extends Fragment {
+public class HelpWebViewInjectionFragment extends Fragment {
 
     WebView mWebView;
     String rbank = "https://www.r-bank.pl/flex-pbl/index.jsp";

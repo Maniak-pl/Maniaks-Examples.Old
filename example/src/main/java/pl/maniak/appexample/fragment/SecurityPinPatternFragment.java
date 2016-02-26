@@ -12,7 +12,7 @@ import pl.maniak.appexample.R;
 /**
  * Created by Sony on 2015-10-29.
  */
-public class PinPatternSecurityFragment extends Fragment {
+public class SecurityPinPatternFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

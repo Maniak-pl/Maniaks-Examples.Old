@@ -16,6 +16,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import pl.maniak.appexample.Constants;
 import pl.maniak.appexample.R;
 
 /**
@@ -25,7 +26,6 @@ public class SoldiersOfMobileMapFragment extends Fragment implements OnMapReadyC
 
     private GoogleMap mMap;
     private SupportMapFragment mSupportMapFragment;
-    int ZOOM_LEVEL=15;
 
     @Nullable
     @Override
@@ -62,11 +62,10 @@ public class SoldiersOfMobileMapFragment extends Fragment implements OnMapReadyC
         mMap.addMarker(new MarkerOptions().position(androidCourse)
                 .title("Advanced android programming")
                 .snippet("Clever point, date: 24-26.02.2016"));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(androidCourse));
         mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
 
         CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(
-                androidCourse, ZOOM_LEVEL);
+                androidCourse, Constants.ZOOM_LEVEL);
         mMap.animateCamera(cameraUpdate);
 
      }
