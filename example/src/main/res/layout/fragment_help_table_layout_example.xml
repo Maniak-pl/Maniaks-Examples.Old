@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/FragmentHeader"
+        android:text="@string/fragment_help_tablelayout_example" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_default"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/fragment_help_tablelayout_example_description"
+        />
+
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="@dimen/padding_default"
+        android:stretchColumns="*">
+
+
+        <!-- Row 1 with 3 columns -->
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/red"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="Cell (1,1)" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="Cell (1,2)" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/red"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="Cell (1,3)" />
+
+        </TableRow>
+
+
+        <!-- Use this to make Table Border since TableLayout dosen't provides it by default -->
+        <View
+            android:layout_height="2dip"
+            android:background="#FFFFFF" />
+
+
+        <!-- Row 2 with 2 cells  (3rd Cell left Blank)-->
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="Cell (2,1)" />
+            />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@color/red"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="Cell (2,2)" />
+            />
+
+        </TableRow>
+
+
+        <!-- Use this to make Table Border since TableLayout dosen't provides it by default -->
+        <View
+            android:layout_height="2dip"
+            android:background="#FFFFFF" />
+
+
+        <!-- Row 3 with 2 cells, filling whole row by stretching the 2 cells of the row using layout_weight=1 -->
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+
+            <!--  Removing weight=1 will make the cell smaller   -->
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="Cell (3,1)" />
+
+            <!--  Removing weight=1 will make the cell smaller   -->
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@color/red"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="Cell (3,2)" />
+
+
+        </TableRow>
+
+
+        <!-- Use this to make Table Border since TableLayout dosen't provides it by default -->
+        <View
+            android:layout_height="2dip"
+            android:background="#FFFFFF" />
+
+
+        <!-- Row 4 with single cell directly in 2nd column -->
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Directly adding cell to the 2nd column using android:layout_column="1"  (here column index starts with 0) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:background="@color/black"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="Cell (4,2)" />
+            <!-- Make sure about one thing that while using layout_column we need to use layout_height="wrap_context"  for our TextView -->
+            <!-- You might not get auto suggestion of android:layout_column with older updates -->
+
+        </TableRow>
+
+
+        <!-- Use this to make Table Border since TableLayout dosen't provides it by default -->
+        <View
+            android:layout_height="2dip"
+            android:background="#FFFFFF" />
+
+
+        <!-- Row 5 with single cell occupying all columns -->
+        <TableRow
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <!-- android:layout_span="3"   merges 3 cells for the current row -->
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_span="3"
+                android:background="@color/red"
+                android:textColor="@color/white"
+                android:gravity="center"
+                android:padding="20dip"
+                android:text="Cell (5,1)" />
+
+        </TableRow>
+
+
+    </TableLayout>
+</LinearLayout>

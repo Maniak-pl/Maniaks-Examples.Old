@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 
 import pl.maniak.appexample.fragment.GoogleActivitiesRecognitionFragment;
 import pl.maniak.appexample.fragment.EducativoAsyncTaskFragment;
+import pl.maniak.appexample.fragment.HelpTableLayoutExampleFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileExitModalFragment;
 import pl.maniak.appexample.fragment.GoogleFindLocationFragment;
 import pl.maniak.appexample.fragment.GitHubFloatingActionButtonFragment;
@@ -45,6 +46,7 @@ public enum FragmentStep {
 
     LOG(HelpLogFragment.class),
     ASYNC_TASK_EXAMPLE(EducativoAsyncTaskFragment.class),
+    TABLELAYOUT_EXAMPLE(HelpTableLayoutExampleFragment.class),
     WEBVIEW_INJECTION(HelpWebViewInjectionFragment.class),
 
     // Security

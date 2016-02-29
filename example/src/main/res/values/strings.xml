@@ -88,6 +88,10 @@
     <string name="fragment_security_main_description">Przykłady implementacji szyfrowań lubi innych zabezpieczeń.</string>
 
 
+    <string name="fragment_help_tablelayout_example">TableLayout Example</string>
+    <string name="fragment_help_tablelayout_example_description">Android TableLayout positions its child components into : Rows and Columns. Our TableLayout will have as many columns as the row with the maximum cells. We can combine some of the cells of a row using property android:layout_span. \n More information http://nestedif.com/android-development/android-tablelayout-example/</string>
+
+
     <!--Voice commands-->
 
     <string name="google_voice_commands_info">Podaj jedną z dwuch komend \'Dalej\' lub \'Cofnij\'</string>
@@ -113,5 +117,6 @@
     <string name="find_location_button_find">Wyszukaj</string>
     <string name="find_location_button_save">Zapisz</string>
     <string name="find_location_button_remove">Usuń</string>
+
 
 </resources>
