@@ -44,11 +44,10 @@ import pl.maniak.appexample.model.Step;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, SoldiersOfMobileExitModalFragment.ExitCallback {
 
     private Button nextBt, prevBt;
-    private static final int REQUEST_PLACE_PICKER = 4421;
+
 
     private List<FragmentStep> stepList;
     private int currentStep;
-    FavoriteLocation favoriteLocation = new FavoriteLocation("Advanced android programming", "Clever point, date: 24-26.02.2016", new LatLng(52.232219699999995, 20.988004));
 
 
     @Override
@@ -76,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nextBt.setOnClickListener(this);
         prevBt.setOnClickListener(this);
 
-        initFragmentStep(Step.GITHUB);
+        initFragmentStep(Step.SOLDIERS_OF_MOBILE);
         currentStep = 0;
 
     }
@@ -272,70 +271,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         dialogFragment.show(transaction, "ExitDialogFragment");
     }
 
-    public void startLocationPicker() {
-
-        try {
-            PlacePicker.IntentBuilder intentBuilder = new PlacePicker.IntentBuilder();
-            Intent intent = intentBuilder.build(MainActivity.this);
-            // Start the Intent by requesting a result, identified by a request code.
-            startActivityForResult(intent, REQUEST_PLACE_PICKER);
-
-            // Hide the pick option in the UI to prevent users from starting the picker
-            // multiple times.
-            // showPickAction(false);
-
-        } catch (GooglePlayServicesRepairableException e) {
-            GooglePlayServicesUtil
-                    .getErrorDialog(e.getConnectionStatusCode(), MainActivity.this, 0);
-        } catch (GooglePlayServicesNotAvailableException e) {
-            Toast.makeText(MainActivity.this, "Google Play Services is not available.",
-                    Toast.LENGTH_LONG)
-                    .show();
-        }
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        // BEGIN_INCLUDE(activity_result)
-        if (requestCode == REQUEST_PLACE_PICKER) {
-            // This result is from the PlacePicker dialog.
-
-            // Enable the picker option
-            //showPickAction(true);
-
-            if (resultCode == Activity.RESULT_OK) {
-                /* User has picked a place, extract data.
-                    Data is extracted from the returned intent by retrieving a Place object from
-                    the PlacePicker.
-                */
-                final Place place = PlacePicker.getPlace(data, this);
-
-                /* A Place object contains details about that place, such as its name, address
-                    and phone number. Extract the name, address, phone number, place ID and place types.
-                */
-
-                final String placeId = place.getId();
-                String attribution = PlacePicker.getAttributions(data);
-                if (attribution == null) {
-                    attribution = "";
-                    favoriteLocation = new FavoriteLocation(place.getName().toString(),place.getAddress().toString(),place.getLatLng());
-                    Fragment frg = getSupportFragmentManager().findFragmentByTag("stepFragment");
-                    getSupportFragmentManager().beginTransaction().detach(frg).attach(frg).commit();
-                }
-
-            } else {
-            // User has not selected a place, hide the card.
-            // getCardStream().hideCard(CARD_DETAIL);
-            }
-
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-        // END_INCLUDE(activity_result)
-    }
-
-    public FavoriteLocation getFavoriteLocation() {
-        return favoriteLocation;
-    }
 
 }

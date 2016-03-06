@@ -18,6 +18,8 @@ public class Constants {
     public final static int SIZE_LOG = 20;
     public final static int ZOOM_LEVEL=15;
 
+    public static final int REQUEST_PLACE_PICKER = 4421;
+
     public static final String PACKAGE_NAME = "pl.maniak.appexample";
 
     public static final String BROADCAST_ACTION = PACKAGE_NAME + ".BROADCAST_ACTION";

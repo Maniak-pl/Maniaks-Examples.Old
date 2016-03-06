@@ -2,6 +2,8 @@ package pl.maniak.appexample.fragment;
 
 
 import android.Manifest;
+import android.app.Activity;
+import android.content.Intent;
 import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.location.Location;
@@ -14,13 +16,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
+import com.google.android.gms.common.GooglePlayServicesRepairableException;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.location.places.Place;
+import com.google.android.gms.location.places.ui.PlacePicker;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -33,7 +41,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.maniak.appexample.Constants;
 import pl.maniak.appexample.R;
-import pl.maniak.appexample.activity.MainActivity;
 import pl.maniak.appexample.common.log.L;
 import pl.maniak.appexample.model.FavoriteLocation;
 
@@ -51,16 +58,21 @@ public class SoldiersOfMobileFindLocationFragment extends Fragment implements On
     Button saveLocationBtn;
     @Bind(R.id.removeLocationBtn)
     Button removeLocationBtn;
+    @Bind(R.id.locationNameTv)
+    TextView locationNameTv;
+    @Bind(R.id.latituteLocationTv)
+    TextView latituteLocationTv;
+    @Bind(R.id.longitudeLocationTv)
+    TextView longitudeLocationTv;
+    @Bind(R.id.adressLocationTv)
+    TextView adressLocationTv;
     private GoogleMap mMap;
     private SupportMapFragment mSupportMapFragment;
 
     public static final int RESOLUTION_REQUEST_CODE = 1234;
     private GoogleApiClient googleApiClient;
     private LocationRequest locationRequest;
-    private CharSequence name;
-    private CharSequence address;
-    private CharSequence phone;
-    private LatLng latLng;
+    private FavoriteLocation mFavoriteLocation;
 
 
     @Override
@@ -89,18 +101,25 @@ public class SoldiersOfMobileFindLocationFragment extends Fragment implements On
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
+        setUpLocationOnMap();
 
-
-        FavoriteLocation location = ((MainActivity)getActivity()).getFavoriteLocation();
-        mMap.addMarker(new MarkerOptions().position(location.getLatLng())
-                .title(location.getName())
-                .snippet(location.getAddress()));
-        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        mMap.moveCamera(CameraUpdateFactory.zoomTo(Constants.ZOOM_LEVEL));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(location.getLatLng()));
 
     }
 
+    private void setUpLocationOnMap() {
+        if (mFavoriteLocation != null) {
+
+            mMap.clear();
+            LatLng location = new LatLng(mFavoriteLocation.getLatitude(),mFavoriteLocation.getLongitude());
+            mMap.addMarker(new MarkerOptions().position(location)
+                    .title(mFavoriteLocation.getName())
+                    .snippet(mFavoriteLocation.getAddress()));
+            mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+            mMap.getUiSettings().setScrollGesturesEnabled(false);
+            mMap.moveCamera(CameraUpdateFactory.zoomTo(Constants.ZOOM_LEVEL));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(location));
+        }
+    }
 
 
     private void initGoogleApi() {
@@ -190,8 +209,91 @@ public class SoldiersOfMobileFindLocationFragment extends Fragment implements On
         ButterKnife.unbind(this);
     }
 
-    @OnClick(R.id.findLocationBtn)
-    public void onClick() {
-        ((MainActivity)getActivity()).startLocationPicker();
+
+    @OnClick({R.id.findLocationBtn, R.id.loadLocationBtn, R.id.saveLocationBtn, R.id.removeLocationBtn})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.findLocationBtn:
+                startLocationPicker();
+                break;
+            case R.id.loadLocationBtn:
+                break;
+            case R.id.saveLocationBtn:
+                break;
+            case R.id.removeLocationBtn:
+                break;
+        }
+    }
+
+    public void startLocationPicker() {
+
+        try {
+            PlacePicker.IntentBuilder intentBuilder = new PlacePicker.IntentBuilder();
+            Intent intent = intentBuilder.build(getActivity());
+            // Start the Intent by requesting a result, identified by a request code.
+            startActivityForResult(intent, Constants.REQUEST_PLACE_PICKER);
+
+            // Hide the pick option in the UI to prevent users from starting the picker
+            // multiple times.
+            // showPickAction(false);
+
+        } catch (GooglePlayServicesRepairableException e) {
+            GooglePlayServicesUtil
+                    .getErrorDialog(e.getConnectionStatusCode(), getActivity(), 0);
+        } catch (GooglePlayServicesNotAvailableException e) {
+            Toast.makeText(getActivity(), "Google Play Services is not available.",
+                    Toast.LENGTH_LONG)
+                    .show();
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // BEGIN_INCLUDE(activity_result)
+        if (requestCode == Constants.REQUEST_PLACE_PICKER) {
+            // This result is from the PlacePicker dialog.
+
+            // Enable the picker option
+            //showPickAction(true);
+
+            if (resultCode == Activity.RESULT_OK) {
+                /* User has picked a place, extract data.
+                    Data is extracted from the returned intent by retrieving a Place object from
+                    the PlacePicker.
+                */
+                final Place place = PlacePicker.getPlace(data, getActivity());
+
+                /* A Place object contains details about that place, such as its name, address
+                    and phone number. Extract the name, address, phone number, place ID and place types.
+                */
+
+                final String placeId = place.getId();
+                String attribution = PlacePicker.getAttributions(data);
+                if (attribution == null) {
+                    attribution = "";
+
+                    mFavoriteLocation = new FavoriteLocation(place.getName().toString(), place.getAddress().toString(), place.getLatLng().latitude, place.getLatLng().longitude);
+                    setLocationData();
+
+                }
+
+            } else {
+                // User has not selected a place, hide the card.
+                // getCardStream().hideCard(CARD_DETAIL);
+            }
+
+        }
+        // END_INCLUDE(activity_result)
+    }
+
+    private void setLocationData() {
+        if (mFavoriteLocation != null) {
+            locationNameTv.setText(mFavoriteLocation.getName());
+            latituteLocationTv.setText(String.valueOf(mFavoriteLocation.getLatitude()));
+            longitudeLocationTv.setText(String.valueOf(mFavoriteLocation.getLongitude()));
+            adressLocationTv.setText(mFavoriteLocation.getAddress());
+
+            setUpLocationOnMap();
+        }
     }
 }

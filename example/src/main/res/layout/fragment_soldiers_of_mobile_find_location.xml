@@ -23,14 +23,15 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:gravity="left"
-                android:text="name" />
+                android:text="@string/sof_find_location_name_tv" />
 
             <TextView
+                android:id="@+id/locationNameTv"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:text="" />
         </TableRow>
@@ -42,14 +43,15 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:gravity="left"
-                android:text="latitute" />
+                android:text="@string/sof_find_location_latitute_tv" />
 
             <TextView
+                android:id="@+id/latituteLocationTv"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:text="" />
         </TableRow>
@@ -61,14 +63,15 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:gravity="left"
-                android:text="longitude" />
+                android:text="@string/sof_find_location_longitude_tv" />
 
             <TextView
+                android:id="@+id/longitudeLocationTv"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:text="" />
         </TableRow>
@@ -80,14 +83,15 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:gravity="left"
-                android:text="adress" />
+                android:text="@string/sof_find_location_address_tv" />
 
             <TextView
+                android:id="@+id/adressLocationTv"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:text="" />
         </TableRow>
@@ -98,14 +102,14 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_weight="1.5"
                 android:gravity="left"
-                android:text="tag" />
+                android:text="@string/sof_find_location_tag_tv" />
 
-            <TextView
+            <Spinner
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_weight="1"
+                android:layout_weight="3"
                 android:gravity="center"
                 android:text="" />
         </TableRow>
@@ -122,19 +126,25 @@
             android:id="@+id/findLocationBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/find_location_button_find" />
+            android:text="@string/sof_find_location_button_find" />
+
+        <Button
+            android:id="@+id/loadLocationBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sof_find_location_button_load" />
 
         <Button
             android:id="@+id/saveLocationBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/find_location_button_save" />
+            android:text="@string/sof_find_location_button_save" />
 
         <Button
             android:id="@+id/removeLocationBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/find_location_button_remove" />
+            android:text="@string/sof_find_location_button_remove" />
 
     </LinearLayout>
 
