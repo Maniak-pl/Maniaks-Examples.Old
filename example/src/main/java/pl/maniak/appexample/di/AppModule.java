@@ -3,6 +3,7 @@ package pl.maniak.appexample.di;
 import android.content.Context;
 
 import dagger.Module;
+import dagger.Provides;
 
 /**
  * Created by Maniak on 2016-02-25.
@@ -16,6 +17,7 @@ public class AppModule {
         this.context = context;
     }
 
+    @Provides
     public Context provideContext() {
         return context;
     }

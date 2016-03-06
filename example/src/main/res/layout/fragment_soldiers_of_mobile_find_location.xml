@@ -107,6 +107,7 @@
                 android:text="@string/sof_find_location_tag_tv" />
 
             <Spinner
+                android:id="@+id/tagSpinner"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="3"

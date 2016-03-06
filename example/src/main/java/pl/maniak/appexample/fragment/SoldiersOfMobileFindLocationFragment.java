@@ -14,8 +14,10 @@ import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,12 +38,19 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.Constants;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
+import pl.maniak.appexample.db.DBHelper;
 import pl.maniak.appexample.model.FavoriteLocation;
 
 /**
@@ -66,6 +75,14 @@ public class SoldiersOfMobileFindLocationFragment extends Fragment implements On
     TextView longitudeLocationTv;
     @Bind(R.id.adressLocationTv)
     TextView adressLocationTv;
+
+    @Inject
+    public DBHelper dbHelper;
+    @Bind(R.id.tagSpinner)
+    Spinner tagSpinner;
+    @Bind(R.id.loadLocationBtn)
+    Button loadLocationBtn;
+
     private GoogleMap mMap;
     private SupportMapFragment mSupportMapFragment;
 
@@ -80,10 +97,20 @@ public class SoldiersOfMobileFindLocationFragment extends Fragment implements On
                              Bundle savedInstanceState) {
         View mTrackView = inflater.inflate(R.layout.fragment_soldiers_of_mobile_find_location, container, false);
 
+
+        App.getAppComponent().inject(this);
+        ButterKnife.bind(this, mTrackView);
+
         initGoogleApi();
         setMap();
 
-        ButterKnife.bind(this, mTrackView);
+        List<String> tagList = new ArrayList<>();
+        tagList.add("like");
+        tagList.add("goto");
+
+        ArrayAdapter<String> tagAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_expandable_list_item_1, tagList);
+        tagSpinner.setAdapter(tagAdapter);
+
         return mTrackView;
     }
 
@@ -110,7 +137,7 @@ public class SoldiersOfMobileFindLocationFragment extends Fragment implements On
         if (mFavoriteLocation != null) {
 
             mMap.clear();
-            LatLng location = new LatLng(mFavoriteLocation.getLatitude(),mFavoriteLocation.getLongitude());
+            LatLng location = new LatLng(mFavoriteLocation.getLatitude(), mFavoriteLocation.getLongitude());
             mMap.addMarker(new MarkerOptions().position(location)
                     .title(mFavoriteLocation.getName())
                     .snippet(mFavoriteLocation.getAddress()));
@@ -219,8 +246,10 @@ public class SoldiersOfMobileFindLocationFragment extends Fragment implements On
             case R.id.loadLocationBtn:
                 break;
             case R.id.saveLocationBtn:
+                saveLocationToDB();
                 break;
             case R.id.removeLocationBtn:
+                deleteLocationToDB();
                 break;
         }
     }
@@ -294,6 +323,19 @@ public class SoldiersOfMobileFindLocationFragment extends Fragment implements On
             adressLocationTv.setText(mFavoriteLocation.getAddress());
 
             setUpLocationOnMap();
+        }
+    }
+
+    private void saveLocationToDB() {
+        if (mFavoriteLocation != null) {
+            mFavoriteLocation.setTag(tagSpinner.getSelectedItem().toString());
+            dbHelper.saveLocation(mFavoriteLocation);
+        }
+    }
+
+    private void deleteLocationToDB() {
+        if (mFavoriteLocation != null) {
+            dbHelper.deleteLocation(mFavoriteLocation);
         }
     }
 }

@@ -10,16 +10,22 @@ import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable
 public class FavoriteLocation {
+
+    public static final String LATITUDE = "latitude";
+    public static final String LONGITUDE = "longitude";
+
+
     @DatabaseField(generatedId = true)
     private int id;
     @DatabaseField(canBeNull = false)
     private String name;
     @DatabaseField(canBeNull = false)
     private String address;
-    @DatabaseField(canBeNull = false)
+    @DatabaseField(columnName = LATITUDE, canBeNull = false)
     private double latitude;
-    @DatabaseField(canBeNull = false)
+    @DatabaseField(columnName = LONGITUDE, canBeNull = false)
     private double longitude;
+    @DatabaseField
     private String tag;
 
     public FavoriteLocation() {
