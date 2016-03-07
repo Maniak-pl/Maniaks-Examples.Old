@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="facebook_app_id">xxx</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCSWAWjnD659ng5_b-TgJ5029TE8CIUdnM </string>
+
+</resources>

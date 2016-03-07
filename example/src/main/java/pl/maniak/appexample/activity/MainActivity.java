@@ -4,6 +4,9 @@ package pl.maniak.appexample.activity;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -15,18 +18,25 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Base64;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.facebook.FacebookSdk;
+import com.facebook.appevents.AppEventsLogger;
 import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.common.GooglePlayServicesRepairableException;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlacePicker;
 import com.google.android.gms.maps.model.LatLng;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import java.util.List;
 
@@ -78,6 +88,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         initFragmentStep(Step.SOLDIERS_OF_MOBILE);
         currentStep = 0;
 
+        initFacebook();
+
+    }
+
+    private void initFacebook() {
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        // Initialize the SDK before executing any other operations,
+        // especially, if you're using Facebook UI elements.
+
+
+
     }
 
     @Override
@@ -90,6 +111,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onResume() {
         L.i("MainActivity.onResume() ");
         super.onResume();
+
+        // Logs 'install' and 'app activate' App Events.
+        AppEventsLogger.activateApp(this);
     }
 
     @Override
@@ -108,6 +132,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onPause() {
         L.i("MainActivity.onPause() ");
         super.onPause();
+
+        // Logs 'app deactivate' App Event.
+        AppEventsLogger.deactivateApp(this);
     }
 
     @Override

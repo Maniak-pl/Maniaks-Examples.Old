@@ -70,6 +70,7 @@ public class Constants {
                 fragmentSteps.add(FragmentStep.TABLELAYOUT_EXAMPLE);
                 fragmentSteps.add(FragmentStep.WEBVIEW_INJECTION);
                 fragmentSteps.add(FragmentStep.ASYNC_TASK_EXAMPLE);
+                fragmentSteps.add(FragmentStep.FACEBOOK_LOGIN);
                 break;
             case ADVANCED_TUTORIAL:
                 fragmentSteps.add(FragmentStep.ADVANCED_TUTORIAL_MAIN);

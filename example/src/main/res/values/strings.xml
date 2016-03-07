@@ -124,6 +124,7 @@
     <string name="sof_find_location_longitude_tv">Longitude</string>
     <string name="sof_find_location_address_tv">Address</string>
     <string name="sof_find_location_tag_tv">Tag</string>
+    <string name="fragment_facebook_login_header">Facebook Login</string>
 
 
 </resources>
