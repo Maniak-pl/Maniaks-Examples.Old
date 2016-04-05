@@ -111,6 +111,8 @@ public class SoldiersOfMobileFindLocationFragment extends Fragment implements On
         ArrayAdapter<String> tagAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_expandable_list_item_1, tagList);
         tagSpinner.setAdapter(tagAdapter);
 
+
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
         return mTrackView;
     }
 

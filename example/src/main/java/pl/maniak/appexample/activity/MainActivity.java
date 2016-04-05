@@ -40,11 +40,13 @@ import java.security.NoSuchAlgorithmException;
 
 import java.util.List;
 
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.Constants;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 import pl.maniak.appexample.fragment.SoldiersOfMobileExitModalFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileFindLocationFragment;
+import pl.maniak.appexample.helpers.GoogleAnalyticsHelper;
 import pl.maniak.appexample.modals.ExitDialogFragment;
 import pl.maniak.appexample.model.FavoriteLocation;
 import pl.maniak.appexample.model.FragmentStep;
@@ -85,21 +87,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nextBt.setOnClickListener(this);
         prevBt.setOnClickListener(this);
 
-        initFragmentStep(Step.SOLDIERS_OF_MOBILE);
+        initFragmentStep(Step.GOOGLE);
         currentStep = 0;
 
-        initFacebook();
+        App.getAnalytics().startTracking();
 
     }
 
-    private void initFacebook() {
-        FacebookSdk.sdkInitialize(getApplicationContext());
-        // Initialize the SDK before executing any other operations,
-        // especially, if you're using Facebook UI elements.
 
-
-
-    }
 
     @Override
     protected void onStart() {

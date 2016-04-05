@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 
@@ -19,6 +20,9 @@ public class GitHubMainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         L.i("MainGitHubFragment.onCreateView() ");
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_github_main, null);
+
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
+
         return root;
     }
 }

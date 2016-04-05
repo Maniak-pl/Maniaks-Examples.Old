@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 
@@ -23,6 +24,9 @@ public class GoogleTurnOnGPSFragment extends Fragment {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_google_turn_on_gps, null);
 
         turnGPSOn();
+
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
+
         return root;
     }
 

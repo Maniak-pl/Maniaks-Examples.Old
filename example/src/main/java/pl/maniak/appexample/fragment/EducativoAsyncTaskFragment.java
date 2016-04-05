@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 import pl.maniak.appexample.helpers.ExtraAsyncTask;
@@ -39,6 +40,8 @@ public class EducativoAsyncTaskFragment extends Fragment {
                 new ExtremelySampleTask(true).execute();
             }
         });
+
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
 
         return root;
     }

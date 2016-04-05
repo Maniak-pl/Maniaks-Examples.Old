@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 
@@ -18,6 +19,9 @@ public class SoldiersOfMobileMainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         L.i("MainSecurityFragment.onCreateView() ");
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_soldiers_of_mobile_main, null);
+
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
+
         return root;
     }
 }

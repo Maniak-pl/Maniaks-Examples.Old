@@ -14,6 +14,7 @@ import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.spec.SecretKeySpec;
 
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 
@@ -35,6 +36,7 @@ public class SecuritySymmetricAlgorithmAESFragment extends Fragment {
 
         setupAlgorithmAES();
 
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
         return root;
     }
 

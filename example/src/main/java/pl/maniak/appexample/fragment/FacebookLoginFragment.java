@@ -18,6 +18,7 @@ import com.facebook.login.widget.LoginButton;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 
@@ -39,6 +40,9 @@ public class FacebookLoginFragment extends Fragment {
         ButterKnife.bind(this, root);
 
         initFacebook();
+
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
+
         return root;
     }
 

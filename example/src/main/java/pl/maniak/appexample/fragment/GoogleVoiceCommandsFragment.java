@@ -14,6 +14,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.activity.MainActivity;
 import pl.maniak.appexample.common.log.L;
@@ -39,6 +40,8 @@ public class GoogleVoiceCommandsFragment extends Fragment implements View.OnClic
         speakButton.setOnClickListener(this);
         speakButton = (Button) root.findViewById(R.id.btn_speak);
         mList = (ListView) root.findViewById(R.id.list);
+
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
 
         return root;
     }

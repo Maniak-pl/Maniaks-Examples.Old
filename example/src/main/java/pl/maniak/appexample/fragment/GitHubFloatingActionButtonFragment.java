@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.activity.MainActivity;
 import pl.maniak.appexample.common.log.L;
@@ -38,6 +39,8 @@ public class GitHubFloatingActionButtonFragment extends Fragment implements View
         actionB.setOnClickListener(this);
 
         setupFloatingActionButton(root);
+
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
 
         return root;
     }

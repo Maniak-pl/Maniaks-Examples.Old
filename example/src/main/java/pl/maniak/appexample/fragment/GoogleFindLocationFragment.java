@@ -15,6 +15,7 @@ import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 
@@ -47,6 +48,9 @@ public class GoogleFindLocationFragment extends Fragment implements GoogleApiCli
 
         mLongitudeTv = (TextView) root.findViewById(R.id.LongitudeTv);
         mLatitudeTv = (TextView) root.findViewById(R.id.LatitudeTv);
+
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
+
         return root;
     }
 

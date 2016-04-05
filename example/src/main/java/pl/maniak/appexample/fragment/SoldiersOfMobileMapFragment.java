@@ -49,6 +49,7 @@ public class SoldiersOfMobileMapFragment extends Fragment implements OnMapReadyC
         App.getAppComponent().inject(this);
         initilizeMap();
 
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
         return mTrackView;
 
     }

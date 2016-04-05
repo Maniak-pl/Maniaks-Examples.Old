@@ -28,6 +28,7 @@ import com.google.android.gms.location.LocationServices;
 
 import java.util.ArrayList;
 
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.Constants;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
@@ -56,6 +57,9 @@ public class GoogleActivitiesRecognitionFragment extends Fragment implements Goo
         remove_activity_updates_button.setOnClickListener(this);
         request_activity_updates_button.setOnClickListener(this);
         buildGoogleApiClient();
+
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
+
         return root;
     }
 

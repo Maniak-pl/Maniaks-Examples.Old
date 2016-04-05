@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 import pl.maniak.appexample.model.CommandLog;
@@ -65,6 +66,7 @@ public class HelpLogFragment extends Fragment implements View.OnClickListener {
 
         consoleLogLv.setAdapter(adapter);
 
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
 
         return root;
     }

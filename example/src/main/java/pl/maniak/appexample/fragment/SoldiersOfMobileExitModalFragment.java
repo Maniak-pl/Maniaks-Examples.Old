@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 
@@ -38,6 +39,7 @@ public class SoldiersOfMobileExitModalFragment extends Fragment {
 
         setHasOptionsMenu(true);
 
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
         return root;
     }
 

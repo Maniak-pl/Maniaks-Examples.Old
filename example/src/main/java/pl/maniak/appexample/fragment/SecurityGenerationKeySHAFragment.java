@@ -11,6 +11,7 @@ import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 
@@ -26,6 +27,8 @@ public class SecurityGenerationKeySHAFragment extends Fragment {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_security_generation_key_sha, null);
         mKeyTv = (TextView) root.findViewById(R.id.fragmentSecuritySHAKeyTv);
         mKeyTv.setText("Klucz: "+buildKey());
+
+        App.getAnalytics().sendScreenView(getClass().getSimpleName());
         return root;
     }
 
