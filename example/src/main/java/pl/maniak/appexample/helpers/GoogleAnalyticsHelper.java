@@ -54,7 +54,17 @@ public class GoogleAnalyticsHelper {
     }
 
     public void sendScreenView(String screenName) {
-        mTracker.setScreenName(screenName);
-        mTracker.send(new HitBuilders.ScreenViewBuilder().build());
+        getTracker().setScreenName(screenName);
+        getTracker().send(new HitBuilders.ScreenViewBuilder().build());
+    }
+
+    public void sendEvent(String category, String action, String label) {
+
+        // Send the hit
+        getTracker().send(new HitBuilders.EventBuilder()
+                .setCategory(category)
+                .setAction(action)
+                .setLabel(label)
+                .build());
     }
 }

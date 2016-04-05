@@ -80,6 +80,7 @@
     <string name="fragment_github_floating_action_button_header">Floating Action Button</string>
     <string name="fragment_security_main_header">Security Main</string>
     <string name="fragment_help_webview_injection">WebView Injection</string>
+    <string name="fragment_google_analytics_header">Google Analytics</string>
     <string name="fragment_security_aes_header">AES (Symmetric)</string>
     <string name="fragment_security_pin_pattern_header">Pin Pattern</string>
     <string name="fragment_security_generation_key_sha_header">Generation Key SHA</string>
@@ -125,6 +126,11 @@
     <string name="sof_find_location_address_tv">Address</string>
     <string name="sof_find_location_tag_tv">Tag</string>
     <string name="fragment_facebook_login_header">Facebook Login</string>
+    <string name="analytics_category_prompt">Category</string>
+    <string name="analytics_action_prompt">Action</string>
+    <string name="analytics_label_prompt">Label</string>
+    <string name="analytics_send_event_btn">Send Event</string>
+    <string name="analytics_send_screen_btn">Send Screen Event</string>
 
 
 </resources>

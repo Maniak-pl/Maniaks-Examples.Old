@@ -56,6 +56,7 @@ public class Constants {
         switch (step) {
             case GOOGLE:
                 fragmentSteps.add(FragmentStep.GOOGLE_MAIN);
+                fragmentSteps.add(FragmentStep.GOOGLE_ANALYTICS);
 //                fragmentSteps.add(FragmentStep.TURN_ON_GPS);
                 fragmentSteps.add(FragmentStep.FINE_LOCATION);
                 fragmentSteps.add(FragmentStep.ACTIVITIES_RECOGNITION);

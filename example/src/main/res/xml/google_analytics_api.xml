@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="ga_trackingId">UA-71266401-2</string>
+    <bool name="ga_autoActivityTracking">false</bool>
+
+    <screenName name="pl.maniak.appexample.activity.MainActivity">
+        Main screen
+    </screenName>
 
 </resources>

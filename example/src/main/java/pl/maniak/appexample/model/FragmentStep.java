@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import pl.maniak.appexample.fragment.FacebookLoginFragment;
 import pl.maniak.appexample.fragment.GoogleActivitiesRecognitionFragment;
 import pl.maniak.appexample.fragment.EducativoAsyncTaskFragment;
+import pl.maniak.appexample.fragment.GoogleAnalyticsFragment;
 import pl.maniak.appexample.fragment.HelpTableLayoutExampleFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileExitModalFragment;
 import pl.maniak.appexample.fragment.GoogleFindLocationFragment;
@@ -33,6 +34,7 @@ public enum FragmentStep {
     // Google
 
     GOOGLE_MAIN(GoogleMainFragment.class),
+    GOOGLE_ANALYTICS(GoogleAnalyticsFragment.class),
     TURN_ON_GPS(GoogleTurnOnGPSFragment.class),
     FINE_LOCATION(GoogleFindLocationFragment.class),
     ACTIVITIES_RECOGNITION(GoogleActivitiesRecognitionFragment.class),
