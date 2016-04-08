@@ -166,6 +166,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 initFragmentStep(Step.GITHUB);
                 L.d("MainActivity.onNavigationDrawerItemSelected() GITHUB");
                 break;
+            case R.id.nav_udacity:
+                initFragmentStep(Step.UDACITY);
+                L.d("MainActivity.onNavigationDrawerItemSelected() UDACITY");
+                break;
             case R.id.nav_help:
                 initFragmentStep(Step.HELP);
                 L.d("MainActivity.onNavigationDrawerItemSelected() HELP");

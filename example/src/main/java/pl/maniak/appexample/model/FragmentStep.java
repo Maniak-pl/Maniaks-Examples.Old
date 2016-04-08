@@ -25,6 +25,7 @@ import pl.maniak.appexample.fragment.SecuritySymmetricAlgorithmAESFragment;
 import pl.maniak.appexample.fragment.GoogleTurnOnGPSFragment;
 import pl.maniak.appexample.fragment.GoogleVoiceCommandsFragment;
 import pl.maniak.appexample.fragment.HelpWebViewInjectionFragment;
+import pl.maniak.appexample.fragment.UdacityAnalyticsFragment;
 
 /**
  * Created by Sony on 2015-09-28.
@@ -44,6 +45,11 @@ public enum FragmentStep {
 
     GITHUB_MAIN(GitHubMainFragment.class),
     GITHUB_FLOATING_ACTION_BUTTON(GitHubFloatingActionButtonFragment.class),
+
+    // Udacity
+
+    UDACITY_ANALYTICS(UdacityAnalyticsFragment.class),
+
 
     // Help
 

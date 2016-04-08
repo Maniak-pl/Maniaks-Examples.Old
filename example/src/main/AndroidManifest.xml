@@ -40,6 +40,59 @@
             </intent-filter>
         </activity>
 
+
+        <!--Udacity Analytics-->
+
+        <activity
+            android:name=".section.udacity.analytics.activity.DinnerMainActivity"
+            android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".section.udacity.analytics.activity.ShowDinnerActivity"
+            android:label=""
+            android:parentActivityName=".section.udacity.analytics.activity.ShowDinnerActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".section.udacity.analytics.activity.DinnerMainActivity" />
+        </activity>
+        <activity
+            android:name=".section.udacity.analytics.activity.ShowAllDinnersActivity"
+            android:label=""
+            android:parentActivityName=".section.udacity.analytics.activity.ShowAllDinnersActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".section.udacity.analytics.activity.DinnerMainActivity" />
+        </activity>
+        <activity
+            android:name=".section.udacity.analytics.activity.ShowRecipeActivity"
+            android:label=""
+            android:parentActivityName=".section.udacity.analytics.activity.ShowRecipeActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".section.udacity.analytics.activity.ShowDinnerActivity" />
+        </activity>
+
+        <activity
+            android:name=".section.udacity.analytics.activity.OrderDinnerActivity"
+            android:label=""
+            android:parentActivityName=".section.udacity.analytics.activity.OrderDinnerActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".section.udacity.analytics.activity.ShowDinnerActivity" />
+        </activity>
+
+        <activity
+            android:name=".section.udacity.analytics.activity.RemoveMealActivity"
+            android:label=""
+            android:parentActivityName=".section.udacity.analytics.activity.RemoveMealActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".section.udacity.analytics.activity.ShowDinnerActivity" />
+        </activity>
+
+
+
+
         <activity android:name="com.facebook.FacebookActivity"
             android:configChanges=
                 "keyboard|keyboardHidden|screenLayout|screenSize|orientation"

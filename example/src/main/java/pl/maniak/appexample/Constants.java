@@ -66,6 +66,9 @@ public class Constants {
                 fragmentSteps.add(FragmentStep.GITHUB_MAIN);
                 fragmentSteps.add(FragmentStep.GITHUB_FLOATING_ACTION_BUTTON);
                 break;
+            case UDACITY:
+                fragmentSteps.add(FragmentStep.UDACITY_ANALYTICS);
+                break;
             case HELP:
                 fragmentSteps.add(FragmentStep.LOG);
                 fragmentSteps.add(FragmentStep.TABLELAYOUT_EXAMPLE);
