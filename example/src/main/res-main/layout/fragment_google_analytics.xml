@@ -67,22 +67,22 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
+                style="@style/button_solid"
                 android:id="@+id/sendEvnetBtn"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/analytics_send_event_btn"
-                android:textStyle="bold" />
+                android:text="@string/analytics_send_event_btn"/>
 
             <Button
+                style="@style/button_solid"
                 android:id="@+id/sendScreenBtn"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="@string/analytics_send_screen_btn"
-                android:textStyle="bold" />
+                android:text="@string/analytics_send_screen_btn"/>
+
+            <Button
+                android:id="@+id/sendProductBtn"
+                style="@style/button_solid"
+                android:layout_marginTop="16dp"
+                android:text="@string/analytics_send_product_btn"/>
 
         </LinearLayout>
     </ScrollView>

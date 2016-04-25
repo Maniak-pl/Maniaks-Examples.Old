@@ -133,6 +133,7 @@
     <string name="analytics_label_prompt">Label</string>
     <string name="analytics_send_event_btn">Send Event</string>
     <string name="analytics_send_screen_btn">Send Screen Event</string>
+    <string name="analytics_send_product_btn">Send Product For E-Commerce</string>
 
 
 </resources>

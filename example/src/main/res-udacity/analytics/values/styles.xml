@@ -10,6 +10,7 @@
         <item name="android:padding">10dp</item>
         <item name="android:minWidth">180dp</item>
         <item name="android:layout_gravity">center_horizontal</item>/>
+        <item name="android:textStyle">bold</item>/>
     </style>
 
     <style name="button_in_row">
