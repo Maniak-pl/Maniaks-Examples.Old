@@ -4,19 +4,13 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/red"
-        android:gravity="center"
-        android:padding="@dimen/padding_small"
-        android:text="@string/fragment_advanced_tutorial_main_header"
-        android:textSize="18dp"
-        android:textStyle="bold" />
+        style="@style/FragmentHeader"
+        android:text="@string/tutorialspoint_main_header"/>
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:src="@drawable/ic_advanced_tutorial"
+        android:src="@drawable/ic_tutorialspoint"
         android:scaleType="center"/>
 
     <TextView
@@ -25,6 +19,6 @@
         android:padding="@dimen/padding_default"
         android:layout_gravity="center"
         android:gravity="center"
-        android:text="@string/fragment_advanced_tutorial_main_description"/>
+        android:text="@string/tutorialspoint_main_description"/>
 
 </LinearLayout>

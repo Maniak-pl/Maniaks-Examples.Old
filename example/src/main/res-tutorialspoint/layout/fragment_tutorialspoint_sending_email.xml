@@ -9,7 +9,7 @@
 
     <TextView
         style="@style/FragmentHeader"
-        android:text="@string/fragment_advanced_tutorial_sending_email_header" />
+        android:text="@string/tutorialspoint_sending_email_header" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,12 +25,8 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/padding_default"
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:text="@string/fragment_advanced_tutorial_sending_email_description"/>
+                style="@style/FragmentDescription"
+                android:text="@string/tutorialspoint_sending_email_description"/>
 
 
             <android.support.design.widget.TextInputLayout

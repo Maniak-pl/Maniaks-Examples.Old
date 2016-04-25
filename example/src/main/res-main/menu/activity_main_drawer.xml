@@ -20,7 +20,7 @@
             android:title="@string/nav_label_help" />
         <item
             android:id="@+id/nav_advanced_tutorial"
-            android:icon="@drawable/ic_advanced_tutorial"
+            android:icon="@drawable/ic_tutorialspoint"
             android:title="@string/nav_label_advanced_tutorial" />
         <item
             android:id="@+id/nav_security"

@@ -77,8 +77,9 @@ public class Constants {
                 fragmentSteps.add(FragmentStep.FACEBOOK_LOGIN);
                 break;
             case ADVANCED_TUTORIAL:
-                fragmentSteps.add(FragmentStep.ADVANCED_TUTORIAL_MAIN);
-                fragmentSteps.add(FragmentStep.ADVANCED_TUTORIAL_SENDING_EMAIL);
+                fragmentSteps.add(FragmentStep.TUTORIALSPOINT_MAIN);
+                fragmentSteps.add(FragmentStep.TUTORIALSPOINT_NOTIFICATION);
+                fragmentSteps.add(FragmentStep.TUTORIALSPOINT_SENDING_EMAIL);
                 break;
             case SOLDIERS_OF_MOBILE:
                 fragmentSteps.add(FragmentStep.SOLDIERS_OF_MOBILE_MAIN);

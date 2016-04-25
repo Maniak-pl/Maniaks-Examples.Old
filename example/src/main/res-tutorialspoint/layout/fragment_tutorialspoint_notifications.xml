@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        style="@style/FragmentHeader"
+        android:text="@string/tutorialspoint_notifications_header" />
+
+    <TextView
+        style="@style/FragmentDescription"
+        android:text="@string/tutorialspoint_notifications_description"/>
+
+    <Button
+        android:id="@+id/startNotificationBtn"
+        style="@style/FragmentButton"
+        android:text="@string/tutorialspointNotificationStartBtn"/>
+
+    <Button
+        android:id="@+id/cancelNotificationBtn"
+        style="@style/FragmentButton"
+        android:text="@string/tutorialspointNotificationCancelBtn"/>
+
+    <Button
+        android:id="@+id/updateNotificationBtn"
+        style="@style/FragmentButton"
+        android:text="@string/tutorialspointNotificationUpdateBtn"/>
+
+</LinearLayout>

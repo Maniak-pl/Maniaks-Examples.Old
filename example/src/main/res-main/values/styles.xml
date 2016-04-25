@@ -53,6 +53,18 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="FragmentDescription" parent="Wrap">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/padding_default</item>
+    </style>
+
+    <style name="FragmentButton" parent="Wrap">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/padding_default</item>
+    </style>
+
     <style name="FloatingButtonMenuLabels">
         <item name="android:textColor">@color/black</item>
     </style>
