@@ -66,10 +66,6 @@
     <string name="floating_button_info_text">Aby zobaczyć więcej przykładów wystarczy pobrać sample z repozytorium GitHub-a pod linkiem https://github.com/futuresimple/android-floating-action-button</string>
 
 
-    <!--Advanced Tutorial-->
-
-    <string name="fragment_advanced_tutorial_main_header">Advanced Tutorial Main</string>
-    <string name="fragment_advanced_tutorial_main_description">Przykłady wyciągnięte z dostępnego w internecie pdf-a którego można pobrać na stronie \n http://www.tutorialspoint.com </string>
 
     <!--Clever Point-->
 

@@ -13,7 +13,7 @@ import pl.maniak.appexample.fragment.GoogleFindLocationFragment;
 import pl.maniak.appexample.fragment.GitHubFloatingActionButtonFragment;
 import pl.maniak.appexample.fragment.SecurityGenerationKeySHAFragment;
 import pl.maniak.appexample.fragment.HelpLogFragment;
-import pl.maniak.appexample.fragment.AdvancedTutorialMainFragment;
+import pl.maniak.appexample.section.advancedtutorial.fragment.AdvancedTutorialMainFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileFindLocationFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileMainFragment;
 import pl.maniak.appexample.fragment.GitHubMainFragment;
@@ -26,6 +26,7 @@ import pl.maniak.appexample.fragment.GoogleTurnOnGPSFragment;
 import pl.maniak.appexample.fragment.GoogleVoiceCommandsFragment;
 import pl.maniak.appexample.fragment.HelpWebViewInjectionFragment;
 import pl.maniak.appexample.fragment.UdacityAnalyticsFragment;
+import pl.maniak.appexample.section.advancedtutorial.fragment.AdvancedTutorialSendingEmailFragment;
 
 /**
  * Created by Sony on 2015-09-28.
@@ -69,6 +70,7 @@ public enum FragmentStep {
     // Advanced Tutorial
 
     ADVANCED_TUTORIAL_MAIN(AdvancedTutorialMainFragment.class),
+    ADVANCED_TUTORIAL_SENDING_EMAIL(AdvancedTutorialSendingEmailFragment.class),
 
     // Soldiers Of Mobile
 
