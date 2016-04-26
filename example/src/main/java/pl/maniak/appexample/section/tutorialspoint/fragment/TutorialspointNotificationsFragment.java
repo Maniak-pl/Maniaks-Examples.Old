@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,13 +19,16 @@ import butterknife.OnClick;
 import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.activity.MainActivity;
+import pl.maniak.appexample.common.log.L;
 
 /**
  * Created by Maniak on 2015-09-29.
  */
 public class TutorialspointNotificationsFragment extends Fragment {
 
+    private NotificationManager mNotificationManager;
     private int notificationID = 100;
+    private int numMessages = 0;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,33 +47,57 @@ public class TutorialspointNotificationsFragment extends Fragment {
     }
 
     @OnClick(R.id.startNotificationBtn)
-    public void onClick() {
+    public void displayNotification() {
+        L.i("Display Notification");
+
         // STEP 1 - Create Notification Builder
 
         NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getActivity());
 
         // STEP 2 - Setting Notification Properties
 
-        mBuilder.setSmallIcon(R.drawable.ic_launcher);
-        mBuilder.setContentText("Notification Alert, Click Me!");
+        mBuilder.setContentTitle("Notification Alert, Click Me!");
         mBuilder.setContentText("Hi, This is Android Notification Detail!");
+        mBuilder.setTicker("New Message Alert!");
+        mBuilder.setSmallIcon(R.drawable.ic_launcher);
 
-        // STEP 3 - Attach Actions
+        /* Increase notification number every time a new notification arrives */
+
+        mBuilder.setNumber(++numMessages);
+
+
+        /* STEP 3 - Attach Actions
+            Creates an explicit intent for an Activity in your app */
 
         Intent resultIntent = new Intent(getActivity(), MainActivity.class);
         TaskStackBuilder stackBuilder = TaskStackBuilder.create(getActivity());
         stackBuilder.addParentStack(MainActivity.class);
 
         // Adds the Intent that starts the Activity to the top of the stack
+
         stackBuilder.addNextIntent(resultIntent);
-        PendingIntent resultPendingIntent =  stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT);
+
         mBuilder.setContentIntent(resultPendingIntent);
 
         // STEP 4 - Issue the Notification
 
-        NotificationManager mNotificationManager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+        mNotificationManager = (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
 
         // notificationID allows you to update the notification later on.
         mNotificationManager.notify(notificationID, mBuilder.build());
+    }
+
+    @OnClick(R.id.cancelNotificationBtn)
+    public void cancelNotification() {
+        L.i("Cancel Notification");
+        if(mNotificationManager != null) {
+            mNotificationManager.cancel(notificationID);
+        }
+    }
+
+
+    @OnClick(R.id.updateNotificationBtn)
+    public void updateNotification() {
     }
 }
