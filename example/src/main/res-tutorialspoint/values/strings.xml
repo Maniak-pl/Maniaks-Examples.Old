@@ -12,6 +12,7 @@ message you can display as an icon at the top of the device which we call notifi
     <string name="tutorialspointNotificationStartBtn">Start Notification</string>
     <string name="tutorialspointNotificationCancelBtn">Cancel Notification</string>
     <string name="tutorialspointNotificationUpdateBtn">Update Notification</string>
+    <string name="tutorialspointNotificationBigBtn">Big Notification</string>
 
     <string name="tutorialspoint_sending_email_header">21. Sending Email</string>
     <string name="tutorialspoint_sending_email_description">You have learnt Android Intent, which is an object carrying an intent ie. message from one component to

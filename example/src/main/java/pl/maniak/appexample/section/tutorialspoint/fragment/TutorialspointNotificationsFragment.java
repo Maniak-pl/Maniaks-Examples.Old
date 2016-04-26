@@ -91,7 +91,7 @@ public class TutorialspointNotificationsFragment extends Fragment {
     @OnClick(R.id.cancelNotificationBtn)
     public void cancelNotification() {
         L.d("Cancel Notification");
-        if(mNotificationManager != null) {
+        if (mNotificationManager != null) {
             mNotificationManager.cancel(notificationID);
         }
     }
@@ -100,5 +100,100 @@ public class TutorialspointNotificationsFragment extends Fragment {
     @OnClick(R.id.updateNotificationBtn)
     public void updateNotification() {
         L.d("Update notification");
+
+        /* Invoking the default notification service */
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(getActivity());
+
+        mBuilder.setContentTitle("Updated Message");
+        mBuilder.setContentText("You've got updated message.");
+        mBuilder.setTicker("Updated Message Alert!");
+        mBuilder.setSmallIcon(R.drawable.ic_launcher);
+
+        /* Increase notification number every time a new notification arrives */
+        mBuilder.setNumber(++numMessages);
+
+        /* Creates an explicit intent for an Activity in your app */
+        Intent resultIntent = new Intent(getActivity(), MainActivity.class);
+
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(getActivity());
+        stackBuilder.addParentStack(MainActivity.class);
+
+        /* Adds the Intent that starts the Activity to the top of the stack */
+        stackBuilder.addNextIntent(resultIntent);
+        PendingIntent resultPendingIntent =
+                stackBuilder.getPendingIntent(
+                        0,
+                        PendingIntent.FLAG_UPDATE_CURRENT
+                );
+        mBuilder.setContentIntent(resultPendingIntent);
+        mNotificationManager =
+                (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+
+        /* Update the existing notification using same notification ID */
+        mNotificationManager.notify(notificationID, mBuilder.build());
+
+    }
+
+
+    @OnClick(R.id.bigNotificationBtn)
+    public void bigNotification() {
+        Log.i("Start", "notification");
+
+        /* Invoking the default notification service */
+
+        NotificationCompat.Builder mBuilder =
+                new NotificationCompat.Builder(getActivity());
+
+        mBuilder.setContentTitle("New Message");
+        mBuilder.setContentText("You've received new message.");
+        mBuilder.setTicker("New Message Alert!");
+        mBuilder.setSmallIcon(R.drawable.ic_launcher);
+
+
+        /* Increase notification number every time a new notification arrives */
+
+        mBuilder.setNumber(++numMessages);
+
+        /* Add Big View Specific Configuration */
+
+        NotificationCompat.InboxStyle inboxStyle =
+                new NotificationCompat.InboxStyle();
+
+        String[] events = new String[6];
+        events[0] = new String("This is first line....");
+        events[1] = new String("This is second line...");
+        events[2] = new String("This is third line...");
+        events[3] = new String("This is 4th line...");
+        events[4] = new String("This is 5th line...");
+        events[5] = new String("This is 6th line...");
+
+        // Sets a title for the Inbox style big view
+        inboxStyle.setBigContentTitle("Big Title Details:");
+
+        // Moves events into the big view
+        for (int i=0; i<events.length; i++) {
+            inboxStyle.addLine(events[i]);
+        }
+        mBuilder.setStyle(inboxStyle);
+
+        /* Creates an explicit intent for an Activity in your app */
+        Intent resultIntent = new Intent(getActivity(), MainActivity.class);
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(getActivity());
+        stackBuilder.addParentStack(MainActivity.class);
+
+        /* Adds the Intent that starts the Activity to the top of the stack */
+        stackBuilder.addNextIntent(resultIntent);
+        PendingIntent resultPendingIntent =
+                stackBuilder.getPendingIntent(
+                        0,
+                        PendingIntent.FLAG_UPDATE_CURRENT
+                );
+        mBuilder.setContentIntent(resultPendingIntent);
+        mNotificationManager =
+                (NotificationManager) getActivity().getSystemService(Context.NOTIFICATION_SERVICE);
+
+        /* notificationID allows you to update the notification later on. */
+        mNotificationManager.notify(notificationID, mBuilder.build());
+
     }
 }

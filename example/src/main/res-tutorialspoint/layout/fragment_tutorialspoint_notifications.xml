@@ -26,4 +26,9 @@
         style="@style/FragmentButton"
         android:text="@string/tutorialspointNotificationUpdateBtn"/>
 
+    <Button
+        android:id="@+id/bigNotificationBtn"
+        style="@style/FragmentButton"
+        android:text="@string/tutorialspointNotificationBigBtn"/>
+
 </LinearLayout>
