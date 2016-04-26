@@ -16,9 +16,10 @@ android {
     sourceSets {
         main {
             res.srcDirs = [
-                    'src/main/res-main',
-                    'src/main/res-udacity/analytics',
-                    'src/main/res-tutorialspoint',
+                    'src/main/res/main',
+                    'src/main/res/help',
+                    'src/main/res/udacity/analytics',
+                    'src/main/res/tutorialspoint',
             ]
         }
     }
