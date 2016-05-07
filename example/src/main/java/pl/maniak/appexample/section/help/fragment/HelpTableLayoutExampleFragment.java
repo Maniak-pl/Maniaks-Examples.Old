@@ -1,4 +1,4 @@
-package pl.maniak.appexample.fragment;
+package pl.maniak.appexample.section.help.fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

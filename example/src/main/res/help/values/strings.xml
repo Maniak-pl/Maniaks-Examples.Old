@@ -3,6 +3,12 @@
 
     <!--Help-->
 
+    <string name="help_main_header">Help Main</string>
+    <string name="help_main_description">Przykłady które w szybki sposób pomogą mi rozwiązać problemy w innych aplikacjach.</string>
+
+    <string name="help_video_header">Video</string>
+    <string name="help_video_description">Uruchamianie video w aplikacji</string>
+
     <string name="fragment_help_tablelayout_example">TableLayout Example</string>
     <string name="fragment_help_tablelayout_example_description">Android TableLayout positions its child components into : Rows and Columns. Our TableLayout will have as many columns as the row with the maximum cells. We can combine some of the cells of a row using property android:layout_span. \n More information http://nestedif.com/android-development/android-tablelayout-example/</string>
 

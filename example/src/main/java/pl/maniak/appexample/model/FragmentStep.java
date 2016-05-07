@@ -7,12 +7,14 @@ import pl.maniak.appexample.fragment.FacebookLoginFragment;
 import pl.maniak.appexample.fragment.GoogleActivitiesRecognitionFragment;
 import pl.maniak.appexample.fragment.EducativoAsyncTaskFragment;
 import pl.maniak.appexample.fragment.GoogleAnalyticsFragment;
-import pl.maniak.appexample.fragment.HelpTableLayoutExampleFragment;
+import pl.maniak.appexample.section.help.fragment.HelpMainFragment;
+import pl.maniak.appexample.section.help.fragment.HelpTableLayoutExampleFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileExitModalFragment;
 import pl.maniak.appexample.fragment.GoogleFindLocationFragment;
 import pl.maniak.appexample.fragment.GitHubFloatingActionButtonFragment;
 import pl.maniak.appexample.fragment.SecurityGenerationKeySHAFragment;
-import pl.maniak.appexample.fragment.HelpLogFragment;
+import pl.maniak.appexample.section.help.fragment.HelpLogFragment;
+import pl.maniak.appexample.section.help.fragment.HelpVideoFragment;
 import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointMainFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileFindLocationFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileMainFragment;
@@ -24,7 +26,7 @@ import pl.maniak.appexample.fragment.SoldiersOfMobileMapFragment;
 import pl.maniak.appexample.fragment.SecuritySymmetricAlgorithmAESFragment;
 import pl.maniak.appexample.fragment.GoogleTurnOnGPSFragment;
 import pl.maniak.appexample.fragment.GoogleVoiceCommandsFragment;
-import pl.maniak.appexample.fragment.HelpWebViewInjectionFragment;
+import pl.maniak.appexample.section.help.fragment.HelpWebViewInjectionFragment;
 import pl.maniak.appexample.fragment.UdacityAnalyticsFragment;
 import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointNotificationsFragment;
 import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointSendingEmailFragment;
@@ -55,10 +57,12 @@ public enum FragmentStep {
 
     // Help
 
+    HELP_MAIN(HelpMainFragment.class),
     LOG(HelpLogFragment.class),
     ASYNC_TASK_EXAMPLE(EducativoAsyncTaskFragment.class),
     TABLELAYOUT_EXAMPLE(HelpTableLayoutExampleFragment.class),
     WEBVIEW_INJECTION(HelpWebViewInjectionFragment.class),
+    VIDEO(HelpVideoFragment.class),
     FACEBOOK_LOGIN(FacebookLoginFragment.class),
 
     // Security

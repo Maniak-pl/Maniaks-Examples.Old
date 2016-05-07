@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        style="@style/FragmentHeader"
+        android:text="@string/help_video_header"/>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_default"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="@string/help_video_description"/>
+
+    <pl.maniak.appexample.section.help.view.VideoPlayer
+        android:id="@+id/videoView"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/padding_default">
+
+        <ImageButton
+            android:id="@+id/videoPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_play_arrow_24dp"/>
+
+
+        <ImageButton
+            android:id="@+id/videoPause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_pause_24dp"/>
+
+
+        <ImageButton
+            android:id="@+id/videoSoundOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_volume_up_24dp"/>
+
+
+        <ImageButton
+            android:id="@+id/videoSoundOff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_volume_off_24dp"/>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

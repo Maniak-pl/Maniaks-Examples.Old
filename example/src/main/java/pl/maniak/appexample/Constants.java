@@ -70,8 +70,10 @@ public class Constants {
                 fragmentSteps.add(FragmentStep.UDACITY_ANALYTICS);
                 break;
             case HELP:
+                fragmentSteps.add(FragmentStep.HELP_MAIN);
                 fragmentSteps.add(FragmentStep.LOG);
                 fragmentSteps.add(FragmentStep.TABLELAYOUT_EXAMPLE);
+                fragmentSteps.add(FragmentStep.VIDEO);
                 fragmentSteps.add(FragmentStep.WEBVIEW_INJECTION);
                 fragmentSteps.add(FragmentStep.ASYNC_TASK_EXAMPLE);
                 fragmentSteps.add(FragmentStep.FACEBOOK_LOGIN);

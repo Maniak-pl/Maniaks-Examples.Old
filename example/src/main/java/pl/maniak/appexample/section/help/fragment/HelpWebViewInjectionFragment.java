@@ -1,4 +1,4 @@
-package pl.maniak.appexample.fragment;
+package pl.maniak.appexample.section.help.fragment;
 
 
 import android.graphics.Bitmap;
@@ -21,8 +21,7 @@ import pl.maniak.appexample.common.log.L;
 public class HelpWebViewInjectionFragment extends Fragment {
 
     WebView mWebView;
-    String rbank = "https://www.r-bank.pl/flex-pbl/index.jsp";
-    String sslBlocked = "https://192.168.0.24/"; // Ten link dla bezpieczeństwa powinien być blokowany
+    String rbank = "https://www.google.pl/";
 
 
     @Override
@@ -57,7 +56,7 @@ public class HelpWebViewInjectionFragment extends Fragment {
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-            L.i("BankWebViewClientTest.onPageFinished() URL = " + url);
+            L.d("BankWebViewClientTest.onPageFinished() URL = " + url);
             mWebView.setVisibility(View.VISIBLE);
             L.d("WebView.VISIBLE ");
         }
@@ -66,25 +65,25 @@ public class HelpWebViewInjectionFragment extends Fragment {
         public void onLoadResource(WebView view, String url) {
             super.onLoadResource(view, url);
 
-            L.i("BankWebViewClientTest.onLoadResource()  URL = " + url);
+            L.d("BankWebViewClientTest.onLoadResource()  URL = " + url);
         }
 
         @Override
         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-            L.i("BankWebViewClientTest.onReceivedError() ");
+            L.d("BankWebViewClientTest.onReceivedError() ");
             super.onReceivedError(view, errorCode, description, failingUrl);
         }
 
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
-            L.i("BankWebViewClientTest.onPageStarted() ");
+            L.d("BankWebViewClientTest.onPageStarted() ");
 
             super.onPageStarted(view, url, favicon);
         }
 
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
-            L.i("BankWebViewClientTest.shouldOverrideUrlLoading() ");
+            L.d("BankWebViewClientTest.shouldOverrideUrlLoading() ");
             return super.shouldOverrideUrlLoading(view, url);
         }
     }
