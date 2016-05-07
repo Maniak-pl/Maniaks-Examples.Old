@@ -2,6 +2,7 @@
 <resources>
     <string name="ga_trackingId">UA-71266401-2</string>
     <bool name="ga_autoActivityTracking">false</bool>
+    <bool name="ga_reportUncaughtExceptions">true</bool>
 
     <screenName name="pl.maniak.appexample.activity.MainActivity">
         Main screen

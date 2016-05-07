@@ -142,7 +142,8 @@ public class OrderDinnerActivity extends Activity {
                 .setQuantity(1);
 
         ProductAction productAction =
-                new ProductAction(ProductAction.ACTION_CHECKOUT);
+                new ProductAction(ProductAction.ACTION_CHECKOUT)
+                        .setCheckoutStep(1);
 
         Tracker tracker = App.getAnalytics().getTracker();
 
