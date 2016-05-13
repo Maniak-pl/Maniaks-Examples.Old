@@ -6,6 +6,10 @@
     <string name="help_main_header">Help Main</string>
     <string name="help_main_description">Przykłady które w szybki sposób pomogą mi rozwiązać problemy w innych aplikacjach.</string>
 
+    <string name="help_toast_header">Custom Toast</string>
+    <string name="help_toast_description">Własne komunikaty</string>
+    <string name="help_toast_button">Show Toast</string>
+
     <string name="help_video_header">Video</string>
     <string name="help_video_description">Uruchamianie video w aplikacji</string>
 

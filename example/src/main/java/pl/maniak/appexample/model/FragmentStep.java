@@ -14,6 +14,7 @@ import pl.maniak.appexample.fragment.GoogleFindLocationFragment;
 import pl.maniak.appexample.fragment.GitHubFloatingActionButtonFragment;
 import pl.maniak.appexample.fragment.SecurityGenerationKeySHAFragment;
 import pl.maniak.appexample.section.help.fragment.HelpLogFragment;
+import pl.maniak.appexample.section.help.fragment.HelpToastFragment;
 import pl.maniak.appexample.section.help.fragment.HelpVideoFragment;
 import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointMainFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileFindLocationFragment;
@@ -59,6 +60,7 @@ public enum FragmentStep {
 
     HELP_MAIN(HelpMainFragment.class),
     LOG(HelpLogFragment.class),
+    CUSTOME_TOAST(HelpToastFragment.class),
     ASYNC_TASK_EXAMPLE(EducativoAsyncTaskFragment.class),
     TABLELAYOUT_EXAMPLE(HelpTableLayoutExampleFragment.class),
     WEBVIEW_INJECTION(HelpWebViewInjectionFragment.class),

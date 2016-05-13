@@ -72,6 +72,7 @@ public class Constants {
             case HELP:
                 fragmentSteps.add(FragmentStep.HELP_MAIN);
                 fragmentSteps.add(FragmentStep.LOG);
+                fragmentSteps.add(FragmentStep.CUSTOME_TOAST);
                 fragmentSteps.add(FragmentStep.TABLELAYOUT_EXAMPLE);
                 fragmentSteps.add(FragmentStep.VIDEO);
                 fragmentSteps.add(FragmentStep.WEBVIEW_INJECTION);
