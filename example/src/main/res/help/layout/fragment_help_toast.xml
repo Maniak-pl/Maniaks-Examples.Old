@@ -1,25 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         style="@style/FragmentHeader"
-        android:text="@string/help_toast_header"/>
+        android:text="@string/help_toast_header" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/padding_default"
+        android:text="@string/help_toast_description" />
+
+    <Button
+        android:id="@+id/imageToastBtn"
+        style="@style/FragmentButton"
+        android:text="@string/help_toast_image_btn" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_default"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="@string/help_toast_description"/>
+        android:text="System Toast"/>
 
-    <Button
-        android:id="@+id/toastBtn"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/help_toast_button"/>
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/padding_default_small"
+        android:paddingRight="@dimen/padding_default_small">
+
+        <Button
+            android:id="@+id/infoToastBtn"
+            style="@style/FragmentButton"
+            android:textColor="@color/info"
+            android:text="@string/help_toast_info_btn" />
+
+        <Button
+            android:id="@+id/confirmToastBtn"
+            style="@style/FragmentButton"
+            android:textColor="@color/confirm"
+            android:text="@string/help_toast_confirm_btn" />
+
+        <Button
+            android:id="@+id/warningToastBtn"
+            style="@style/FragmentButton"
+            android:textColor="@color/warning"
+            android:text="@string/help_toast_warning_btn" />
+
+        <Button
+            android:id="@+id/alertToastBtn"
+            style="@style/FragmentButton"
+            android:textColor="@color/alert"
+            android:text="@string/help_toast_alert_btn" />
+    </LinearLayout>
 
 </LinearLayout>

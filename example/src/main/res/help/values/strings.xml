@@ -8,7 +8,11 @@
 
     <string name="help_toast_header">Custom Toast</string>
     <string name="help_toast_description">Własne komunikaty</string>
-    <string name="help_toast_button">Show Toast</string>
+    <string name="help_toast_image_btn">Image Toast</string>
+    <string name="help_toast_info_btn">Info</string>
+    <string name="help_toast_confirm_btn">Confirm</string>
+    <string name="help_toast_warning_btn">Warning</string>
+    <string name="help_toast_alert_btn">Error</string>
 
     <string name="help_video_header">Video</string>
     <string name="help_video_description">Uruchamianie video w aplikacji</string>

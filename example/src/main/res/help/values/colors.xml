@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="alert">#ffe41e0a</color>
+    <color name="alertBg">#ffd8d9</color>
+    <color name="confirm">#18a035</color>
+    <color name="confirmBg">#a1f2b3</color>
+    <color name="warning">#fbd550</color>
+    <color name="warningBg">#fff4c7</color>
+    <color name="info">#36b9ff</color>
+    <color name="infoBg">#dcf5fc</color>
+
+</resources>
