@@ -42,7 +42,7 @@ public class HelpToastFragment extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.imageToastBtn:
-                ImageToast.show(getActivity(), "Launcher Icon", false);
+                ImageToast.show(getActivity(), "Android System", false);
                 break;
             case R.id.infoToastBtn:
                 SystemToast.show(getActivity(), "Data has been sent", SystemToast.STYLE_INFO);

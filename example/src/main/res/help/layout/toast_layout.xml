@@ -10,16 +10,15 @@
     <ImageView
         android:id="@+id/toast_image"
         android:layout_width="wrap_content"
-        android:src="@drawable/ic_launcher"
+        android:src="@drawable/android_toast_image"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/app_name"
-        android:layout_marginBottom="10dp" />
+        />
 
     <TextView
         android:id="@+id/toast_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="lskfjlsdjf sdlkfsl"
+        android:layout_margin="5dp"
         android:gravity="center"
         android:textColor="#FFF" />
 

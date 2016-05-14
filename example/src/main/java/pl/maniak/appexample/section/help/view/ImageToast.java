@@ -16,7 +16,7 @@ public class ImageToast {
         View layout = inflater.inflate(R.layout.toast_layout, null);
 
         ImageView image = (ImageView) layout.findViewById(R.id.toast_image);
-        image.setImageResource(R.drawable.ic_launcher);
+        image.setImageResource(R.drawable.android_toast_image);
 
         TextView textV = (TextView) layout.findViewById(R.id.toast_text);
         textV.setText(text);
