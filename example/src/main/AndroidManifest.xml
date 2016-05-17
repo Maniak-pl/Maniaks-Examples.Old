@@ -40,6 +40,15 @@
             </intent-filter>
         </activity>
 
+        <!--TutorialPoint - Android Widgets-->
+
+        <receiver android:name=".section.tutorialspoint.provider.WidgetInfoProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"></action>
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info"></meta-data>
+        </receiver>
 
         <!--Udacity Analytics-->
 

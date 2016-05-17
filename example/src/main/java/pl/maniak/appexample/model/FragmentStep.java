@@ -31,6 +31,7 @@ import pl.maniak.appexample.section.help.fragment.HelpWebViewInjectionFragment;
 import pl.maniak.appexample.fragment.UdacityAnalyticsFragment;
 import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointNotificationsFragment;
 import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointSendingEmailFragment;
+import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointWidgetsFragment;
 
 /**
  * Created by Sony on 2015-09-28.
@@ -79,6 +80,7 @@ public enum FragmentStep {
     TUTORIALSPOINT_MAIN(TutorialspointMainFragment.class),
     TUTORIALSPOINT_NOTIFICATION(TutorialspointNotificationsFragment.class),
     TUTORIALSPOINT_SENDING_EMAIL(TutorialspointSendingEmailFragment.class),
+    TUTORIALSPOINT_WIDGETS(TutorialspointWidgetsFragment.class),
 
     // Soldiers Of Mobile
 

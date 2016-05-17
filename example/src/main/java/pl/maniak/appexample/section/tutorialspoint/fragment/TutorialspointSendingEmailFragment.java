@@ -36,7 +36,7 @@ public class TutorialspointSendingEmailFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        L.i("MainGoogleFragment.onCreateView() ");
+        L.i("TutorialspointSendingEmailFragment.onCreateView() ");
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_tutorialspoint_sending_email, null);
 
         App.getAnalytics().sendScreenView(getClass().getSimpleName());

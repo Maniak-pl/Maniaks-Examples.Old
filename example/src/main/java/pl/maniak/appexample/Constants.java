@@ -83,6 +83,7 @@ public class Constants {
                 fragmentSteps.add(FragmentStep.TUTORIALSPOINT_MAIN);
                 fragmentSteps.add(FragmentStep.TUTORIALSPOINT_NOTIFICATION);
                 fragmentSteps.add(FragmentStep.TUTORIALSPOINT_SENDING_EMAIL);
+                fragmentSteps.add(FragmentStep.TUTORIALSPOINT_WIDGETS);
                 break;
             case SOLDIERS_OF_MOBILE:
                 fragmentSteps.add(FragmentStep.SOLDIERS_OF_MOBILE_MAIN);

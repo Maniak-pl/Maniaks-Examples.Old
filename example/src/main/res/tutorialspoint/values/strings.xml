@@ -5,6 +5,7 @@
 
     <string name="tutorialspoint_main_header">Tutorialspoint Main</string>
     <string name="tutorialspoint_main_description">Przykłady wyciągnięte z dostępnego w internecie pdf-a którego można pobrać na stronie \n http://www.tutorialspoint.com </string>
+    <string name="tutorialspoint_text_hint">Widget description</string>
 
     <string name="tutorialspoint_notifications_header">19. Notifications</string>
     <string name="tutorialspoint_notifications_description">Anotification is a
@@ -23,7 +24,8 @@ another component with-in the application or outside the applicatio </string>
     <string name="sending_email_text_label">EXTRA_TEXT</string>
     <string name="sending_email_btn">Compose Email</string>
 
-
+    <string name="tutorialspoint_widgets_header">79. Android Widgets</string>
+    <string name="tutorialspoint_widgets_description">A widget is a small gadget or control of your android application placed on the home screen.</string>
 
 
 </resources>
