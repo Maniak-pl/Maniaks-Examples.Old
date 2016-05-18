@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:id="@+id/widgetInfoTv"
-        android:text="This text can be changed in the application"
+        android:text="@string/tutorialspoint_widgets_info"
         android:layout_centerHorizontal="true"
         android:textColor="@color/black"
          />

@@ -26,6 +26,8 @@ public class Constants {
 
     public static final String DETECTED_ACTIVITIES_EXTRA = PACKAGE_NAME + ".DETECTED_ACTIVITIES_EXTRA";
 
+    public static final String HAWK_WIDGET_INFO = "HAWK_WIDGET_INFO";
+
     /**
      * The desired time between activity detections. Larger values result in fewer activity
      * detections while improving battery life. A value of 0 results in activity detections at the

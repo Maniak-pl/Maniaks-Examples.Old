@@ -5,6 +5,9 @@ import android.app.Application;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Logger;
 import com.google.android.gms.analytics.Tracker;
+import com.orhanobut.hawk.Hawk;
+import com.orhanobut.hawk.HawkBuilder;
+import com.orhanobut.hawk.LogLevel;
 
 import pl.maniak.appexample.di.AppComponent;
 import pl.maniak.appexample.di.AppModule;
@@ -20,6 +23,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        initHawk();
         instance = this;
         appComponent = DaggerAppComponent.builder()
                 .appModule(new AppModule(getApplicationContext()))
@@ -42,7 +46,13 @@ public class App extends Application {
         return getInstance().mAnalytics;
     }
 
-
+    private void initHawk(){
+        Hawk.init(this)
+                .setEncryptionMethod(HawkBuilder.EncryptionMethod.NO_ENCRYPTION)
+                .setStorage(HawkBuilder.newSharedPrefStorage(this))
+                .setLogLevel(LogLevel.FULL)
+                .build();
+    }
 
 
 

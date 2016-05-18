@@ -7,8 +7,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.widget.RemoteViews;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.orhanobut.hawk.Hawk;
+
+import pl.maniak.appexample.Constants;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.activity.MainActivity;
 import pl.maniak.appexample.section.help.view.SystemToast;
@@ -31,7 +35,7 @@ public class WidgetInfoProvider extends AppWidgetProvider {
 
             PendingIntent pending = PendingIntent.getActivity(context, 0,intent, 0);
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_tutorialspoint_info);
-
+            views.setTextViewText(R.id.widgetInfoTv, Hawk.get(Constants.HAWK_WIDGET_INFO, context.getString(R.string.tutorialspoint_widgets_info)));
             views.setOnClickPendingIntent(R.id.widgetInfoBtn, pending);
             appWidgetManager.updateAppWidget(currentWidgetId, views);
             SystemToast.show(context, "Widget added", SystemToast.STYLE_CONFIRM);

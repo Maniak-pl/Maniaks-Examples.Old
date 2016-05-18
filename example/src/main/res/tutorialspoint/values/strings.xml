@@ -26,6 +26,7 @@ another component with-in the application or outside the applicatio </string>
 
     <string name="tutorialspoint_widgets_header">79. Android Widgets</string>
     <string name="tutorialspoint_widgets_description">A widget is a small gadget or control of your android application placed on the home screen.</string>
+    <string name="tutorialspoint_widgets_info">"This text can be changed in the application"</string>
 
 
 </resources>
