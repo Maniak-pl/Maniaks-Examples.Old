@@ -83,6 +83,7 @@ public class Constants {
                 break;
             case ADVANCED_TUTORIAL:
                 fragmentSteps.add(FragmentStep.TUTORIALSPOINT_MAIN);
+                fragmentSteps.add(FragmentStep.TUTORIALSPOINT_JSON_PARSER);
                 fragmentSteps.add(FragmentStep.TUTORIALSPOINT_NOTIFICATION);
                 fragmentSteps.add(FragmentStep.TUTORIALSPOINT_SENDING_EMAIL);
                 fragmentSteps.add(FragmentStep.TUTORIALSPOINT_WIDGETS);

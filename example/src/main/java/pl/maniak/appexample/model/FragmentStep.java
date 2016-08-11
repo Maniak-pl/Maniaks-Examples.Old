@@ -16,6 +16,7 @@ import pl.maniak.appexample.fragment.SecurityGenerationKeySHAFragment;
 import pl.maniak.appexample.section.help.fragment.HelpLogFragment;
 import pl.maniak.appexample.section.help.fragment.HelpToastFragment;
 import pl.maniak.appexample.section.help.fragment.HelpVideoFragment;
+import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointJSONParserFragment;
 import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointMainFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileFindLocationFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileMainFragment;
@@ -78,6 +79,7 @@ public enum FragmentStep {
     // Advanced Tutorial
 
     TUTORIALSPOINT_MAIN(TutorialspointMainFragment.class),
+    TUTORIALSPOINT_JSON_PARSER(TutorialspointJSONParserFragment.class),
     TUTORIALSPOINT_NOTIFICATION(TutorialspointNotificationsFragment.class),
     TUTORIALSPOINT_SENDING_EMAIL(TutorialspointSendingEmailFragment.class),
     TUTORIALSPOINT_WIDGETS(TutorialspointWidgetsFragment.class),
