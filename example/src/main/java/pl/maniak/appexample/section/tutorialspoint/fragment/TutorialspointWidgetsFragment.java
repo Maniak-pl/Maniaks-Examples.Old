@@ -3,6 +3,8 @@ package pl.maniak.appexample.section.tutorialspoint.fragment;
 
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -66,8 +68,17 @@ public class TutorialspointWidgetsFragment extends Fragment {
     public void onClick() {
         descriptionWidgetTv.setText(widgetTextInput.getText().toString());
         Hawk.put(Constants.HAWK_WIDGET_INFO, widgetTextInput.getText().toString());
+        updateWidget(getActivity());
 
 
+    }
 
+    private void updateWidget(Context context) {
+        L.e("TutorialspointWidgetsFragment.updateWidget() ");
+        Intent intent = new Intent(context,WidgetInfoProvider.class);
+        intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+        int ids[] = AppWidgetManager.getInstance(context).getAppWidgetIds(new ComponentName(context, WidgetInfoProvider.class));
+        intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS,ids);
+        context.sendBroadcast(intent);
     }
 }

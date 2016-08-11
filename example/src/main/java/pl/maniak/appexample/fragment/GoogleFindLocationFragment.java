@@ -1,8 +1,11 @@
 package pl.maniak.appexample.fragment;
 
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,7 +41,7 @@ public class GoogleFindLocationFragment extends Fragment implements GoogleApiCli
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         L.i("FineLocationGoogleFragment.onCreateView() ");
-        ViewGroup root = (ViewGroup)inflater.inflate(R.layout.fragment_google_fine_location, null);
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_google_fine_location, null);
 
         mGoogleApiClient = new GoogleApiClient.Builder(getActivity())
                 .addApi(LocationServices.API)
@@ -80,6 +83,16 @@ public class GoogleFindLocationFragment extends Fragment implements GoogleApiCli
         mLocationRequest.setInterval(1000);
 
         // 4 - Call requestLocationUpdates in the Api with this request
+        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient, mLocationRequest, this);
 
     }

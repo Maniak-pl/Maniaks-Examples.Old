@@ -5,16 +5,14 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.widget.RemoteViews;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.orhanobut.hawk.Hawk;
 
 import pl.maniak.appexample.Constants;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.activity.MainActivity;
+import pl.maniak.appexample.common.log.L;
 import pl.maniak.appexample.section.help.view.SystemToast;
 
 /**
@@ -24,8 +22,10 @@ public class WidgetInfoProvider extends AppWidgetProvider {
 
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+        L.e("WidgetInfoProvider.onUpdate() " );
         super.onUpdate(context, appWidgetManager, appWidgetIds);
         for(int i=0; i<appWidgetIds.length; i++){
+            L.e("WidgetInfoProvider.onUpdate() appWidgetIds = "+appWidgetIds[i] );
             int currentWidgetId = appWidgetIds[i];
 
 

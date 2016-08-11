@@ -1,28 +1,34 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/padding_default_small"
+    android:paddingTop="@dimen/padding_default_small"
+    android:paddingBottom="@dimen/padding_default_small"
+    android:background="@drawable/widget_bg"
     android:transitionGroup="true">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight=".7"
         android:gravity="center"
         android:id="@+id/widgetInfoTv"
+        android:padding="@dimen/padding_default"
         android:text="@string/tutorialspoint_widgets_info"
-        android:layout_centerHorizontal="true"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
+        android:singleLine="false"
          />
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_weight=".3"
         android:text="Open App"
+        android:background="@drawable/widget_bg"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
         android:id="@+id/widgetInfoBtn"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/widgetInfoTv" />
+        android:drawableBottom="@drawable/ic_open_app_24dp"
+        android:layout_alignParentRight="@+id/widgetInfoTv" />
 
-   </RelativeLayout>
+   </LinearLayout>
