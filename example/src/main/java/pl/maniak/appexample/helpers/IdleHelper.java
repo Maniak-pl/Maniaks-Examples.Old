@@ -54,4 +54,5 @@ public class IdleHelper extends Thread {
     }
 
 // http://stackoverflow.com/questions/4075180/application-idle-time/4075857#comment-7234627
+
 }
