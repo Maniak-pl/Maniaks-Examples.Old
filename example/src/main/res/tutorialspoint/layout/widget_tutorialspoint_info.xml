@@ -4,7 +4,6 @@
     android:paddingRight="@dimen/padding_default_small"
     android:paddingTop="@dimen/padding_default_small"
     android:paddingBottom="@dimen/padding_default_small"
-    android:background="@drawable/widget_bg"
     android:transitionGroup="true">
 
     <TextView
@@ -24,8 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_weight=".3"
         android:text="Open App"
-        android:background="@drawable/widget_bg"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:layout_gravity="center"
         android:id="@+id/widgetInfoBtn"
         android:drawableBottom="@drawable/ic_open_app_24dp"
