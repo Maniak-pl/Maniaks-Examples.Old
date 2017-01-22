@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--RxJava-->
+
+    <string name="rxjava_main_header">RxJava Main</string>
+    <string name="rxjava_main_description">Programowanie reaktywne jest rozszerzeniem wzorca obserwatora. Mamy dwa główne typy:\n\n
+    Observable – w dużym skrócie: dostarcza dane, zajmuje się również ich wcześniejszym przefiltrowaniem, mapowaniem etc.\n
+    Observer – przetwarza dane, posiada 3 metody:\n
+    \tonNext() – normalne przetwarzanie elementu\n
+    \tonCompleted() – wywoływane po przetworzeniu wszystkich elementów\n
+    \tonError() – wywołane po wystąpieniu błędu\n\n Będą tutaj umieszczane wszelkie przykłady.
+ </string>
+
+
+
+
+</resources>

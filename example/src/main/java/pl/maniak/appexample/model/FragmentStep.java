@@ -16,6 +16,7 @@ import pl.maniak.appexample.fragment.SecurityGenerationKeySHAFragment;
 import pl.maniak.appexample.section.help.fragment.HelpLogFragment;
 import pl.maniak.appexample.section.help.fragment.HelpToastFragment;
 import pl.maniak.appexample.section.help.fragment.HelpVideoFragment;
+import pl.maniak.appexample.section.rxjava.fragment.RxJavaMainFragment;
 import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointJSONParserFragment;
 import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointMainFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileFindLocationFragment;
@@ -34,9 +35,6 @@ import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointNotifi
 import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointSendingEmailFragment;
 import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointWidgetsFragment;
 
-/**
- * Created by Sony on 2015-09-28.
- */
 public enum FragmentStep {
 
     // Google
@@ -57,6 +55,9 @@ public enum FragmentStep {
 
     UDACITY_ANALYTICS(UdacityAnalyticsFragment.class),
 
+    // RxJava
+
+    RXJAVA_MAIN(RxJavaMainFragment.class),
 
     // Help
 
@@ -90,6 +91,7 @@ public enum FragmentStep {
     SOLDIERS_OF_MOBILE_EXIT_MODAL(SoldiersOfMobileExitModalFragment.class),
     SOLDIERS_OF_MOBILE_MAP(SoldiersOfMobileMapFragment.class),
     SOLDIERS_OF_MOBILE_FIND_LOCATION(SoldiersOfMobileFindLocationFragment.class);
+
 
     // --------------------------------------------------------
 

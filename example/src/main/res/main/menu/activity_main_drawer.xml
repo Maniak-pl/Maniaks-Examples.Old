@@ -15,6 +15,10 @@
             android:icon="@drawable/ic_udacity"
             android:title="@string/nav_label_udacity" />
         <item
+            android:id="@+id/nav_rxjava"
+            android:icon="@drawable/ic_rxjava"
+            android:title="@string/nav_label_rxjava" />
+        <item
             android:id="@+id/nav_help"
             android:icon="@drawable/ic_help"
             android:title="@string/nav_label_help" />
@@ -37,11 +41,11 @@
             <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
+                android:title="@string/share" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:title="@string/send" />
         </menu>
     </item>
 

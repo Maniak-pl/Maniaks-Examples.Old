@@ -9,9 +9,6 @@ import pl.maniak.appexample.model.FragmentStep;
 import pl.maniak.appexample.model.NavDraItem;
 import pl.maniak.appexample.model.Step;
 
-/**
- * Created by pliszka on 28.09.15.
- */
 public class Constants {
 
     public final static boolean DEBUG_LOG = true;
@@ -50,8 +47,7 @@ public class Constants {
             DetectedActivity.UNKNOWN
     };
 
-    private static List<NavDraItem> navDraItems = new ArrayList();
-    private static List<FragmentStep> fragmentSteps = new ArrayList();
+    private static List<FragmentStep> fragmentSteps = new ArrayList<>();
 
     public static List<FragmentStep> getFragmentSteps(Step step){
         fragmentSteps.clear();
@@ -70,6 +66,9 @@ public class Constants {
                 break;
             case UDACITY:
                 fragmentSteps.add(FragmentStep.UDACITY_ANALYTICS);
+                break;
+            case RXJAVA:
+                fragmentSteps.add(FragmentStep.RXJAVA_MAIN);
                 break;
             case HELP:
                 fragmentSteps.add(FragmentStep.HELP_MAIN);

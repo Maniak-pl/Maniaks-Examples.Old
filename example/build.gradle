@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 24
@@ -17,6 +18,7 @@ android {
         main {
             res.srcDirs = [
                     'src/main/res/main',
+                    'src/main/res/rxjava',
                     'src/main/res/help',
                     'src/main/res/udacity/analytics',
                     'src/main/res/tutorialspoint',

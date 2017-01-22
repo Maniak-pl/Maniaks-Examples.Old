@@ -7,6 +7,7 @@
     <string name="prev">Back</string>
     <string name="next">Next</string>
     <string name="send">Send</string>
+    <string name="share">Shere</string>
     <string name="save">Save</string>
     <string name="start">Start</string>
     <string name="stop">Stop</string>
@@ -14,7 +15,6 @@
     <string name="cancel">Anuluj</string>
     <string name="yes">Tak</string>
     <string name="no">Nie</string>
-    <string name="share">Udostępnij</string>
 
 
     <string name="drawer_open">Open navigation drawer</string>
@@ -26,6 +26,7 @@
     <string name="nav_label_google">Google</string>
     <string name="nav_label_github">GitHub</string>
     <string name="nav_label_udacity">Udacity</string>
+    <string name="nav_label_rxjava">RxJava</string>
     <string name="nav_label_help">Help</string>
     <string name="nav_label_advanced_tutorial">Advanced Tutorial</string>
     <string name="nav_label_security">Security</string>
@@ -128,6 +129,7 @@
     <string name="analytics_send_event_btn">Send Event</string>
     <string name="analytics_send_screen_btn">Send Screen Event</string>
     <string name="analytics_send_product_btn">Send Product For E-Commerce</string>
+
 
 
 </resources>
