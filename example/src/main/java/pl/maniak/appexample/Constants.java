@@ -69,6 +69,7 @@ public class Constants {
                 break;
             case RXJAVA:
                 fragmentSteps.add(FragmentStep.RXJAVA_MAIN);
+                fragmentSteps.add(FragmentStep.RXJAVA_SEARCH_PEOPLE);
                 break;
             case HELP:
                 fragmentSteps.add(FragmentStep.HELP_MAIN);

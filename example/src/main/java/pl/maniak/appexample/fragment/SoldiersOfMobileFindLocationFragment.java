@@ -43,7 +43,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.maniak.appexample.App;
@@ -59,28 +59,28 @@ import pl.maniak.appexample.model.FavoriteLocation;
 public class SoldiersOfMobileFindLocationFragment extends Fragment implements OnMapReadyCallback, GoogleApiClient.OnConnectionFailedListener,
         GoogleApiClient.ConnectionCallbacks, LocationListener {
 
-    @Bind(R.id.findLocationMapContainer)
+    @BindView(R.id.findLocationMapContainer)
     FrameLayout findLocationMapContainer;
-    @Bind(R.id.findLocationBtn)
+    @BindView(R.id.findLocationBtn)
     Button findLocationBtn;
-    @Bind(R.id.saveLocationBtn)
+    @BindView(R.id.saveLocationBtn)
     Button saveLocationBtn;
-    @Bind(R.id.removeLocationBtn)
+    @BindView(R.id.removeLocationBtn)
     Button removeLocationBtn;
-    @Bind(R.id.locationNameTv)
+    @BindView(R.id.locationNameTv)
     TextView locationNameTv;
-    @Bind(R.id.latituteLocationTv)
+    @BindView(R.id.latituteLocationTv)
     TextView latituteLocationTv;
-    @Bind(R.id.longitudeLocationTv)
+    @BindView(R.id.longitudeLocationTv)
     TextView longitudeLocationTv;
-    @Bind(R.id.adressLocationTv)
+    @BindView(R.id.adressLocationTv)
     TextView adressLocationTv;
 
     @Inject
     public DBHelper dbHelper;
-    @Bind(R.id.tagSpinner)
+    @BindView(R.id.tagSpinner)
     Spinner tagSpinner;
-    @Bind(R.id.loadLocationBtn)
+    @BindView(R.id.loadLocationBtn)
     Button loadLocationBtn;
 
     private GoogleMap mMap;
@@ -231,13 +231,6 @@ public class SoldiersOfMobileFindLocationFragment extends Fragment implements On
     public void onLocationChanged(Location location) {
         handleLocation(location);
     }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
-
 
     @OnClick({R.id.findLocationBtn, R.id.loadLocationBtn, R.id.saveLocationBtn, R.id.removeLocationBtn})
     public void onClick(View view) {

@@ -31,13 +31,6 @@ public class HelpToastFragment extends Fragment {
         return root;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
-
-
     @OnClick({R.id.imageToastBtn, R.id.infoToastBtn, R.id.confirmToastBtn, R.id.warningToastBtn, R.id.alertToastBtn})
     public void onClick(View view) {
         switch (view.getId()) {

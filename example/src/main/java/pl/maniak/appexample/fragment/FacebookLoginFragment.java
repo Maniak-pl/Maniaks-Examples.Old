@@ -3,7 +3,6 @@ package pl.maniak.appexample.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,7 @@ import com.facebook.FacebookSdk;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
@@ -27,11 +26,11 @@ import pl.maniak.appexample.common.log.L;
  */
 public class FacebookLoginFragment extends Fragment {
 
-    @Bind(R.id.login_button)
+    @BindView(R.id.login_button)
     LoginButton loginButton;
 
     CallbackManager callbackManager;
-    @Bind(R.id.facebookLoginName)
+    @BindView(R.id.facebookLoginName)
     TextView mLoginName;
 
     @Override
@@ -78,13 +77,6 @@ public class FacebookLoginFragment extends Fragment {
             }
         });
     }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
-
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {

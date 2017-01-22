@@ -14,7 +14,7 @@ import com.google.android.gms.analytics.Tracker;
 import com.google.android.gms.analytics.ecommerce.Product;
 import com.google.android.gms.analytics.ecommerce.ProductAction;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.maniak.appexample.App;
@@ -27,11 +27,11 @@ import pl.maniak.appexample.section.udacity.analytics.util.Utility;
  */
 public class GoogleAnalyticsFragment extends Fragment {
 
-    @Bind(R.id.analyticsCategory)
+    @BindView(R.id.analyticsCategory)
     AutoCompleteTextView analyticsCategory;
-    @Bind(R.id.analyticsAction)
+    @BindView(R.id.analyticsAction)
     AutoCompleteTextView analyticsAction;
-    @Bind(R.id.analyticsLabel)
+    @BindView(R.id.analyticsLabel)
     AutoCompleteTextView analyticsLabel;
 
     @Override
@@ -43,13 +43,6 @@ public class GoogleAnalyticsFragment extends Fragment {
 
         App.getAnalytics().sendScreenView(getClass().getSimpleName());
         return root;
-    }
-
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     @OnClick({R.id.sendEvnetBtn, R.id.sendScreenBtn})

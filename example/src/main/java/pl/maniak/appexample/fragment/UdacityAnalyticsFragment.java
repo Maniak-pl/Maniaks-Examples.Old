@@ -32,13 +32,6 @@ public class UdacityAnalyticsFragment extends Fragment {
         return root;
     }
 
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
-
     @OnClick(R.id.showDinnerActivity)
     public void onClick() {
         startActivity(new Intent(getActivity(), DinnerMainActivity.class));

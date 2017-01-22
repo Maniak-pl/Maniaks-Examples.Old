@@ -12,7 +12,8 @@ import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
 
-import butterknife.Bind;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.maniak.appexample.App;
@@ -26,7 +27,7 @@ import pl.maniak.appexample.section.help.view.VideoPlayer;
 public class HelpVideoFragment extends Fragment {
 
     MediaController mediaController;
-    @Bind(R.id.videoView)
+    @BindView(R.id.videoView)
     VideoPlayer mVideoView;
 
     @Override
@@ -65,13 +66,6 @@ public class HelpVideoFragment extends Fragment {
         super.onPause();
         mVideoView.pause();
     }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
-
 
     @OnClick({R.id.videoPlay, R.id.videoPause, R.id.videoSoundOn, R.id.videoSoundOff})
     public void onClick(View view) {

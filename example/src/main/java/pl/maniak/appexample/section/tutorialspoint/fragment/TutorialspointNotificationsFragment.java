@@ -40,12 +40,6 @@ public class TutorialspointNotificationsFragment extends Fragment {
         return root;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
-
     @OnClick(R.id.startNotificationBtn)
     public void displayNotification() {
         L.d("Display Notification");

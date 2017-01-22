@@ -16,7 +16,7 @@ import android.widget.TextView;
 
 import com.orhanobut.hawk.Hawk;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.maniak.appexample.App;
@@ -31,11 +31,11 @@ import pl.maniak.appexample.section.tutorialspoint.provider.WidgetInfoProvider;
 public class TutorialspointWidgetsFragment extends Fragment {
 
 
-    @Bind(R.id.fragmentWidgetTextInput)
+    @BindView(R.id.fragmentWidgetTextInput)
     AutoCompleteTextView widgetTextInput;
-    @Bind(R.id.fragmentWidgetInfoTv)
+    @BindView(R.id.fragmentWidgetInfoTv)
     TextView descriptionWidgetTv;
-    @Bind(R.id.fragmentWidgetInfoBtn)
+    @BindView(R.id.fragmentWidgetInfoBtn)
     Button saveBtn;
 
     @Override
@@ -57,20 +57,11 @@ public class TutorialspointWidgetsFragment extends Fragment {
     }
 
 
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
-
     @OnClick(R.id.fragmentWidgetInfoBtn)
     public void onClick() {
         descriptionWidgetTv.setText(widgetTextInput.getText().toString());
         Hawk.put(Constants.HAWK_WIDGET_INFO, widgetTextInput.getText().toString());
         updateWidget(getActivity());
-
-
     }
 
     private void updateWidget(Context context) {

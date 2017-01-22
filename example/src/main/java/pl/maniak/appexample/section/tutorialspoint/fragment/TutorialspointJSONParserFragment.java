@@ -11,19 +11,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 
-/**
- * Created by pliszka on 11.08.16.
- */
 public class TutorialspointJSONParserFragment extends Fragment {
 
 
-    @Bind(R.id.parserJSON)
+    @BindView(R.id.parserJSON)
     TextView parserJSON;
 
     @Override
@@ -83,10 +80,4 @@ public class TutorialspointJSONParserFragment extends Fragment {
         }
     }
 
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
-    }
 }

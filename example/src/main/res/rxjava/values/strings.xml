@@ -12,7 +12,8 @@
     \tonError() – wywołane po wystąpieniu błędu\n\n Będą tutaj umieszczane wszelkie przykłady.
  </string>
 
-
-
+    <string name="rxjava_search_people_header">Search People</string>
+    <string name="rxjava_button_search">Search</string>
+    <string name="rxjava_search_nothing_found">People were not found</string>
 
 </resources>

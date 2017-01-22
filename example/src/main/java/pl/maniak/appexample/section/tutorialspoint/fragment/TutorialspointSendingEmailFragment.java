@@ -12,25 +12,22 @@ import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import pl.maniak.appexample.App;
 import pl.maniak.appexample.R;
 import pl.maniak.appexample.common.log.L;
 
-/**
- * Created by Maniak on 2015-09-29.
- */
 public class TutorialspointSendingEmailFragment extends Fragment {
 
-    @Bind(R.id.sendingEmailExtraEmail)
+    @BindView(R.id.sendingEmailExtraEmail)
     AutoCompleteTextView tvEmailTo;
-    @Bind(R.id.sendingEmailExtraCc)
+    @BindView(R.id.sendingEmailExtraCc)
     AutoCompleteTextView tvExtraCc;
-    @Bind(R.id.sendingEmailExtraSubject)
+    @BindView(R.id.sendingEmailExtraSubject)
     AutoCompleteTextView tvExtraSubject;
-    @Bind(R.id.sendingEmailExtraText)
+    @BindView(R.id.sendingEmailExtraText)
     AutoCompleteTextView tvExtraText;
 
 
@@ -43,12 +40,6 @@ public class TutorialspointSendingEmailFragment extends Fragment {
 
         ButterKnife.bind(this, root);
         return root;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 
     @OnClick(R.id.sendEmailBtn)

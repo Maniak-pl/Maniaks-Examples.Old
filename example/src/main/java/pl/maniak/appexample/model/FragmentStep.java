@@ -17,6 +17,7 @@ import pl.maniak.appexample.section.help.fragment.HelpLogFragment;
 import pl.maniak.appexample.section.help.fragment.HelpToastFragment;
 import pl.maniak.appexample.section.help.fragment.HelpVideoFragment;
 import pl.maniak.appexample.section.rxjava.fragment.RxJavaMainFragment;
+import pl.maniak.appexample.section.rxjava.fragment.RxJavaSearchPeopleFragment;
 import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointJSONParserFragment;
 import pl.maniak.appexample.section.tutorialspoint.fragment.TutorialspointMainFragment;
 import pl.maniak.appexample.fragment.SoldiersOfMobileFindLocationFragment;
@@ -58,6 +59,7 @@ public enum FragmentStep {
     // RxJava
 
     RXJAVA_MAIN(RxJavaMainFragment.class),
+    RXJAVA_SEARCH_PEOPLE(RxJavaSearchPeopleFragment.class),
 
     // Help
 
